@@ -1,0 +1,650 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Thunder Road",
+    "artist": "Bruce Springsteen",
+    "album": "Born to Run",
+    "year": 1975,
+    "tuning": "Standard (EADGBe) — shapes in E, capo 4 = Ab concert",
+    "capo": 4,
+    "timeSignature": "4/4",
+    "tempo": "♩≈96 BPM",
+    "accentColor": "#f59e0b"
+  },
+  "analysis": {
+    "tonicNote": "E (shapes) / Ab (concert pitch)",
+    "tonicPC": 9,
+    "primaryMode": "E Ionio — diatonica pura, con interscambio modale Misolidio (D♭VII) nel climax",
+    "complexity": 3,
+    "alienChord": "D (♭VII — da E Misolidio, climax e outro)",
+    "alienReason": "L'intera canzone è rigorosamente diatonica in E Ionio — I–V–vi–IV con inversioni di basso. Il D maggiore (♭VII) rompe questo schema una volta sola, nel culmine dell'outro, esattamente come in 'Something' dei Beatles e 'Axis: Bold as Love'. La nota aliena è D naturale, il settimo abbassato: non appartiene a E Ionio (che ha D#). Springsteen lo usa come accordo di apertura emotiva — il D♭VII è l'accordo che dice 'siamo arrivati dove volevamo'. Tecnicamente proviene da E Misolidio, ma la sua rarità nell'arrangiamento lo rende un momento di rottura tanto più potente.",
+    "technique": "La vera sofisticazione armonica di Thunder Road non è nelle altezze degli accordi — quasi tutti diatonici — ma nel basso: la discesa cromatica E→D#→C#→C# ottenuta attraverso inversioni di primo rivolto (E/G#, B/D#, A/C#) crea voice leading da musica classica romantica in un contesto rock. È la stessa tecnica del Lied tedesco (Schubert, Schumann) applicata alla chitarra elettrica. Il Bsus4 aggiunge una sospensione ritardata della dominante — il suono dell'attesa e della speranza che caratterizza il testo.",
+    "bassMotion": "Discesa cromatica del verso: E(I) → B/D#(V/3°) → C#m(vi) → A/C#(IV/3°) — il basso scende E→D#→C#→C# per gradi cromatici. Nel chorus il basso sale: A→B→E (IV→V→I cadenza autentica). Nel bridge scende per terze: F#m→A→E→B (ii→IV→I→V). L'outro aggiunge D (♭VII) come gradino extra: A→D→A→B→E.",
+    "summary": "Thunder Road è costruita su una paradosso armonico: usa la progressione più semplice del rock (I–V–vi–IV in E maggiore) ma la trascende attraverso la voce del basso. Le inversioni B/D# e A/C# creano una discesa cromatica E→D#→C#→C# che appartiene alla tradizione classico-romantica più che al rock. Il risultato è una canzone percepita come 'epica' e 'cinematografica' pur usando meno di sette accordi distinti. Il ♭VII (D) appare una sola volta, nel climax finale, come ricompensa armonica di tutta la tensione accumulata. È la stessa logica narrativa del testo: semplice in superficie, complessa nell'esecuzione."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro — piano e armonica",
+      "chords": [
+        "E_intro",
+        "Asus2_intro"
+      ],
+      "note": "Il piano suona un'oscillazione I–IV (E–Asus2) senza ritmo preciso — vamp aperto. L'armonica di Springsteen improvvisa sopra. Nessuna batteria, nessun basso: solo spazio. Stabilisce E Ionio prima ancora che la canzone inizi."
+    },
+    {
+      "id": "verse",
+      "label": "Verse — discesa cromatica",
+      "chords": [
+        "E_verse",
+        "BGsharp_verse",
+        "Bsus4_verse",
+        "B_verse",
+        "Csharpm_verse",
+        "ACsharp_verse"
+      ],
+      "note": "La progressione principale: E → B/D# (o E/G#) → Bsus4→B → C#m → A/C#. Il basso cammina cromaticamente: E(5)→D#(4)→C#(3)→C#(3). Il Bsus4 ritarda la risoluzione del V — il momento dell'incertezza prima del coro."
+    },
+    {
+      "id": "prechorus",
+      "label": "Pre-chorus — F#m come ombra",
+      "chords": [
+        "Fsharpm_pre",
+        "A_pre",
+        "E_pre",
+        "Bsus4_pre"
+      ],
+      "note": "Il F#m (ii grado) introduce il colore più scuro della canzone. La progressione ii→IV→I→Vsus4 è la stessa 'ritardata speranza' del testo: 'you can hide 'neath your covers and study your pain'."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — cadenza autentica",
+      "chords": [
+        "A_chorus",
+        "B_chorus",
+        "E_chorus"
+      ],
+      "note": "Il chorus è volutamente più semplice del verso: IV→V→I, una cadenza autentica diretta. Dopo la complessità della discesa cromatica del verso, la risoluzione IV→V→I suona come un'apertura. Springsteen toglie le inversioni per massimizzare l'impatto emotivo."
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge — discesa per terze",
+      "chords": [
+        "Fsharpm_bridge",
+        "A_bridge",
+        "E_bridge",
+        "B_bridge"
+      ],
+      "note": "Il bridge usa una discesa per terze: F#m→A→E→B (ii→IV→I→V). Il basso scende F#→E→D#→... aspettando la risoluzione. È il momento più 'aperto' della canzone — Springsteen descrive la fuga sulla macchina come possibilità ancora non realizzata."
+    },
+    {
+      "id": "outro",
+      "label": "Outro — climax con ♭VII",
+      "chords": [
+        "A_outro",
+        "D_outro",
+        "B_outro",
+        "E_outro"
+      ],
+      "note": "Il momento più atteso dell'intera canzone: A→D→B→E. Il D (♭VII) rompe per la prima (e unica) volta la diatonica pura di E Ionio. È l'accordo del 'siamo arrivati' — la nota D naturale contro D# di tutte le altre sezioni crea un contrasto che il cervello percepisce come risoluzione emotiva definitiva."
+    }
+  ],
+  "chords": [
+    {
+      "id": "E_intro",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — vamp di apertura",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Il piano suona E in apertura di ottava ampia — tonica quasi orchestrale. La chitarra (o il piano) tiene E aperto come pedale mentre l'armonica vola sopra."
+    },
+    {
+      "id": "Asus2_intro",
+      "symbol": "Asus2",
+      "degree": "IVsus2",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante sospesa — colore aperto, pastorale",
+      "tetrad": "Asus2",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Asus2 (A–B–E senza terza) è il voicing del panorama americano aperto — nessuna terza, nessun colore modale definito. Springsteen usa Asus2 invece di A pieno per mantenere l'ambiguità emotiva dell'intro. È il suono di qualcosa che potrebbe ancora andare in qualunque direzione."
+    },
+    {
+      "id": "E_verse",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — punto di partenza della discesa cromatica",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Il basso suona E — questa è la nota più alta della discesa cromatica che segue. Da E il basso scenderà D#→C#→C# attraverso le inversioni degli accordi successivi."
+    },
+    {
+      "id": "BGsharp_verse",
+      "symbol": "E/G#",
+      "degree": "I/3°",
+      "modalOrigin": "E Ionio — primo rivolto",
+      "function": "Tonica in primo rivolto — il basso scende E→G#? No: qui il basso è G#, terza di E. Crea movimento.",
+      "tetrad": "Emaj7/G#",
+      "tensions": [],
+      "tetradFull": "E/G#",
+      "voicing": "4x2100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Primo rivolto di E: G# nel basso. Tecnicamente questo accordo a volte è invece B/D# — dipende dall'arrangiamento. In entrambi i casi la funzione è identica: creare un basso che scende cromaticamente verso C# di C#m. Questa inversione è rara nel rock ma comune in Schubert e nel songwriting americano classico (Gershwin, Cole Porter)."
+    },
+    {
+      "id": "Bsus4_verse",
+      "symbol": "Bsus4",
+      "degree": "Vsus4",
+      "modalOrigin": "E Ionio — sospensione della dominante",
+      "function": "Dominante sospesa — la quarta E ritarda la risoluzione a D# (terza di B)",
+      "tetrad": "Bsus4",
+      "tensions": [
+        "sus4"
+      ],
+      "tetradFull": "Bsus4",
+      "voicing": "x24452",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il Bsus4 è la 'sospensione dell'incertezza' di Thunder Road. La quarta E nella voce acuta non vuole ancora risolvere alla terza D# — è il momento musicale del 'forse', del 'potrei'. Springsteen usa questa sospensione nel testo ('you can hide 'neath your covers') prima che la dominante risolva e il verso avanzi."
+    },
+    {
+      "id": "B_verse",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante — risoluzione dal Bsus4",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il B che risolve il Bsus4: la quarta E diventa terza D#. Questo movimento sus4→maj (E→D#) è una voce che scende per semitono — microvoice leading che Springsteen usa sistematicamente nel verso."
+    },
+    {
+      "id": "Csharpm_verse",
+      "symbol": "C#m",
+      "degree": "vi",
+      "modalOrigin": "E Ionio — relativa minore",
+      "function": "Relativa minore — colore malinconico nel mezzo della discesa",
+      "tetrad": "C#m7",
+      "tensions": [],
+      "tetradFull": "C#m7",
+      "voicing": "x46654",
+      "rootPC": 1,
+      "isAlien": false,
+      "note": "C#m è la nota più bassa del basso nella discesa (C# = terza di A/C# che segue). Il vi grado in E Ionio porta il colore della malinconia — è il momento del verso dove il testo descrive qualcosa di perso o non ancora raggiunto. La progressione I→V→vi è la stessa di innumerevoli ballate romantiche."
+    },
+    {
+      "id": "ACsharp_verse",
+      "symbol": "A/C#",
+      "degree": "IV/3°",
+      "modalOrigin": "E Ionio — primo rivolto del IV",
+      "function": "Sottodominante in primo rivolto — basso C# mantiene la nota della discesa",
+      "tetrad": "Amaj7/C#",
+      "tensions": [],
+      "tetradFull": "A/C#",
+      "voicing": "x42220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Chiusura della discesa cromatica: il basso è ancora C#, come nel C#m che precede. La sequenza C#m→A/C# mantiene lo stesso basso (C#) mentre la triade sopra cambia da minore a maggiore — è un cambio di colore emotivo con continuità del basso. Tecnica classica: il basso come filo conduttore, le voci come melodia variabile."
+    },
+    {
+      "id": "Fsharpm_pre",
+      "symbol": "F#m",
+      "degree": "ii",
+      "modalOrigin": "E Ionio — sopradominante minore",
+      "function": "Sopradominante — colore più scuro, introduce l'ombra prima del coro",
+      "tetrad": "F#m7",
+      "tensions": [],
+      "tetradFull": "F#m7",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": "F#m è il ii grado di E Ionio — diatonica ma coloristicamente l'accordo più 'scuro' della canzone insieme a C#m. Nel pre-chorus Springsteen lo usa per creare l'ombra prima dell'apertura del coro. Voice leading: F# nel basso scende a E (tonica), il ii prepara il I con movimento di seconda discendente."
+    },
+    {
+      "id": "A_pre",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — apertura dopo il ii",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_pre",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — punto di ritorno prima del Vsus4",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Bsus4_pre",
+      "symbol": "Bsus4",
+      "degree": "Vsus4",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante sospesa — massima tensione prima del coro",
+      "tetrad": "Bsus4",
+      "tensions": [
+        "sus4"
+      ],
+      "tetradFull": "Bsus4",
+      "voicing": "x24452",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il Bsus4 qui ha il compito più importante: crea la tensione che il coro ('Thunder Road') deve risolvere. Springsteen tiene questo Bsus4 più a lungo che nel verso — l'attesa è massima prima dell'esplosione del coro."
+    },
+    {
+      "id": "A_chorus",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — inizio della cadenza autentica IV→V→I",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Il coro è deliberatamente più semplice del verso: niente inversioni, niente sospensioni, solo accordi in stato fondamentale. Springsteen toglie la complessità armonica per lasciare spazio alla melodia vocale e alla liberazione emotiva. IV→V→I in stato fondamentale è la progressione più 'aperta' e 'vittoriosa' dell'armonia tonale."
+    },
+    {
+      "id": "B_chorus",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante — secondo passo della cadenza autentica",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_chorus",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — risoluzione sul nome 'Thunder Road'",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "La parola 'Road' nel coro cade sul I grado — risoluzione testuale e armonica coincidono perfettamente. Springsteen sincronizza sempre l'accento sillabico con il cambio armonico più significativo."
+    },
+    {
+      "id": "Fsharpm_bridge",
+      "symbol": "F#m",
+      "degree": "ii",
+      "modalOrigin": "E Ionio",
+      "function": "Sopradominante — apertura del bridge con il colore più riflessivo",
+      "tetrad": "F#m7",
+      "tensions": [],
+      "tetradFull": "F#m7",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": "Il bridge inizia su F#m — il grado più 'aperto' e 'interrogativo' della canzone. Nel testo corrisponde alla descrizione della macchina che attende fuori ('there's a place out on the edge of town'). La discesa successiva F#m→A→E crea un effetto di apertura verso il basso."
+    },
+    {
+      "id": "A_bridge",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — secondo passo della discesa per terze",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_bridge",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — terzo passo, ritorno momentaneo",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "B_bridge",
+      "symbol": "Bsus4",
+      "degree": "Vsus4",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante sospesa — riapre la tensione verso il ritornello",
+      "tetrad": "Bsus4",
+      "tensions": [
+        "sus4"
+      ],
+      "tetradFull": "Bsus4",
+      "voicing": "x24452",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il bridge chiude su Bsus4 come il pre-chorus: il pattern di tensione (sospensione del V) → risoluzione (tonica del coro) è il respiro ciclico di tutta la canzone."
+    },
+    {
+      "id": "A_outro",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — preparazione al ♭VII",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "L'outro inizia con A come se fosse un altro coro normale. La sorpresa del D che segue è massima perché il contesto armonico è familiare — Springsteen prepara la rottura con la ripetizione."
+    },
+    {
+      "id": "D_outro",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Misolidio — settimo abbassato ⚡",
+      "function": "Interscambio modale — D naturale rompe E Ionio (che ha D#). Accordo del climax emotivo.",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "LA nota aliena di Thunder Road: D naturale. In E Ionio il settimo grado è D# — il D naturale appartiene a E Misolidio. Springsteen lo usa una volta sola, nel climax finale, come 'accordo di liberazione'. Il meccanismo è lo stesso di George Harrison in 'Something' (G = ♭VII in A) e Hendrix in 'Bold as Love' (G = ♭VII in A): il bVII Misolidio come punto di massima apertura emotiva. Il D maggiore contiene le note D–F#–A: il D naturale crea frizione cromatica con D# di B che segue, massimizzando la tensione prima della risoluzione finale su E."
+    },
+    {
+      "id": "B_outro",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante — ultima tensione prima della tonica finale",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Dopo il D (♭VII) il B ristabilisce E Ionio e crea l'ultima tensione dominante. D→B è una discesa di terza minore che crea il 'rimbalzo' verso la tonica finale: D(♭VII)→B(V)→E(I) è una progressione di cadenza estesa — si arriva alla tonica E attraverso due passi invece di uno."
+    },
+    {
+      "id": "E_outro",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica finale — risoluzione definitiva",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "La tonica finale su cui la canzone si chiude. Dopo tutto il viaggio armonico — le discese cromatiche del verso, le sospensioni del Bsus4, il momento alieno del D♭VII — il ritorno a E suona come un arrivo reale, non una semplice ripetizione. È la 'Thunder Road' del titolo: la strada è stata percorsa."
+    }
+  ],
+  "modes": [
+    {
+      "id": "e_ionian",
+      "label": "E Ionio (Maggiore)",
+      "sub": "Tutto il brano — primaria",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#f59e0b",
+      "sections": [
+        "intro",
+        "verse",
+        "prechorus",
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "tip": "La scala di base. Copre tutti gli accordi tranne D (♭VII). Note: E–F#–G#–A–B–C#–D#. Improv: enfatizza D# (sensibile) su B e Bsus4 — è la nota che crea la tensione verso la tonica. Su C#m usa C# come nota di arrivo dalla discesa del basso."
+    },
+    {
+      "id": "e_mixolydian",
+      "label": "E Misolidio",
+      "sub": "Sul D (♭VII) — outro",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#fbbf24",
+      "sections": [
+        "outro"
+      ],
+      "tip": "Abbassa D# a D naturale. Copre l'accordo D (♭VII). Sul D dell'outro usa E Misolidio: la nota D naturale è la nota caratteristica, usala come nota di approdo melodico. Dopo il D torna immediatamente a E Ionio (con D#) per il B finale."
+    },
+    {
+      "id": "csharpm_aeolian",
+      "label": "C#m Aeoliano",
+      "sub": "Sul C#m — colore malinconico del verso",
+      "rootPC": 1,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#a78bfa",
+      "sections": [
+        "verse"
+      ],
+      "tip": "C#m Aeoliano = E Ionio relativo: stesse note, radice diversa. Sul C#m del verso puoi pensare in C#m Aeoliano (C#–D#–E–F#–G#–A–B) oppure restare su E Ionio. Le note 'colorate' in questo contesto sono A (sesta maggiore, colore dorico) e B (settima minore, tensione verso tonica)."
+    },
+    {
+      "id": "e_major_pentatonic",
+      "label": "E Pentatonica Maggiore",
+      "sub": "Tutto il brano — improv base",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#34d399",
+      "sections": [
+        "verse",
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "tip": "E–F#–G#–B–C#. La pentatonica maggiore di E funziona su tutti gli accordi della canzone incluso il D♭VII (E e B sono nella triade di D). È la scala più sicura per improvvisare. Aggiungi A (da E Ionio) su A e Asus2, aggiungi D# (da E Ionio) su Bsus4→B per sentire la sensibile."
+    },
+    {
+      "id": "bsus_resolution",
+      "label": "Sospensione sus4→maj",
+      "sub": "Tecnica melodica — Bsus4 verso B",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        5,
+        7
+      ],
+      "color": "#fb923c",
+      "sections": [
+        "verse",
+        "prechorus",
+        "bridge"
+      ],
+      "tip": "Non è una scala ma una tecnica melodica: il passaggio E→D# (quarta→terza di B) è il momento espressivo più caratteristico di Thunder Road. In fase di improv: arriva sulla nota E sopra il Bsus4 e scendi a D# sul B — questo micro-voice-leading di semitono cattura l'essenza emotiva della canzone."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "e_arp",
+      "label": "E",
+      "sub": "I · tutto il brano",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#f59e0b",
+      "chordRef": "E_verse",
+      "tip": "E–G#–B. Arpeggio di tonica aperto — usa le corde aperte (E bassa, B, E alta) per il suono ampio caratteristico di Springsteen. Il G# (terza) è la nota che definisce il colore maggiore ottimistico della canzone."
+    },
+    {
+      "id": "b_arp",
+      "label": "B",
+      "sub": "V · verso/coro/outro",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#fbbf24",
+      "chordRef": "B_verse",
+      "tip": "B–D#–F#. Il D# è la sensibile di E — la nota che 'vuole' risolvere su E. Nel Bsus4 questa terza è sostituita da E (quarta), creando la sospensione. Quando il D# appare (B risolto) il cervello percepisce movimento in avanti."
+    },
+    {
+      "id": "csharpm_arp",
+      "label": "C#m7",
+      "sub": "vi · verso",
+      "rootPC": 1,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#a78bfa",
+      "chordRef": "Csharpm_verse",
+      "tip": "C#–E–G#–B. La settima B è la tonica di E — voice leading naturale C#m7→A/C# mantiene G# come nota comune. Il C#m7 è l'accordo più 'cinematografico' di Thunder Road — enfatizzalo nelle parti strumentali."
+    },
+    {
+      "id": "a_arp",
+      "label": "A",
+      "sub": "IV · tutto il brano",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#34d399",
+      "chordRef": "A_chorus",
+      "tip": "A–C#–E. La quinta E è la tonica di E maggiore — ogni A porta in sé la tonica come quinta. Questo crea continuità armonica: il IV di Thunder Road non suona mai 'lontano' dalla tonica. Usa il voicing x02220 aperto — il suono grande americano di Springsteen."
+    },
+    {
+      "id": "fsharpm_arp",
+      "label": "F#m7",
+      "sub": "ii · pre-chorus/bridge",
+      "rootPC": 6,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#818cf8",
+      "chordRef": "Fsharpm_pre",
+      "tip": "F#–A–C#–E. La settima E è la tonica — il ii7 di Thunder Road porta sempre la tonica nella settima, creando un legame sottile con I. L'arpeggio F#m7 scende naturalmente verso A (nota comune) e poi E (tonica). È la scala della riflessione e del dubbio nel testo."
+    },
+    {
+      "id": "d_arp",
+      "label": "D",
+      "sub": "♭VII · outro ⚡",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#f87171",
+      "chordRef": "D_outro",
+      "tip": "D–F#–A. L'accordo alieno. Il D naturale (♭7 di E) è la nota che spicca — suonala come nota melodica di arrivo nell'outro. F# è la nota comune con E (seconda di E) e con B (quinta di B): F# collega il D♭VII al B(V) successivo come nota di continuità. Usa l'arpeggio D brevemente — è un accordo di passaggio emotivo, non di permanenza."
+    }
+  ],
+  "improv": {
+    "intro": {
+      "primary": "E Ionio — note lente e aperte, come l'armonica",
+      "secondary": "E e Asus2 arpeggiati, corde aperte",
+      "tip": "L'intro di Thunder Road è uno spazio di silenzio e attesa. Imita l'approccio dell'armonica: frasi brevi, molti respiri, note tenute a lungo. Usa le corde aperte di E e B come risonatori. Non suonare troppo — il vuoto è parte dell'arrangiamento."
+    },
+    "verse": {
+      "primary": "E Ionio — segui la discesa cromatica del basso",
+      "secondary": "E pentatonica maggiore come base sicura",
+      "tip": "La chiave del verso è sentire la discesa del basso E→D#→C#→C# e creare frasi melodiche che scendono insieme a essa. Non lavorare contro la discesa: assecondala. Su B/D# usa D# come nota di approdo melodico. Su A/C# usa C# come nota di arrivo. L'improv deve suonare come se stesse 'scivolando verso il basso' con il basso."
+    },
+    "prechorus": {
+      "primary": "E Ionio — enfatizza E→D# sul Bsus4→B",
+      "secondary": "F#m7 arpeggio sul F#m per il colore scuro",
+      "tip": "Il pre-chorus è il momento della tensione crescente. Sul Bsus4: suona la nota E (quarta sospesa) e mantienila — poi scendi a D# quando il Bsus4 risolve a B. Questo micro-movimento di semitono è l'essenza sonora di Thunder Road. L'orecchio lo riconosce istintivamente come 'il suono della speranza che si concretizza'."
+    },
+    "chorus": {
+      "primary": "E pentatonica maggiore — frasi semplici e aperte",
+      "secondary": "E Ionio per ornamentazioni melodiche",
+      "tip": "Il coro è il momento di liberazione — improv semplice, note alte, frasi aperte. Non complicare: la potenza del coro viene dalla semplicità armonica (IV→V→I) e dalla melodia vocale. Lascia spazio. Se suoni con altri, il coro è il momento per accordi pieni e ritmici più che per frasi melodiche elaborate."
+    },
+    "bridge": {
+      "primary": "E Ionio — discesa per terze F#m→A→E→Bsus4",
+      "secondary": "C#m arpeggio come colore riflessivo",
+      "tip": "Il bridge è riflessivo e 'aperto' — usa frasi lunghe, molti respiri. La discesa per terze (F#→E→D) del basso invita frasi melodiche che scendono lentamente. Sul Bsus4 finale: massima sospensione. Tieni la nota E acuta il più a lungo possibile prima che il coro esploda."
+    },
+    "outro": {
+      "primary": "E Misolidio sul D (♭VII) — poi E Ionio sul B e E finale",
+      "secondary": "D arpeggio brevemente, poi B arpeggio verso E tonica",
+      "tip": "L'outro è il culmine emotivo. Sul D (♭VII): usa la nota D come nota melodica di approdo — è la nota 'nuova', quella che l'orecchio non si aspettava. Una singola frase su D (anche una nota sola tenuta) vale più di dieci frasi elaborate. Sul B finale: usa D# (la sensibile) come spinta verso E. La risoluzione finale su E deve suonare come un vero arrivo — non accelerare verso di essa, lasciala venire."
+    }
+  }
+}
