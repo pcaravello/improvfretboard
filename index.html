@@ -172,6 +172,123 @@ async function loadSongsFromManifest() {
   return songs;
 }
 
+
+// ── Pitch helpers ────────────────────────────────────────────────────────
+const OPEN_PC = [4, 9, 2, 7, 11, 4]; // low-E → high-e
+const STR_LBL = ["E","A","D","G","B","e"];
+const NOTE_NM = ["C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B"];
+const DEG_MAP = {0:"R",1:"♭2",2:"2",3:"♭3",4:"3",5:"4",6:"♭5",7:"5",8:"♭6",9:"6",10:"♭7",11:"7"};
+const pc = (s, f) => (OPEN_PC[s] + f) % 12;
+
+// ── SVG layout ───────────────────────────────────────────────────────────
+const FW=50, SH=44, NUT_X=56, NUT_W=8, BX=NUT_X+NUT_W, OPEN_X=NUT_X-24;
+const PT=44, PB=28, PR=22;
+const SVG_W = BX + 12*FW + PR;
+const SVG_H = PT + 5*SH + PB;
+const nX = f => f===0 ? OPEN_X : BX + (f-0.5)*FW;
+const sY = s => PT + (5-s)*SH;
+
+// ── THEME PALETTES ───────────────────────────────────────────────────────
+const THEMES = {
+  dark: {
+    id: "dark",
+    bg:             "#040810",
+    bgPage:         "#040810",
+    bgCard:         "#070e18",
+    bgCardAlt:      "#080e14",
+    bgCardHi:       "#0a1525",
+    bgInput:        "#060d16",
+    borderFaint:    "#0e1e28",
+    borderMid:      "#162030",
+    borderStrong:   "#1e3040",
+    textPrimary:    "#ddeeff",
+    textSecondary:  "#b8cede",
+    textMid:        "#8aacb8",
+    textDim:        "#4a7a90",
+    textFaint:      "#2a4058",
+    textGhost:      "#1e3040",
+    neckBg:         "#080e14",
+    neckShadow:     "#020509",
+    stringCol:      "#5a7a90",
+    nutCol:         "#c8a434",
+    fretCol:        "#111e2a",
+    fretActive:     "#4a6a7a",
+    markerCol:      "#131f2a",
+    fretNumActive:  "#8aaabf",
+    fretNumIdle:    "#1e3040",
+    strLabelCol:    "#2a4058",
+  },
+  light: {
+    id: "light",
+    bg:             "#eef2f7",
+    bgPage:         "#eef2f7",
+    bgCard:         "#ffffff",
+    bgCardAlt:      "#f4f8fc",
+    bgCardHi:       "#e8f0f8",
+    bgInput:        "#f8fafc",
+    borderFaint:    "#ccd8e4",
+    borderMid:      "#aabccc",
+    borderStrong:   "#7a9ab0",
+    textPrimary:    "#0e1e2c",
+    textSecondary:  "#1e3040",
+    textMid:        "#2a4a60",
+    textDim:        "#3a6070",
+    textFaint:      "#5a7a8a",
+    textGhost:      "#8aaabf",
+    neckBg:         "#dce8f0",
+    neckShadow:     "#c0d0e0",
+    stringCol:      "#4a6878",
+    nutCol:         "#b89030",
+    fretCol:        "#b0c4d4",
+    fretActive:     "#6a8a9a",
+    markerCol:      "#c0d4e4",
+    fretNumActive:  "#3a5060",
+    fretNumIdle:    "#a0b8c8",
+    strLabelCol:    "#6a8898",
+  }
+};
+
+// ── Stars ────────────────────────────────────────────────────────────────
+const Stars = ({ n, color }) => (
+  <span>
+    {Array.from({length:5},(_,i)=>(
+      <span key={i} style={{color: i<n ? color : '#3a4a5a', fontSize:12}}>★</span>
+    ))}
+  </span>
+);
+
+// ── Voicing diagram ──────────────────────────────────────────────────────
+const VoicingDot = ({ voicing, color, T }) => {
+  if (!voicing) return null;
+  const frets = voicing.split("").map(c => c==='x'?-1:parseInt(c));
+  const played = frets.filter(f=>f>0);
+  if (!played.length) return null;
+  const minF = Math.min(...played), maxF = Math.max(...played);
+  const span = Math.max(maxF - minF + 1, 4);
+  const cellW=13, cellH=13;
+  const w=6*cellW+10, h=span*cellH+18;
+  return (
+    <svg width={w} height={h} style={{display:"block",margin:"0 auto"}}>
+      {minF<=1 && <rect x={8} y={12} width={6*cellW} height={2} fill={T.nutCol} rx={1}/>}
+      {Array.from({length:span+1},(_,row)=>(
+        <line key={row} x1={8} y1={14+row*cellH} x2={8+6*cellW} y2={14+row*cellH}
+          stroke={T.borderStrong} strokeWidth={1}/>
+      ))}
+      {frets.map((_,s)=>(
+        <line key={s} x1={8+s*cellW+cellW/2} y1={14} x2={8+s*cellW+cellW/2} y2={14+span*cellH}
+          stroke={T.stringCol} strokeWidth={[2.2,1.8,1.5,1.2,1,0.7][s]}/>
+      ))}
+      {frets.map((f,s)=>{
+        if(f<0) return <text key={s} x={8+s*cellW+cellW/2} y={10} textAnchor="middle" fontSize={8} fill="#f87171">×</text>;
+        if(f===0) return <circle key={s} cx={8+s*cellW+cellW/2} cy={10} r={3} fill="none" stroke={color} strokeWidth={1.5}/>;
+        const row = f-minF;
+        return <circle key={s} cx={8+s*cellW+cellW/2} cy={14+row*cellH+cellH/2} r={4.5} fill={color}/>;
+      })}
+      {minF>1 && <text x={2} y={14+cellH/2+4} fontSize={7} fill={T.textFaint}>{minF}</text>}
+    </svg>
+  );
+};
+
 // ════════════════════════════════════════════════════════════════════════
 // MAIN APP
 // ════════════════════════════════════════════════════════════════════════
