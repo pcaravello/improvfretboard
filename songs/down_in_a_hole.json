@@ -1,0 +1,638 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Down in a Hole",
+    "artist": "Alice in Chains",
+    "album": "Dirt",
+    "year": 1992,
+    "tuning": "Eb Standard (EbAbDbGbBbeb — tutto mezzo tono sotto)",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "~63 BPM",
+    "accentColor": "#818cf8"
+  },
+  "analysis": {
+    "tonicNote": "E (shapes in Eb standard — suona Eb minor)",
+    "tonicPC": 4,
+    "primaryMode": "E Aeoliano con contaminazione Dorica (A maggiore = IV) e E Armonico Minore (B7 = V7)",
+    "complexity": 4,
+    "alienChord": "B7 (V7 — da E armonico minore, sensibile alzata D#)",
+    "alienReason": "B7 introduce il D# (sensibile di E) che non esiste né in E Aeoliano né in E Dorico. Viene da E armonico minore — la scala che alza il VII grado per creare una vera dominante. In una canzone grunge questa cadenza V7→i è inattesa quanto il Dm in Fell on Black Days. Non fa 'rock', fa Bartók.",
+    "technique": "Sovrapposizione di tre scale parallele (Aeoliano, Dorico, Armonico Minore) + armonie vocali in intervalli paralleli (Staley/Cantrell in 4e e 5e) che aggiungono note non presenti nella chitarra",
+    "bassMotion": "Nessuna discesa cromatica lineare — il interesse è nel contrasto di qualità: accordi maggiori (A, G) contro fondamentali minori (Em, Bm). Il B7 introduce D# come sensibile ascendente verso E.",
+    "summary": "Alice in Chains costruisce la complessità in verticale, non in orizzontale: la progressione Em–G–A–D–C–B7 mescola tre scale parallele in sei accordi. La A maggiore (IV) viene da E Dorico (il #6 che Lo caratterizza), la G viene da E Aeoliano (♭III), il B7 viene da E armonico minore (V7 con sensibile). Le voci di Staley e Cantrell aggiungono un ulteriore strato: cantando in quarte parallele creano cluster armonici che non esistono sulla chitarra. La semplicità in superficie nasconde una complessità teorica che rivaleggia con Beethoven."
+  },
+  "sections": [
+    {
+      "id": "verse",
+      "label": "Verse — progressione principale",
+      "chords": [
+        "Em",
+        "G",
+        "A",
+        "D",
+        "C",
+        "B7"
+      ],
+      "note": "I sei accordi che percorrono tre scale diverse: G/D/C da Aeoliano, A da Dorico, B7 da Armonico minore."
+    },
+    {
+      "id": "prechorus",
+      "label": "Pre-chorus / Variazione",
+      "chords": [
+        "Em2",
+        "D2",
+        "C2",
+        "B7b"
+      ],
+      "note": "Forma compressa del verse — basso che sale scalare E→D→C→B. V7 come apice di tensione."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus",
+      "chords": [
+        "A2",
+        "Em3",
+        "C3",
+        "G2",
+        "D3",
+        "Em4"
+      ],
+      "note": "Il IV maggiore (A) come punto di partenza cambia il colore: il chorus suona più aperto del verse."
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge / Outro",
+      "chords": [
+        "Em5",
+        "G3",
+        "A3",
+        "D4",
+        "C4",
+        "Bm"
+      ],
+      "note": "Il Bm (v minore) al posto del B7 — qui la sensibile scende, scegliendo l'Aeoliano invece dell'Armonico minore."
+    }
+  ],
+  "chords": [
+    {
+      "id": "Em",
+      "symbol": "Em",
+      "degree": "i",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica minore",
+      "tetrad": "Em7",
+      "tensions": [
+        "add9",
+        "add11"
+      ],
+      "tetradFull": "Em11",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "♭III",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale — colore aperto ma oscuro",
+      "tetrad": "Gmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Gmaj9",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": "♭III da E Aeoliano. In E Aeoliano G è diatonico — non è l'alieno, ma contrasta con A maggiore (Dorico)."
+    },
+    {
+      "id": "A",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Dorico — #6 caratteristico",
+      "function": "Sottodominante MAGGIORE — da E Dorico (non Aeoliano) ⚡",
+      "tetrad": "Asus2",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "A MAGGIORE (non Am) è l'accordo Dorico per eccellenza. In E Aeoliano il IV grado sarebbe Am. Usando A maggiore, AIC usa il #6 del Dorico (C# invece di C naturale), dando una luminosità improvvisa nel mezzo dell'oscurità. La stessa mossa che distingue 'Oye Como Va' di Santana."
+    },
+    {
+      "id": "D",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano / E Misolidio",
+      "function": "Interscambio modale — tensione verso tonica",
+      "tetrad": "Dsus2",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Dsus2",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "♭VII diatonico in E Aeoliano. Crea tensione verso Em senza la durezza di B7."
+    },
+    {
+      "id": "C",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale — colore malinconico",
+      "tetrad": "Cmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "♭VI da E Aeoliano — colore tipicamente dark. Con il G (♭III) forma il 'trittico Aeoliano' (♭III–♭VI–♭VII) caratteristico del grunge."
+    },
+    {
+      "id": "B7",
+      "symbol": "B7",
+      "degree": "V7",
+      "modalOrigin": "E Armonico Minore — sensibile D#",
+      "function": "Dominante funzionale — unica cadenza V7→i del brano ⚡",
+      "tetrad": "B7",
+      "tensions": [
+        "b9"
+      ],
+      "tetradFull": "B7b9",
+      "voicing": "x21202",
+      "rootPC": 11,
+      "isAlien": true,
+      "note": "L'accordo più inaspettato: B7 contiene D# (sensibile di E), che non esiste né in E Aeoliano né in E Dorico. Viene da E armonico minore — la scala che i compositori classici usavano per creare tensione verso la tonica. Cantrell/Staley inseriscono Bartók nel grunge."
+    },
+    {
+      "id": "Em2",
+      "symbol": "Em",
+      "degree": "i",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "D2",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio — tensione ascendente nel basso (E→D→C→B)",
+      "tetrad": "Dsus2",
+      "tensions": [],
+      "tetradFull": "Dsus2",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Pre-chorus: il basso sale E→D→C→B (moto contrario rispetto alla discesa del verse)"
+    },
+    {
+      "id": "C2",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio — secondo passo salita",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "Cmaj7",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "B7b",
+      "symbol": "B7",
+      "degree": "V7",
+      "modalOrigin": "E Armonico Minore",
+      "function": "Dominante funzionale — apice tensione pre-chorus",
+      "tetrad": "B7",
+      "tensions": [],
+      "tetradFull": "B7",
+      "voicing": "x21202",
+      "rootPC": 11,
+      "isAlien": true,
+      "note": "Il pre-chorus costruisce verso B7: dopo Em–D–C il B7 è l'apice di tensione. La salita E→D→C→B nel basso (moto contrario al verse) rende il B7 inevitabile."
+    },
+    {
+      "id": "A2",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Dorico",
+      "function": "Sottodominante maggiore — apertura del chorus",
+      "tetrad": "Asus2",
+      "tensions": [],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "Il chorus apre su A maggiore — ancora il IV Dorico. Iniziare sul IV crea una sensazione di 'già in movimento', meno greve del verse che parte da Em."
+    },
+    {
+      "id": "Em3",
+      "symbol": "Em",
+      "degree": "i",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica — risposta al IV",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "C3",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "Cmaj7",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G2",
+      "symbol": "G",
+      "degree": "♭III",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "Gmaj7",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "D3",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio — tensione chorus",
+      "tetrad": "Dsus2",
+      "tensions": [],
+      "tetradFull": "Dsus2",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Em4",
+      "symbol": "Em",
+      "degree": "i",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica — chiusura chorus",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Em5",
+      "symbol": "Em",
+      "degree": "i",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G3",
+      "symbol": "G",
+      "degree": "♭III",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "Gmaj7",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A3",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Dorico",
+      "function": "Sottodominante maggiore Dorica",
+      "tetrad": "Asus2",
+      "tensions": [],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": ""
+    },
+    {
+      "id": "D4",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Dsus2",
+      "tensions": [],
+      "tetradFull": "Dsus2",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "C4",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "Cmaj7",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Bm",
+      "symbol": "Bm",
+      "degree": "v",
+      "modalOrigin": "E Aeoliano",
+      "function": "v minore — versione Aeoliana del V7: nessuna sensibile, nessuna risoluzione",
+      "tetrad": "Bm7",
+      "tensions": [],
+      "tetradFull": "Bm7",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il bridge usa Bm invece di B7: la scelta consapevole dell'Aeoliano (v minore) contro l'Armonico minore (V7). Senza D#, senza tensione verso E — il bridge non risolve, fluttua. Diverso dal verse dove B7 crea vera tensione."
+    }
+  ],
+  "modes": [
+    {
+      "id": "e_aeolian",
+      "label": "E Aeoliano",
+      "sub": "Tutto il brano — primaria",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#818cf8",
+      "sections": [
+        "verse",
+        "prechorus",
+        "chorus",
+        "bridge"
+      ],
+      "tip": "Copre Em, G, D, C. NON copre A maggiore (ha C naturale, non C#) e NON copre B7 (ha D naturale, non D#). Per questi usa E Dorico o E Armonico Minore."
+    },
+    {
+      "id": "e_dorian",
+      "label": "E Dorico",
+      "sub": "Sul A maggiore (IV) — #6 caratteristico",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#a78bfa",
+      "sections": [
+        "verse",
+        "chorus"
+      ],
+      "tip": "Aggiungi C# (il #6 del Dorico) per coprire A maggiore. E Dorico suona più caldo e aperto dell'Aeoliano — usa il C# sulle note di A/C#/E del chorus."
+    },
+    {
+      "id": "e_harmonic",
+      "label": "E Armonico Minore",
+      "sub": "Sul B7 (V7) — sensibile D#",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        11
+      ],
+      "color": "#f87171",
+      "sections": [
+        "verse",
+        "prechorus"
+      ],
+      "tip": "Alza il VII da D a D# per coprire B7. E Armonico Minore: E–F#–G–A–B–C–D#. Usa D# solo sul B7, poi torna Aeoliano — la sensibile crea tensione istantanea verso E."
+    },
+    {
+      "id": "e_pentatonic",
+      "label": "E min. Pentatonica",
+      "sub": "Safe — tutto il brano",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#fb923c",
+      "sections": [
+        "verse",
+        "prechorus",
+        "chorus",
+        "bridge"
+      ],
+      "tip": "E–G–A–B–D. Funziona su tutto. Nota: la A è inclusa (ma come quinta/quarta in contesti pentatonici), quindi copre anche l'accordo A maggiore senza attriti teorici."
+    },
+    {
+      "id": "e_natural_minor_pentatonic_plus",
+      "label": "E min. Pentat. + b2/b5",
+      "sub": "Colori avanzati — blue notes",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        10
+      ],
+      "color": "#c084fc",
+      "sections": [
+        "verse",
+        "prechorus"
+      ],
+      "tip": "Aggiungi F (b2) e Bb (b5) come blue notes. F contro Em crea tensione Frigia. Bb (tritono di E) è l'intervallo più dissonante — usalo brevemente sul B7 per massima tensione."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "em7",
+      "label": "Em7",
+      "sub": "i · tutto il brano",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#818cf8",
+      "chordRef": "Em",
+      "tip": "E–G–B–D. Il D (♭7) è il suono sospeso caratteristico. Con add9 (F#) ottieni la tensione grunge tipica di Cantrell."
+    },
+    {
+      "id": "asus2",
+      "label": "Asus2",
+      "sub": "IV · verse/chorus — Dorico",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        7
+      ],
+      "color": "#a78bfa",
+      "chordRef": "A",
+      "tip": "A–B–E. Essenziale e aperto. Il B e l'E sono condivisi con Em — voice leading naturale A→Em. Il C# (implicito nell'A maggiore) è la nota Dorica da aggiungere in melodia."
+    },
+    {
+      "id": "b7_arp",
+      "label": "B7",
+      "sub": "V7 · verse/prechorus ⚡",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "color": "#f87171",
+      "chordRef": "B7",
+      "tip": "B–D#–F#–A. Il D# è LA nota aliena — la sensibile di E. Arpeggio di B7 verso Em: B→D#→F#→A→... poi scendi su E. Il D# risolve un semitono su E."
+    },
+    {
+      "id": "gmaj7",
+      "label": "Gmaj7",
+      "sub": "♭III · verse/chorus",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#6ee7b7",
+      "chordRef": "G",
+      "tip": "G–B–D–F#. La settima F# è condivisa con B7 (quinta) e D/F# — thread melodico attraverso il brano."
+    },
+    {
+      "id": "cmaj9",
+      "label": "Cmaj9",
+      "sub": "♭VI · verse/chorus",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#fcd34d",
+      "chordRef": "C",
+      "tip": "C–E–G–B–D. L'E (terza di C) è la tonica E — nota comune fondamentale. Il B (settima) crea la stessa tensione di Em. Usa il C come punto di respiro."
+    },
+    {
+      "id": "dm7_arp",
+      "label": "Dm7",
+      "sub": "♭VII · tutto",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#fb923c",
+      "chordRef": "D",
+      "tip": "D–F–A–C. Tutti e quattro le note appartengono anche a C maggiore o F maggiore — l'accordo più 'neutro' della progressione. Buon punto per frasi lunghe."
+    },
+    {
+      "id": "bm7",
+      "label": "Bm7",
+      "sub": "v · bridge",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#c084fc",
+      "chordRef": "Bm",
+      "tip": "B–D–F#–A. Il D NATURALE (invece del D# di B7) è la differenza tra tensione e fluttuazione. Nel bridge: D naturale lascia la melodia sospesa, senza urgenza di risolvere su E."
+    }
+  ],
+  "improv": {
+    "verse": {
+      "primary": "E Aeoliano (su G/D/C) + E Dorico (sul A) + E Armonico Minore (sul B7)",
+      "secondary": "E min. pentatonica safe per tutto",
+      "tip": "La sfida del verse: tre scale diverse in sei accordi. Sul A maggiore: usa C# (Dorico). Sul B7: usa D# (Armonico Minore). Su tutto il resto: E Aeoliano. Se vuoi semplificare: E pentatonica minore funziona ovunque — aggiungi C# e D# come note di colore specifiche per quei due accordi."
+    },
+    "prechorus": {
+      "primary": "E Aeoliano in discesa → E Armonico Minore sul B7",
+      "secondary": "Segui il basso E→D→C→B nella melodia",
+      "tip": "Il pre-chorus ha moto ascendente nel basso (E→D→C→B) e spesso moto discendente nella melodia. Sul B7 finale: usa D# per creare massima tensione — poi il verse/chorus parte su Em e la risoluzione è catartica."
+    },
+    "chorus": {
+      "primary": "E Dorico (sul A) + E Aeoliano (su Em/C/G/D)",
+      "secondary": "E pentatonica minore con C# come nota aggiunta",
+      "tip": "Il chorus inizia su A maggiore — inizia la tua frase su C# o A per catturare il colore Dorico. Poi lascia scivolare verso E naturale quando torni su Em. La tensione Dorico→Aeoliano rispecchia l'emozione del testo."
+    },
+    "bridge": {
+      "primary": "E Aeoliano (tutto) — nessun Armonico Minore",
+      "secondary": "Bm7 arpeggio per il finale",
+      "tip": "Il bridge è completamente Aeoliano — il Bm invece di B7 rimuove la tensione. Suona morbido, fluttuante. Se il verse è Bartók, il bridge è Debussy. Usa il D naturale consapevolmente — è la tua scelta di non risolvere."
+    }
+  }
+}

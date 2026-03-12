@@ -1,0 +1,557 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Something",
+    "artist": "The Beatles",
+    "album": "Abbey Road",
+    "year": 1969,
+    "tuning": "Standard (EADGBe)",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "~72 BPM",
+    "accentColor": "#f59e0b"
+  },
+  "analysis": {
+    "tonicNote": "C (verse/chorus) — A (bridge)",
+    "tonicPC": 0,
+    "primaryMode": "C Ionio con modulazione a A Maggiore nel bridge — relazione di terza (mediant)",
+    "complexity": 4,
+    "alienChord": "G (♭VII in A maggiore / da A Misolidio)",
+    "alienReason": "Nel bridge in A maggiore, l'accordo G (♭VII) proviene da A Misolidio — la stessa mossa di Hendrix in Axis. Ma in Something l'effetto è più sorprendente perché la tonalità stessa è già un'inaspettata modulazione di terza da C maggiore. Il G suona come un cambio di luce improvviso — troppo aperto per A maggiore, troppo lontano per C maggiore.",
+    "technique": "Tre distinte linee di basso cromatico discendente: (1) C→B→Bb nel verse via C–Cmaj7–C7, (2) A→G→F# nel verse via Am–Am/G–Am/F#, (3) A→G#→G→F# nel bridge via A–Amaj7–A7–D/F#. Modulazione di terza C→A nel bridge.",
+    "bassMotion": "Verse: C→B→Bb (voci interne di C, Cmaj7, C7) poi A→G→F# (basso Am–Am/G–Am/F#). Bridge: A→G#→G→F# (cromatico pieno, via A–Amaj7–A7–D/F#). Tre discese diverse nello stesso brano.",
+    "summary": "Capolavoro di voice leading melodico mascherato da canzone pop: George Harrison costruisce tre linee di basso cromatiche in sette accordi. La modulazione a A maggiore nel bridge (da C maggiore — una terza maggiore di distanza) è inaspettata ma naturalissima. Il G maggiore nel bridge (♭VII di A = da Misolidio) crea la stessa apertura armonica di 'Hey Joe' e 'Axis: Bold as Love'. Frank Sinatra la definì 'la più bella canzone degli ultimi 50 anni'."
+  },
+  "sections": [
+    {
+      "id": "verse_a",
+      "label": "Verse A — basso C→B→Bb",
+      "chords": [
+        "C",
+        "Cmaj7",
+        "C7",
+        "F",
+        "Fmaj7"
+      ],
+      "note": "Voce interna discende C→B→Bb (dalla 1ª alla maj7 alla b7 del tasto C). F come risoluzione del C7."
+    },
+    {
+      "id": "verse_b",
+      "label": "Verse B — basso A→G→F#",
+      "chords": [
+        "Dm7",
+        "G",
+        "Am7",
+        "AmG",
+        "AmFsharp",
+        "Fmaj7b",
+        "Gsus"
+      ],
+      "note": "Basso secondario: Am–Am/G–Am/F# scende A→G→F#. La seconda discesa cromatica del brano."
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge — A maggiore (modulazione di terza)",
+      "chords": [
+        "A",
+        "Amaj7",
+        "A7",
+        "DFsharp",
+        "Gbridge",
+        "Areturn"
+      ],
+      "note": "Modulazione da C a A (terza maggiore ascendente). Bridge: A→G#→G→F# nel basso — terza discesa cromatica, la più piena."
+    }
+  ],
+  "chords": [
+    {
+      "id": "C",
+      "symbol": "C",
+      "degree": "I",
+      "modalOrigin": "C Ionio",
+      "function": "Tonica",
+      "tetrad": "Cmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Cmaj7",
+      "symbol": "Cmaj7",
+      "degree": "Imaj7",
+      "modalOrigin": "C Ionio — voce interna B",
+      "function": "Tonica con settima maggiore — basso tiene C, voce interna scende a B",
+      "tetrad": "Cmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32000",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "La settima maggiore B è la nota che 'scende' nella linea cromatica: C(tonica)→Cmaj7(maj7=B)→C7(b7=Bb). Tre accordi, tre note cromatiche discendenti."
+    },
+    {
+      "id": "C7",
+      "symbol": "C7",
+      "degree": "I7",
+      "modalOrigin": "C Ionio → V7/IV — dominante secondaria",
+      "function": "Dominante secondaria di F — V7/IV in C maggiore",
+      "tetrad": "C7",
+      "tensions": [],
+      "tetradFull": "C7",
+      "voicing": "x32310",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "Il Bb è la nota aliena: C maggiore non ha il Bb. Il C7 è il V7/IV — dominante secondaria di F. Harrison trasforma la tonica in una dominante temporanea, creando una tensione jazz verso F. Terzo passo della discesa: C→B→Bb."
+    },
+    {
+      "id": "F",
+      "symbol": "F",
+      "degree": "IV",
+      "modalOrigin": "C Ionio",
+      "function": "Sottodominante — risoluzione del C7",
+      "tetrad": "Fmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Fmaj9",
+      "voicing": "133211",
+      "rootPC": 5,
+      "isAlien": false,
+      "note": "Risoluzione V7/IV→IV: il C7 'tira' verso F. Qui il IV suona come un respiro dopo la tensione."
+    },
+    {
+      "id": "Fmaj7",
+      "symbol": "Fmaj7",
+      "degree": "IVmaj7",
+      "modalOrigin": "C Ionio",
+      "function": "Sottodominante con settima — colore aperto",
+      "tetrad": "Fmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Fmaj9",
+      "voicing": "xx3210",
+      "rootPC": 5,
+      "isAlien": false,
+      "note": "La settima E di Fmaj7 è la tonica C un'ottava sopra — voice leading naturale."
+    },
+    {
+      "id": "Dm7",
+      "symbol": "Dm7",
+      "degree": "ii7",
+      "modalOrigin": "C Ionio",
+      "function": "Sopra-dominante — tensione verso G",
+      "tetrad": "Dm7",
+      "tensions": [],
+      "tetradFull": "Dm7",
+      "voicing": "xx0211",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "V",
+      "modalOrigin": "C Ionio",
+      "function": "Dominante — V in C maggiore",
+      "tetrad": "G7",
+      "tensions": [],
+      "tetradFull": "Gsus–G",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": "V diatonico — momento di tensione classica verso Am o C."
+    },
+    {
+      "id": "Am7",
+      "symbol": "Am7",
+      "degree": "vi7",
+      "modalOrigin": "C Ionio",
+      "function": "Relativa minore — inizio discesa A→G→F#",
+      "tetrad": "Am7",
+      "tensions": [],
+      "tetradFull": "Am7",
+      "voicing": "x02010",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "La Am7 è il punto di partenza della seconda discesa cromatica: A(basso)→G→F#."
+    },
+    {
+      "id": "AmG",
+      "symbol": "Am7/G",
+      "degree": "vi7/♭7",
+      "modalOrigin": "C Ionio — basso cromatico",
+      "function": "Relativa minore con ♭7 nel basso — secondo passo →G",
+      "tetrad": "Am7/G",
+      "tensions": [],
+      "tetradFull": "Am7/G",
+      "voicing": "302010",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "G nel basso = settima minore di Am come nota di basso. Secondo passo: A→G. Anche: McCartney ha reso famosa questa nota di basso nelle sue registrazioni live."
+    },
+    {
+      "id": "AmFsharp",
+      "symbol": "Am7/F#",
+      "degree": "vi7/6°",
+      "modalOrigin": "C Ionio — basso cromatico",
+      "function": "Relativa minore con sesta nel basso — terzo passo →F#",
+      "tetrad": "Am7/F#",
+      "tensions": [],
+      "tetradFull": "Am7/F#",
+      "voicing": "2x2210",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "F# nel basso = terzo passo A→G→F#. F# non è nella scala di C maggiore — momento cromatico nel mezzo di una canzone 'semplice'."
+    },
+    {
+      "id": "Fmaj7b",
+      "symbol": "Fmaj7",
+      "degree": "IVmaj7",
+      "modalOrigin": "C Ionio",
+      "function": "Sottodominante — ritorno dopo la discesa",
+      "tetrad": "Fmaj7",
+      "tensions": [],
+      "tetradFull": "Fmaj9",
+      "voicing": "xx3210",
+      "rootPC": 5,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Gsus",
+      "symbol": "G",
+      "degree": "V",
+      "modalOrigin": "C Ionio",
+      "function": "Dominante — cadenza verso il verse/chorus",
+      "tetrad": "Gsus4",
+      "tensions": [
+        "sus4"
+      ],
+      "tetradFull": "Gsus4",
+      "voicing": "320013",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A",
+      "symbol": "A",
+      "degree": "I (in A mag.)",
+      "modalOrigin": "A Ionio — modulazione di terza da C",
+      "function": "Tonica della nuova tonalità A — sorpresa: da C siamo a A (3ª maggiore lontana)",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "Amaj7",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "LA sorpresa del bridge: da C maggiore a A maggiore — modulazione di terza maggiore ascendente. C e A condividono solo due accordi (F, Am) — la modulazione è audace quanto quella di Schubert. Primo passo della terza discesa cromatica: A→G#→G→F#."
+    },
+    {
+      "id": "Amaj7",
+      "symbol": "Amaj7",
+      "degree": "Imaj7 (in A mag.)",
+      "modalOrigin": "A Ionio — voce interna G#",
+      "function": "Tonica con settima maggiore — voce interna scende a G#",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "Amaj7",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "Secondo passo della discesa cromatica del bridge: A→G#. Speculare al C–Cmaj7 del verse. La settima maggiore G# è anche la sensibile di A — crea tensione verso A."
+    },
+    {
+      "id": "A7",
+      "symbol": "A7",
+      "degree": "I7 (in A mag.) / V7/IV",
+      "modalOrigin": "A Misolidio — dominante secondaria",
+      "function": "Dominante secondaria di D / terzo passo →G",
+      "tetrad": "A7",
+      "tensions": [],
+      "tetradFull": "A7",
+      "voicing": "x02223",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "Terzo passo: G#→G (la settima scende da maggiore a minore). Speculare al C7 del verse: Harrison usa la stessa mossa — la tonica diventa dominante. La discesa A→G#→G nel bridge replica e amplifica la discesa C→B→Bb del verse."
+    },
+    {
+      "id": "DFsharp",
+      "symbol": "D/F#",
+      "degree": "IV/3° (in A mag.)",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante con terza nel basso — quarto passo →F#",
+      "tetrad": "Dmaj7/F#",
+      "tensions": [],
+      "tetradFull": "Dmaj9/F#",
+      "voicing": "200232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Quarto passo: G→F# nel basso. La discesa bridge è completa: A→G#→G→F#. Quattro semitoni, come in Paranoid Android Part II. La coincidenza non è casuale: è la discesa cromatica della tonalità."
+    },
+    {
+      "id": "Gbridge",
+      "symbol": "G",
+      "degree": "♭VII (in A mag.)",
+      "modalOrigin": "A Misolidio — interscambio modale",
+      "function": "♭VII di A — accordo alieno da A Misolidio ⚡",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "Gmaj7",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "G naturale non appartiene ad A maggiore (che ha G#). Viene da A Misolidio — la stessa mossa di Hendrix in Axis: Bold as Love e di Cornell in Black Hole Sun. Frank Sinatra cantava 'something in the way she moves' probabilmente senza sapere che 'qualcosa' era il G naturale contro G#."
+    },
+    {
+      "id": "Areturn",
+      "symbol": "A",
+      "degree": "I — ripristino",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica — chiusura bridge e preparazione ritorno verso C",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "Amaj7",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Ritorno alla tonica A prima di rientrare nel verse in C. La modulazione C→A→C avviene senza la turbolenza armonica che ci si aspetterebbe."
+    }
+  ],
+  "modes": [
+    {
+      "id": "c_ionian",
+      "label": "C Ionio",
+      "sub": "Verse A & B — primaria",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#f59e0b",
+      "sections": [
+        "verse_a",
+        "verse_b"
+      ],
+      "tip": "Scala di C maggiore classica. Copre tutto il verse. Sul C7: aggiungi il Bb (suona C Misolidio per una battuta)."
+    },
+    {
+      "id": "a_ionian",
+      "label": "A Ionio",
+      "sub": "Bridge — primaria",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#fcd34d",
+      "sections": [
+        "bridge"
+      ],
+      "tip": "A maggiore classica. Copre A, Amaj7, A7, D/F#. Sul G (bVII): aggiungi il G naturale — sei momentaneamente in A Misolidio."
+    },
+    {
+      "id": "a_mixolydian",
+      "label": "A Misolidio",
+      "sub": "Bridge — sul G (♭VII)",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#fb923c",
+      "sections": [
+        "bridge"
+      ],
+      "tip": "Abbassa il G# a G naturale per coprire l'accordo G. La differenza è minima (un semitono) ma crea quella sensazione di 'apertura' indefinita che rende il bridge memorabile."
+    },
+    {
+      "id": "c_major_pentatonic",
+      "label": "C Pentatonica Magg.",
+      "sub": "Verse — safe & melodico",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#6ee7b7",
+      "sections": [
+        "verse_a",
+        "verse_b"
+      ],
+      "tip": "C–D–E–G–A. Funziona su tutto il verse senza attriti. Aggiungi B (maj7) per seguire il voice leading di Cmaj7."
+    },
+    {
+      "id": "a_major_pentatonic",
+      "label": "A Pentatonica Magg.",
+      "sub": "Bridge — safe",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#c084fc",
+      "sections": [
+        "bridge"
+      ],
+      "tip": "A–B–C#–E–F#. Funziona su tutto il bridge. Sul G: aggiungi G nat. come nota di passaggio o di colore."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "cmaj9",
+      "label": "Cmaj9",
+      "sub": "I · verse A",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#f59e0b",
+      "chordRef": "C",
+      "tip": "C–E–G–B–D. La settima B e la nona D sono le tensioni melodiche del verse A. Segui B→Bb nel passaggio C→C7."
+    },
+    {
+      "id": "fmaj9",
+      "label": "Fmaj9",
+      "sub": "IV · verse A/B",
+      "rootPC": 5,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#fcd34d",
+      "chordRef": "F",
+      "tip": "F–A–C–E–G. La settima E è la tonica C — voice leading naturale. La nona G prepara l'accordo G successivo."
+    },
+    {
+      "id": "am7",
+      "label": "Am7",
+      "sub": "vi · verse B",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#6ee7b7",
+      "chordRef": "Am7",
+      "tip": "A–C–E–G. Segui il basso nella melodia: A(Am)→G(Am/G)→F#(Am/F#) — tre versioni dello stesso arpeggio con nota di basso che scende."
+    },
+    {
+      "id": "amaj7_arp",
+      "label": "Amaj7",
+      "sub": "I · bridge",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#fb923c",
+      "chordRef": "Amaj7",
+      "tip": "A–C#–E–G#. Il C# è la prova che siamo in A maggiore (non Am). Il G# è la settima maggiore — sensibile verso A."
+    },
+    {
+      "id": "a7_arp",
+      "label": "A7",
+      "sub": "I7 · bridge — discesa G#→G",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "color": "#f87171",
+      "chordRef": "A7",
+      "tip": "A–C#–E–G. Il G naturale (b7) è il momento del cambiamento — da G# (Amaj7) a G (A7) è la stessa mossa del verse: settima maggiore→minore."
+    },
+    {
+      "id": "gmaj7_bridge",
+      "label": "Gmaj7",
+      "sub": "♭VII · bridge alieno",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#c084fc",
+      "chordRef": "Gbridge",
+      "tip": "G–B–D–F#. Il G naturale contro il G# di A maggiore è la tensione specifica di questo accordo. Enfatizza il G naturale — è la nota aliena."
+    },
+    {
+      "id": "dm9",
+      "label": "Dmaj9/F#",
+      "sub": "IV/3° · bridge",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#a78bfa",
+      "chordRef": "DFsharp",
+      "tip": "D–F#–A–C#–E. Il F# nel basso conclude la discesa A→G#→G→F#. La nona E è la quinta di A — coerenza melodica."
+    }
+  ],
+  "improv": {
+    "verse_a": {
+      "primary": "C Ionio / C pentatonica maggiore",
+      "secondary": "Sul C7: C Misolidio (aggiungi Bb) per una battuta",
+      "tip": "Segui la discesa C→B→Bb nelle note melodiche — è quello che George Harrison fa nel riff di chitarra. La tensione è sottile: Bb nel mezzo di C maggiore."
+    },
+    "verse_b": {
+      "primary": "C Ionio — con Am7 come punto focale",
+      "secondary": "A Dorico sul Am (per coprire F# nel basso di Am/F#)",
+      "tip": "Sul Am–Am/G–Am/F# puoi fare una melodia che scende A→G→F# — stai seguendo il basso. F# non è in C maggiore: è il momento cromatico del verse."
+    },
+    "bridge": {
+      "primary": "A Ionio (su A/Amaj7/A7/D/F#) + A Misolidio sul G",
+      "secondary": "Arpeggi Amaj7 → A7: enfatizza G#→G (la settima che cambia)",
+      "tip": "Il bridge ha tre momenti distinti: (1) tensione ascendente su A/Amaj7/A7 — segui G#→G; (2) apertura su D/F# — F# nel basso; (3) apertura massima sul G (♭VII). Sul G: G naturale è LA nota da suonare."
+    }
+  }
+}

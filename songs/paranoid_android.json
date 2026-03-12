@@ -1,0 +1,636 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Paranoid Android",
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": 1997,
+    "tuning": "Standard (EADGBe)",
+    "capo": 0,
+    "timeSignature": "4/4 → 7/8 → 4/4",
+    "tempo": "~84 BPM (Part I) / ~63 BPM (Part II) / ~84 BPM (Part III)",
+    "accentColor": "#a3e635"
+  },
+  "analysis": {
+    "tonicNote": "C (Part I/III) e A (Part II/IV)",
+    "tonicPC": 0,
+    "primaryMode": "C Aeoliano con modulazione a A Aeoliano — due centri tonali collegati da mediant (terza minore)",
+    "complexity": 5,
+    "alienChord": "A maggiore (Picardy third — risoluzione sul parallelo maggiore)",
+    "alienReason": "Nel chorus 'Rain down' la progressione Am–G–C–A risolve su A MAGGIORE invece di Am. La terza C# (invece di C naturale) crea un'apertura di luce improvvisa nel mezzo dell'oscurità. Thom Yorke usa il Picardy third non per rassicurare, ma per creare una sensazione di sollievo irrisolta — 'Rain down from above' suona letteralmente come un sollevamento.",
+    "technique": "Struttura multi-parte (3 brani cuciti) + doppia linea di basso cromatica discendente speculare (C→Bb→A→Ab in Cm, poi A→G#→G→F# in Am) + cadenza jazz ii∅7–V7–i nella sezione heavy",
+    "bassMotion": "Part I: C→Bb→A→Ab (quattro semitoni discendenti). Part II: A→G#→G→F# (quattro semitoni discendenti). Le due discese sono speculari e costruiscono il ponte tra le due tonalità.",
+    "summary": "Il brano rock più complesso degli anni '90: tre sezioni distinte con tempi diversi (4/4 / 7/8 / 4/4), due centri tonali (Cm e Am) a distanza di terza minore — la stessa relazione usata da Schubert. Ogni sezione ha la propria logica armonica: Part I usa una discesa cromatica in Cm, Part II la replica specularmente in Am, il chorus usa il Picardy third, la heavy section nasconde una cadenza jazz (Dm7b5–G7–Cm) sotto la distorsione. Bohemian Rhapsody è stata citata da Thom Yorke come modello strutturale."
+  },
+  "sections": [
+    {
+      "id": "part1",
+      "label": "Part I — Cm (arpeggios)",
+      "chords": [
+        "Cm",
+        "CmBb",
+        "FA",
+        "FmAb"
+      ],
+      "note": "Basso cromatico C→Bb→A→Ab: quattro semitoni in quattro accordi. F maggiore→F minore al quarto accordo."
+    },
+    {
+      "id": "part2",
+      "label": "Part II — transizione Am (cambio metro)",
+      "chords": [
+        "Am",
+        "AmGsharp",
+        "AmG",
+        "DFsharp"
+      ],
+      "note": "Speculare a Part I: A→G#→G→F#. Am pivot tra Cm (vi) e Am (i). Cambio di metro 4/4→7/8."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — Rain Down (Am)",
+      "chords": [
+        "Am2",
+        "G",
+        "Cchorus",
+        "Amaj"
+      ],
+      "note": "La risoluzione finale su A MAGGIORE invece di Am è lo shock emotivo del brano."
+    },
+    {
+      "id": "heavy",
+      "label": "Part III — Heavy section (Cm)",
+      "chords": [
+        "Cm2",
+        "Bb",
+        "Fm2",
+        "Ebmaj7",
+        "Dm7b5",
+        "G7"
+      ],
+      "note": "Ritorno a Cm con cadenza jazz nascosta: Dm7b5–G7–Cm. La sezione più radicale armonicamente."
+    },
+    {
+      "id": "outro",
+      "label": "Part IV — Outro (Am)",
+      "chords": [
+        "Am3",
+        "G2",
+        "Coutro",
+        "Amaj2"
+      ],
+      "note": "Ripresa del chorus. Il brano termina su A maggiore — nessuna risoluzione minore finale."
+    }
+  ],
+  "chords": [
+    {
+      "id": "Cm",
+      "symbol": "Cm",
+      "degree": "i",
+      "modalOrigin": "C Aeoliano",
+      "function": "Tonica minore",
+      "tetrad": "Cm7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Cm9",
+      "voicing": "x35543",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "CmBb",
+      "symbol": "Cm/Bb",
+      "degree": "i/♭7",
+      "modalOrigin": "C Aeoliano — basso cromatico",
+      "function": "Tonica con ♭7 nel basso — primo passo discesa C→Bb",
+      "tetrad": "Cm7/Bb",
+      "tensions": [],
+      "tetradFull": "Cm7/Bb",
+      "voicing": "x15543",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "Bb nel basso = settima minore come nota di basso. Identico al Cm/Bb di Fell on Black Days. Primo passo C→Bb."
+    },
+    {
+      "id": "FA",
+      "symbol": "F/A",
+      "degree": "IV/3°",
+      "modalOrigin": "C Aeoliano",
+      "function": "Sottodominante con terza nel basso — terzo passo →A",
+      "tetrad": "Fmaj7/A",
+      "tensions": [],
+      "tetradFull": "Fmaj7/A",
+      "voicing": "x03211",
+      "rootPC": 5,
+      "isAlien": false,
+      "note": "A nel basso = terza maggiore di F come nota di basso. Terzo passo della discesa: C→Bb→A."
+    },
+    {
+      "id": "FmAb",
+      "symbol": "Fm/Ab",
+      "degree": "iv/♭6",
+      "modalOrigin": "C Aeoliano — modal mixture",
+      "function": "Sottodominante MINORE con ♭6 nel basso — quarto passo →Ab + cambio di qualità",
+      "tetrad": "Fm7/Ab",
+      "tensions": [],
+      "tetradFull": "Fm7/Ab",
+      "voicing": "4x3111",
+      "rootPC": 5,
+      "isAlien": true,
+      "note": "Due cose simultanee: il basso scende da A a Ab (un semitono), E l'accordo cambia da F MAGGIORE a F MINORE. La terza cala da A naturale ad Ab: modal mixture istantaneo nel beat finale della frase."
+    },
+    {
+      "id": "Am",
+      "symbol": "Am",
+      "degree": "vi in Cm / i in Am",
+      "modalOrigin": "Punto di modulazione — pivot chord",
+      "function": "Mediant pivot: vi di C Aeoliano = i di A Aeoliano",
+      "tetrad": "Am7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Am9",
+      "voicing": "x02210",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "La Am è il vi naturale di Cm E simultaneamente il i di Am. La modulazione di terza minore (Cm→Am) avviene senza preparazione — è la mediant relationship di Schubert nel rock."
+    },
+    {
+      "id": "AmGsharp",
+      "symbol": "Am/G#",
+      "degree": "i/7°",
+      "modalOrigin": "A Aeoliano — basso cromatico",
+      "function": "Tonica con settima maggiore nel basso — primo passo A→G#",
+      "tetrad": "Am/G#",
+      "tensions": [],
+      "tetradFull": "Am/G#",
+      "voicing": "4x2210",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "G# nel basso: speculare al Bb di Cm/Bb. La discesa ricomincia identica in Am: A→G#→G→F#. G# NON è nella scala di A Aeoliano (che ha G naturale) — è cromatico."
+    },
+    {
+      "id": "AmG",
+      "symbol": "Am/G",
+      "degree": "i/♭7",
+      "modalOrigin": "A Aeoliano — basso cromatico",
+      "function": "Tonica con ♭7 nel basso — secondo passo →G",
+      "tetrad": "Am7/G",
+      "tensions": [],
+      "tetradFull": "Am7/G",
+      "voicing": "3x2210",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "G nel basso — terzo passo: A→G#→G. Il G naturale è il ♭7 diatonico di Am (Aeoliano)."
+    },
+    {
+      "id": "DFsharp",
+      "symbol": "D/F#",
+      "degree": "IV/3°",
+      "modalOrigin": "A Aeoliano / A Dorico",
+      "function": "Sottodominante con terza nel basso — quarto passo →F#",
+      "tetrad": "Dsus2/F#",
+      "tensions": [],
+      "tetradFull": "Dsus2/F#",
+      "voicing": "200232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "F# nel basso: quarto passo A→G#→G→F#. Identico logicamente al FmAb: la discesa finisce su un accordo maggiore con la terza in basso."
+    },
+    {
+      "id": "Am2",
+      "symbol": "Am",
+      "degree": "i",
+      "modalOrigin": "A Aeoliano",
+      "function": "Tonica — inizio chorus",
+      "tetrad": "Am7",
+      "tensions": [],
+      "tetradFull": "Am7",
+      "voicing": "x02210",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "♭VII",
+      "modalOrigin": "A Aeoliano",
+      "function": "Interscambio modale — tensione",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "Gmaj7",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "♭VII da A Aeoliano — colore scuro. Contrasta con l'apertura finale su A maggiore."
+    },
+    {
+      "id": "Cchorus",
+      "symbol": "C",
+      "degree": "♭III",
+      "modalOrigin": "A Aeoliano",
+      "function": "Interscambio modale — preparazione Picardy",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "Cmaj7",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "♭III da A Aeoliano. Il C prepara la risoluzione su A: la distanza di terza minore C→A è la stessa della modulazione Cm→Am. Coerenza strutturale."
+    },
+    {
+      "id": "Amaj",
+      "symbol": "A",
+      "degree": "I (Picardy)",
+      "modalOrigin": "A Ionio — parallelo maggiore",
+      "function": "Picardy third — risoluzione sul parallelo maggiore ⚡",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "Amaj7",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "LA mossa più sorprendente: invece di risolvere su Am (atteso), risolve su A MAGGIORE. C# invece di C naturale — la differenza di un semitono apre il cielo. 'Rain down from above' suona come sollevarsi fisicamente. Il Picardy third usato non per rassicurare ma per disorientare."
+    },
+    {
+      "id": "Cm2",
+      "symbol": "Cm",
+      "degree": "i",
+      "modalOrigin": "C Aeoliano",
+      "function": "Tonica — ritorno sezione heavy",
+      "tetrad": "Cm7",
+      "tensions": [],
+      "tetradFull": "Cm7",
+      "voicing": "x35543",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Bb",
+      "symbol": "Bb",
+      "degree": "♭VII",
+      "modalOrigin": "C Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Bbmaj7",
+      "tensions": [],
+      "tetradFull": "Bbmaj7",
+      "voicing": "x13331",
+      "rootPC": 10,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Fm2",
+      "symbol": "Fm",
+      "degree": "iv",
+      "modalOrigin": "C Aeoliano",
+      "function": "Sottodominante minore",
+      "tetrad": "Fm7",
+      "tensions": [],
+      "tetradFull": "Fm7",
+      "voicing": "133111",
+      "rootPC": 5,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Ebmaj7",
+      "symbol": "Ebmaj7",
+      "degree": "♭III maj7",
+      "modalOrigin": "C Aeoliano",
+      "function": "Interscambio modale — momento di apertura Lidia nel chaos",
+      "tetrad": "Ebmaj7",
+      "tensions": [
+        "#11"
+      ],
+      "tetradFull": "Ebmaj7#11",
+      "voicing": "x65333",
+      "rootPC": 3,
+      "isAlien": true,
+      "note": "Paradossalmente il momento più aperto e lirico nella sezione più heavy. Ebmaj7 con #11 (La nat.) ha colore Lidio — una finestra di luce prima della cadenza jazz."
+    },
+    {
+      "id": "Dm7b5",
+      "symbol": "Dm7b5",
+      "degree": "ii∅7",
+      "modalOrigin": "C Armonico Minore — jazz",
+      "function": "Semidiminuito — ii∅7 della cadenza jazz ii∅7–V7–i",
+      "tetrad": "Dm7b5",
+      "tensions": [],
+      "tetradFull": "Dm7b5",
+      "voicing": "xx0111",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "Accordo jazz completamente inaspettato in un brano rock. Dm7b5 = D–F–Ab–C: l'Ab è la quinta abbassata. Con G7 forma una cadenza jazz classica ii∅7–V7–i, nascosta sotto riff di chitarra distorta."
+    },
+    {
+      "id": "G7",
+      "symbol": "G7",
+      "degree": "V7",
+      "modalOrigin": "C Armonico Minore",
+      "function": "Dominante funzionale — unica cadenza V7→i del brano",
+      "tetrad": "G7",
+      "tensions": [],
+      "tetradFull": "G7b9",
+      "voicing": "320001",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "V7 da C armonico minore (F# alzato a B nat.). L'unica cadenza funzionale classica V7→i dell'intero brano — e arriva sepolta in mezzo alla sezione più pesante e caotica, come una struttura classica nascosta sotto il noise."
+    },
+    {
+      "id": "Am3",
+      "symbol": "Am",
+      "degree": "i",
+      "modalOrigin": "A Aeoliano",
+      "function": "Tonica — outro",
+      "tetrad": "Am7",
+      "tensions": [],
+      "tetradFull": "Am7",
+      "voicing": "x02210",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G2",
+      "symbol": "G",
+      "degree": "♭VII",
+      "modalOrigin": "A Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "Gmaj7",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": ""
+    },
+    {
+      "id": "Coutro",
+      "symbol": "C",
+      "degree": "♭III",
+      "modalOrigin": "A Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "Cmaj7",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": ""
+    },
+    {
+      "id": "Amaj2",
+      "symbol": "A",
+      "degree": "I (Picardy)",
+      "modalOrigin": "A Ionio",
+      "function": "Risoluzione finale — il brano chiude sul parallelo maggiore",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "Amaj7",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "Il brano finisce su A maggiore. Non c'è mai una vera risoluzione minore. La 'pace' di Paranoid Android è sempre una luce fredda, non il calore."
+    }
+  ],
+  "modes": [
+    {
+      "id": "c_aeolian",
+      "label": "C Aeoliano",
+      "sub": "Part I & III — primaria",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#a3e635",
+      "sections": [
+        "part1",
+        "heavy"
+      ],
+      "tip": "Scala madre di Part I e heavy. Copre Cm, Fm, Bb, Eb. Non coprirà il Dm7b5 e G7 — per quelli serve C armonico minore."
+    },
+    {
+      "id": "a_aeolian",
+      "label": "A Aeoliano",
+      "sub": "Part II, Chorus, Outro — secondaria",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#86efac",
+      "sections": [
+        "part2",
+        "chorus",
+        "outro"
+      ],
+      "tip": "Stessa struttura intervallare di C Aeoliano ma da A. Le stesse shapes, starting da A. Sul A maggiore finale: passa a A Ionio (C# invece di C)."
+    },
+    {
+      "id": "c_harmonic",
+      "label": "C Armonico Minore",
+      "sub": "Heavy — Dm7b5 / G7",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        11
+      ],
+      "color": "#fbbf24",
+      "sections": [
+        "heavy"
+      ],
+      "tip": "Alza la settima (B naturale invece di Bb) per coprire G7 e Dm7b5. Usala solo sulla cadenza jazz ii∅7–V7, poi torna immediatamente all'Aeoliano."
+    },
+    {
+      "id": "a_ionian",
+      "label": "A Ionio / Lidio",
+      "sub": "Picardy — sul A maggiore",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11
+      ],
+      "color": "#f0abfc",
+      "sections": [
+        "chorus",
+        "outro"
+      ],
+      "tip": "Quando arriva A maggiore: il C# è la nota 'luce'. Con il Lidio (#4=D#) hai tensione extra. Anche solo una nota — C# invece di C — cambia tutto."
+    },
+    {
+      "id": "c_pentatonic",
+      "label": "C min. Pentatonica",
+      "sub": "Safe — tutto il brano in Cm",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#fb923c",
+      "sections": [
+        "part1",
+        "heavy"
+      ],
+      "tip": "Funziona su tutto Part I e heavy. Aggiungi Ab (♭6) come nota di colore per l'oscurità. Sul passaggio a Part II trasponi da A."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "cm9",
+      "label": "Cm9",
+      "sub": "i · Part I/heavy",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        2
+      ],
+      "color": "#a3e635",
+      "chordRef": "Cm",
+      "tip": "C–Eb–G–Bb–D. La nona Re è la tensione sospesa di Radiohead. Parti da C (str6 fret 8) o C (str5 fret 3)."
+    },
+    {
+      "id": "fm7",
+      "label": "Fm7",
+      "sub": "iv · Part I",
+      "rootPC": 5,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#86efac",
+      "chordRef": "Fm2",
+      "tip": "F–Ab–C–Eb. Il Ab è la nota oscura del brano. Nel passaggio da F/A a Fm/Ab: Ab fa cadere tutto di un semitono."
+    },
+    {
+      "id": "am9",
+      "label": "Am9",
+      "sub": "i · Part II/chorus/outro",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        2
+      ],
+      "color": "#4ade80",
+      "chordRef": "Am",
+      "tip": "Stessa shape di Cm9 ma da A. La nona Si crea la tensione sospesa caratteristica del chorus."
+    },
+    {
+      "id": "dfsharp",
+      "label": "Dmaj7/F#",
+      "sub": "IV/3° · Part II",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#fcd34d",
+      "chordRef": "DFsharp",
+      "tip": "Il F# nel basso conclude la discesa cromatica A→G#→G→F#. La settima C# prepara la tensione verso Am."
+    },
+    {
+      "id": "amaj7",
+      "label": "Amaj7",
+      "sub": "Picardy · chorus/outro",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#f0abfc",
+      "chordRef": "Amaj",
+      "tip": "A–C#–E–G#. Il C# (terza maggiore) è LA nota della luce del brano. Enfatizzala ogni volta che arriva A maggiore."
+    },
+    {
+      "id": "dm7b5",
+      "label": "Dm7b5",
+      "sub": "ii∅ · heavy",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        3,
+        6,
+        10
+      ],
+      "color": "#fbbf24",
+      "chordRef": "Dm7b5",
+      "tip": "D–F–Ab–C. L'Ab è la quinta abbassata — nota aliena. Arpeggio di passaggio verso G7 nella cadenza jazz."
+    },
+    {
+      "id": "ebmaj7",
+      "label": "Ebmaj7",
+      "sub": "♭III · heavy",
+      "rootPC": 3,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#fb923c",
+      "chordRef": "Ebmaj7",
+      "tip": "Eb–G–Bb–D. La settima D crea tensione verso Cm. Momento lirico nella sezione più caotica — sfruttalo."
+    }
+  ],
+  "improv": {
+    "part1": {
+      "primary": "C Aeoliano",
+      "secondary": "C min. pentatonica + Ab come nota di colore",
+      "tip": "Segui la discesa del basso nella melodia: C→Bb→A→Ab. Sul FmAb enfatizza Ab — è il cambio di colore più sottile (da A a Ab, da F maggiore a F minore)."
+    },
+    "part2": {
+      "primary": "A Aeoliano",
+      "secondary": "D Dorico o D Misolidio sul D/F#",
+      "tip": "Stessa logica di Part I, traslata. Segui A→G#→G→F# nelle note melodiche. Il G# (non diatonico in A Aeoliano) è la nota 'sorpresa' — toccala e vai via."
+    },
+    "chorus": {
+      "primary": "A Aeoliano (su Am/G/C) + A Ionio sul A maggiore",
+      "secondary": "Arpeggi Am9 poi Amaj7",
+      "tip": "La mossa emotiva è C naturale→C# (sul passaggio Am→A maggiore). Anche solo in melodia, questo cambio di un semitono cattura tutto il senso di 'Rain down'."
+    },
+    "heavy": {
+      "primary": "C Aeoliano (su Cm/Bb/Fm/Eb) + C Armonico Minore (solo su Dm7b5 e G7)",
+      "secondary": "Arpeggio Dm7b5–G7–Cm come frase unica",
+      "tip": "La cadenza jazz Dm7b5–G7–Cm è il momento teoricamente più ricco. Sul Dm7b5 usa l'arpeggio (D–F–Ab–C), poi scendi su G7 (G–B–D–F), poi risolvi su Cm. Thom Yorke non lo fa — ma tu puoi."
+    }
+  }
+}

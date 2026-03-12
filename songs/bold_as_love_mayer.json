@@ -1,0 +1,706 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Bold as Love (Mayer)",
+    "artist": "John Mayer",
+    "album": "Continuum",
+    "year": 2006,
+    "tuning": "Eb Standard (EbAbDbGbBbeb — shapes come scritti in A, suonano in Ab)",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "♩=132 BPM",
+    "accentColor": "#10b981"
+  },
+  "analysis": {
+    "tonicNote": "A (shapes) / Ab (concert pitch)",
+    "tonicPC": 9,
+    "primaryMode": "A Ionio con incursioni in A Misolidio (G naturale) + dominanti secondarie (C# = V/vi) + accordo cromatico di avvicinamento (G# = VII cromatico)",
+    "complexity": 4,
+    "alienChord": "G# (VII cromatico — approccio cromatico G→G#→A)",
+    "alienReason": "Il G# maggiore non appartiene né ad A Ionio né ad A Misolidio. Mayer lo inserisce come accordo cromatico di avvicinamento (passing chord) tra il G (bVII misolidio) e l'A (I): G→G#→A. È una tecnica jazz pura — il tritone del G# (D naturale vs D# di A) crea frizione massima prima della risoluzione. Hendrix non lo usava. Mayer porta Wes Montgomery nel grunge.",
+    "technique": "Tre livelli di sofisticazione sovrapposti: (1) struttura armonica Hendrix come base (I–V–vi–IV, bVII), (2) dominanti secondarie jazz (C# = V/vi) e accordo di avvicinamento cromatico (G#), (3) voicing estesi con noni e tredicesime, hybrid picking per articolazione degli accordi",
+    "bassMotion": "Verse: fondamentali diatoniche A–E–F#–D. Chorus: D/F# con terza nel basso (F# ascendente verso A). Outro: G→G#→A — avvicinamento cromatico per semitoni. La linea di Pino Palladino (basso) aggiunge contromelodía indipendente dagli accordi.",
+    "summary": "Mayer prende la struttura armonica di Hendrix e la reinterpreta attraverso tre filtri sovrapposti: il suo training jazz a Berklee, la sua padronanza del blues (SRV, BB King), e la sua voce chitarristica personale. La progressione è riconoscibile — A–E–F#m–D, G (bVII) come 'accordo dell'apertura' — ma i voicing diventano estesi (Amaj9, E9, F#m11), compare un C# come dominante secondaria (V/vi), e l'approccio cromatico G→G#→A nel finale è pura grammatica jazz. Il solo usa la 'scala blues composita' (pentatonica maggiore + pentatonica minore sovrapposte) — la stessa tecnica di Eric Clapton e Stevie Ray Vaughan filtrata attraverso Berklee."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro — fingerpicking Amaj9",
+      "chords": [
+        "Amaj9_intro"
+      ],
+      "note": "Mayer apre da solo con un arpeggio fingerpicked su Amaj9 — stabilisce subito il colore jazz prima che entri la band. Hendrix iniziava con accordi pieni."
+    },
+    {
+      "id": "verse_a",
+      "label": "Verse A — I–V–vi–IV",
+      "chords": [
+        "A_verse",
+        "E9",
+        "Fsharpm11",
+        "Dmaj9"
+      ],
+      "note": "La progressione Hendrix I–V–vi–IV, ma tutti gli accordi con estensioni jazz: A→Amaj9, E→E9, F#m→F#m11, D→Dmaj9."
+    },
+    {
+      "id": "verse_b",
+      "label": "Verse B — IV–I–ii–bVII + C#",
+      "chords": [
+        "Dmaj9_b",
+        "A_verse2",
+        "Bm9",
+        "Csharp",
+        "DFsharp_verse"
+      ],
+      "note": "Mayer aggiunge il C# (III maggiore = V/vi, dominante secondaria di F#m) prima del D/F#. Non presente in Hendrix."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — I–V–vi–bVII con D/F#",
+      "chords": [
+        "A_chorus",
+        "E_chorus",
+        "Fsharpm_chorus",
+        "Dmaj9_chorus",
+        "DFsharp_chorus",
+        "E_high"
+      ],
+      "note": "La progressione chorus usa D/F# (terza nel basso, voicing alto 10° tasto) per il passaggio verso E. Crea un basso melodico ascendente F#→E nella progressione D/F#→E."
+    },
+    {
+      "id": "solo",
+      "label": "Solo — vamp A–E–F#m–G + half-time",
+      "chords": [
+        "A_solo",
+        "E_solo",
+        "Fsharpm_solo",
+        "G_solo"
+      ],
+      "note": "Il solo parte sul loop I–V–vi–bVII. Nella sezione half-time il groove rallenta a metà tempo — Mayer usa questo spazio per frasi più lunghe e bluesy."
+    },
+    {
+      "id": "outro",
+      "label": "Outro — G→G#→A (avvicinamento cromatico)",
+      "chords": [
+        "G_outro",
+        "Gsharp_outro",
+        "A_outro"
+      ],
+      "note": "Il momento più jazz di tutto il brano: G→G# (semitono) →A. Il G# maggiore è un accordo di avvicinamento cromatico — non appartiene ad A Ionio né ad A Misolidio. Mayer lo usa come firma armonica personale."
+    }
+  ],
+  "chords": [
+    {
+      "id": "Amaj9_intro",
+      "symbol": "Amaj9",
+      "degree": "Imaj9",
+      "modalOrigin": "A Ionio — colore jazz",
+      "function": "Tonica con nona aggiunta — apertura jazz",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Mayer apre il brano con questo voicing: A–C#–E–G#–B (da basso ad acuto). La settima maggiore G# e la nona B sono i colori jazz. Hendrix usava A piena o A7. Il voicing aperto risuona come una campana — Mayer usa le corde aperte (B e E) come risonatori."
+    },
+    {
+      "id": "A_verse",
+      "symbol": "Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E9",
+      "symbol": "E9",
+      "degree": "V9",
+      "modalOrigin": "A Ionio — dominante con nona",
+      "function": "Dominante con colore jazz — nona F# evita la cadenza classica",
+      "tetrad": "E7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "E9",
+      "voicing": "020130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Mayer usa E9 (con settima minore D e nona F#) invece del semplice E di Hendrix. La settima D abbassa la tensione verso A, rendendola 'jazz' invece di 'classica'. Il F# (nona) condiviso con A è il legame melodico tra I e V."
+    },
+    {
+      "id": "Fsharpm11",
+      "symbol": "F#m11",
+      "degree": "vi11",
+      "modalOrigin": "A Ionio — relativa minore estesa",
+      "function": "Relativa minore con colore sospeso (11ª = B = corda aperta)",
+      "tetrad": "F#m7",
+      "tensions": [
+        "add9",
+        "add11"
+      ],
+      "tetradFull": "F#m11",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": "L'11ª (B naturale) è la corda B aperta che risuona nel voicing. Mayer lascia risuonare le corde aperte anche negli accordi barré — tecnica distintiva. La settima E è la tonica di A: voice leading F#m11→Dmaj9 mantiene E come nota comune."
+    },
+    {
+      "id": "Dmaj9",
+      "symbol": "Dmaj9",
+      "degree": "IVmaj9",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante con nona aperta",
+      "tetrad": "Dmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Dmaj9",
+      "voicing": "xx0220",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Il voicing xx0220 (Dsus2) apre la quinta A come corda aperta — stessa nota della tonica. Il Dmaj9 con E aperto suona sospeso e luminoso. Mayer usa Dsus2 invece di D pieno per evitare la terza F# bassa che appesantirebbe il voicing."
+    },
+    {
+      "id": "Dmaj9_b",
+      "symbol": "Dmaj9",
+      "degree": "IVmaj9",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante — inizio verse B",
+      "tetrad": "Dmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Dmaj9",
+      "voicing": "xx0220",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A_verse2",
+      "symbol": "Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Bm9",
+      "symbol": "Bm9",
+      "degree": "ii9",
+      "modalOrigin": "A Ionio",
+      "function": "Sopra-dominante con colore jazz",
+      "tetrad": "Bm7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Bm9",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Bm9 aggiunge la nona C# — la terza maggiore di A. La nota C# condivisa tra Bm9 e il C# successivo crea un legame melodico: C# come tensione in Bm9, poi C# come fondamentale dell'accordo seguente."
+    },
+    {
+      "id": "Csharp",
+      "symbol": "C#",
+      "degree": "III (V/vi)",
+      "modalOrigin": "Dominante secondaria — V di F#m",
+      "function": "Dominante secondaria di F#m — III maggiore, non diatonico in A Ionio ⚡",
+      "tetrad": "C#7",
+      "tensions": [],
+      "tetradFull": "C#7",
+      "voicing": "x46464",
+      "rootPC": 1,
+      "isAlien": true,
+      "note": "C# maggiore (con E# = F naturale e G#) è il V di F#m — dominante secondaria. In A Ionio il III grado è C#m (minore), non C# (maggiore). Mayer alza la terza da E a F (E#) per creare tensione verso F#m. Questo move è jazz puro: la cadenza C#→F#m rispecchia V→i. Molto più sofisticato del semplice I–V–vi–IV di Hendrix."
+    },
+    {
+      "id": "DFsharp_verse",
+      "symbol": "D/F#",
+      "degree": "IV/3°",
+      "modalOrigin": "A Ionio — basso con terza",
+      "function": "Sottodominante con terza nel basso — voice leading F#→E",
+      "tetrad": "Dmaj7/F#",
+      "tensions": [],
+      "tetradFull": "Dmaj7/F#",
+      "voicing": "200232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "F# nel basso crea un basso melodico ascendente verso A o discendente verso E. Mayer usa D/F# come punto di snodo — il F# nel basso prepara la cadenza verso E o il ritorno alla tonica A."
+    },
+    {
+      "id": "A_chorus",
+      "symbol": "Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica — apertura chorus",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_chorus",
+      "symbol": "E9",
+      "degree": "V9",
+      "modalOrigin": "A Ionio",
+      "function": "Dominante — tensione chorus",
+      "tetrad": "E7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "E9",
+      "voicing": "020130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Fsharpm_chorus",
+      "symbol": "F#m11",
+      "degree": "vi",
+      "modalOrigin": "A Ionio",
+      "function": "Relativa minore",
+      "tetrad": "F#m7",
+      "tensions": [
+        "add11"
+      ],
+      "tetradFull": "F#m11",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Dmaj9_chorus",
+      "symbol": "Dmaj9",
+      "degree": "IV",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante",
+      "tetrad": "Dmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Dmaj9",
+      "voicing": "xx0220",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "DFsharp_chorus",
+      "symbol": "D/F#",
+      "degree": "IV/3°",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante con terza nel basso — basso melodico F#→E",
+      "tetrad": "Dmaj7/F#",
+      "tensions": [],
+      "tetradFull": "Dmaj7/F#",
+      "voicing": "x97770",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Voicing alto (IX posizione): Mayer usa un voicing jazz a 9° tasto per il D/F# del chorus. La terza F# nel basso crea una linea melodica ascendente che porta verso l'E successivo: F#→E = semitono discendente nel basso, moto contrario alla melodia vocale."
+    },
+    {
+      "id": "E_high",
+      "symbol": "E",
+      "degree": "V",
+      "modalOrigin": "A Ionio",
+      "function": "Dominante — chiusura chorus (voicing alto)",
+      "tetrad": "E7",
+      "tensions": [],
+      "tetradFull": "E7",
+      "voicing": "x79797",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Voicing alto del chorus (VII posizione). La cadenza D/F# → E in posizione alta crea un effetto di 'apertura verso l'alto' prima del ritorno alla tonica. Mayer mantiene le voci alte per enfatizzare 'bold as love' nel testo."
+    },
+    {
+      "id": "A_solo",
+      "symbol": "Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica — vamp del solo",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_solo",
+      "symbol": "E9",
+      "degree": "V",
+      "modalOrigin": "A Ionio",
+      "function": "Dominante",
+      "tetrad": "E7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "E9",
+      "voicing": "020130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Fsharpm_solo",
+      "symbol": "F#m11",
+      "degree": "vi",
+      "modalOrigin": "A Ionio",
+      "function": "Relativa minore",
+      "tetrad": "F#m7",
+      "tensions": [
+        "add11"
+      ],
+      "tetradFull": "F#m11",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "G_solo",
+      "symbol": "G",
+      "degree": "♭VII",
+      "modalOrigin": "A Misolidio — apertura modale",
+      "function": "Interscambio modale — 'accordo dell'apertura' di Mayer",
+      "tetrad": "Gmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Gmaj9",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "Il G naturale (bVII) è il momento in cui il solo 'decolla'. Mayer lo enfatizza ancora più di Hendrix: nel solo usa il G come punto di rilascio della tensione accumulata su F#m — poi il G# cromatico porta verso l'A dell'outro. Il G9 (con corde aperte) risuona lunghissimo."
+    },
+    {
+      "id": "G_outro",
+      "symbol": "G",
+      "degree": "♭VII",
+      "modalOrigin": "A Misolidio",
+      "function": "Primo passo avvicinamento cromatico G→G#→A",
+      "tetrad": "Gmaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Gmaj9",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "L'outro inizia sul G già noto — il bVII misolidio. Ma stavolta non torna direttamente ad A: Mayer aggiunge G# come passaggio cromatico. G→G#→A: tre accordi, tre semitoni ascendenti. La tensione aumenta per gradi prima della risoluzione finale."
+    },
+    {
+      "id": "Gsharp_outro",
+      "symbol": "G#",
+      "degree": "VII (cromatico)",
+      "modalOrigin": "Cromatico — approccio per semitono verso A ⚡",
+      "function": "Accordo di avvicinamento cromatico — non appartiene ad A Ionio né ad A Misolidio",
+      "tetrad": "G#maj7",
+      "tensions": [],
+      "tetradFull": "G#maj7",
+      "voicing": "466544",
+      "rootPC": 8,
+      "isAlien": true,
+      "note": "LA firma armonica di Mayer nell'outro. G# maggiore (G#–B#–D#) contiene note estranee ad A maggiore: D# (♭5 di A) è il tritono della tonica — massima frizione. B# (= C naturale) crea tensione cromatica verso C# di A. È una tecnica jazz di approach chord: accordo a semitono sotto la risoluzione. Wes Montgomery, Grant Green — Mayer porta questa grammatica nel rock."
+    },
+    {
+      "id": "A_outro",
+      "symbol": "Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Risoluzione finale — il brano chiude sull'Amaj9 luminoso",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "La risoluzione G→G#→A porta al voicing Amaj9 aperto dell'intro — il brano si chiude con lo stesso colore con cui era iniziato. Circolarità perfetta: il jazz non risolve su A7 o A5, ma sull'Amaj9 sospeso e luminoso dell'inizio."
+    }
+  ],
+  "modes": [
+    {
+      "id": "a_ionian",
+      "label": "A Ionio (Maggiore)",
+      "sub": "Tutto il brano — primaria",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#10b981",
+      "sections": [
+        "intro",
+        "verse_a",
+        "verse_b",
+        "chorus",
+        "solo",
+        "outro"
+      ],
+      "tip": "La scala di base. Copre tutti gli accordi diatonici: A, E, F#m, D, Bm. Non copre G (usa Misolidio), C# (usa Lidia dominante o scala di C#), G# (usa approccio cromatico). Il G# nella melodia del chorus è la settima maggiore di A — naturale nell'Ionio."
+    },
+    {
+      "id": "a_mixolydian",
+      "label": "A Misolidio",
+      "sub": "Sul G (♭VII) — solo e outro",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#34d399",
+      "sections": [
+        "solo",
+        "outro"
+      ],
+      "tip": "Abbassa il G# a G naturale. Copre l'accordo G (bVII). Sul vamp A–E–F#m–G del solo puoi alternare A Ionio e A Misolidio — Ionio sulle parti di A/E/F#m, Misolidio sul G. La differenza è una sola nota (G vs G#) ma cambia completamente il colore."
+    },
+    {
+      "id": "composite_blues",
+      "label": "Scala Blues Composita",
+      "sub": "Solo — tecnica Mayer/SRV",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#fbbf24",
+      "sections": [
+        "solo"
+      ],
+      "tip": "La firma di Mayer: pentatonica maggiore (A–B–C#–E–F#) + pentatonica minore (A–C–D–E–G) sovrapposte. Le note aggiunte sono C naturale (♭3, blue note) e G (♭7, Misolidio). Risultato: A–B–C–C#–D–E–F#–G. Otto note invece di cinque — infinitamente più espressivo della semplice pentatonica."
+    },
+    {
+      "id": "a_major_pentatonic",
+      "label": "A Pentatonica Maggiore",
+      "sub": "Base del solo — 'note giuste'",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#6ee7b7",
+      "sections": [
+        "verse_a",
+        "verse_b",
+        "solo"
+      ],
+      "tip": "A–B–C#–E–F#. Il punto di partenza sicuro. Mayer usa questa come 'home base' e aggiunge le blue notes (C nat., G nat.) come colori. L'analisi del suo solo mostra che il 70% delle note viene dalla pentatonica maggiore — il restante 30% sono le blue notes che creano tensione."
+    },
+    {
+      "id": "csharp_lydian_dom",
+      "label": "C# Lidia Dominante",
+      "sub": "Sul C# (V/vi) — avanzato",
+      "rootPC": 1,
+      "intervals": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        9,
+        10
+      ],
+      "color": "#f87171",
+      "sections": [
+        "verse_b"
+      ],
+      "tip": "Scala di C# con quarta aumentata (F##=G) e settima minore (B). Copre perfettamente il C#7 (dominante secondaria di F#m). Tecnica avanzata: usa C# Lidia Dominante solo sul beat del C#, poi torna A Ionio su D o F#m. Il tritono G (♭5 di C#) crea la tensione che risolve verso F# di F#m."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "amaj9_arp",
+      "label": "Amaj9",
+      "sub": "I · tutto il brano",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#10b981",
+      "chordRef": "Amaj9_intro",
+      "tip": "A–C#–E–G#–B. Il G# (settima maggiore) e il B (nona) sono i colori jazz distintivi di Mayer. Parti dalla quinta corda (A tasto 0) o dalla sesta (A tasto 5). Il B (nona) sulla prima corda aperta risuona lunghissimo."
+    },
+    {
+      "id": "e9_arp",
+      "label": "E9",
+      "sub": "V · verse/chorus/solo",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        2
+      ],
+      "color": "#34d399",
+      "chordRef": "E9",
+      "tip": "E–G#–B–D–F#. La settima D e la nona F# sono le tensioni jazz. Il D (♭7 di E) risolve verso C# o A — voice leading verso tonica. Il F# (nona) è la tonica di F#m: nota comune tra V e vi."
+    },
+    {
+      "id": "fsharpm11_arp",
+      "label": "F#m11",
+      "sub": "vi · verse/chorus/solo",
+      "rootPC": 6,
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        14
+      ],
+      "color": "#6ee7b7",
+      "chordRef": "Fsharpm11",
+      "tip": "F#–A–C#–E–B. L'11ª (B) è la nota più lontana dalla fondamentale — crea sospensione. E (settima) è la tonica A — voice leading naturale verso Amaj9. Sul F#m11 puoi usare A pentatonica maggiore completa: ogni nota dell'arpeggio appartiene alla pentatonica."
+    },
+    {
+      "id": "csharp7_arp",
+      "label": "C#7",
+      "sub": "III / V/vi · verse B",
+      "rootPC": 1,
+      "intervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "color": "#f87171",
+      "chordRef": "Csharp",
+      "tip": "C#–F(=E#)–G#–B. Il F naturale (= E# enarmonia) è la nota aliena — non è in A Ionio (che ha E naturale, non E#). Questa è la sensibile cromatica che tira verso F# di F#m. Arpeggio breve e direzionale: suonalo velocemente verso F#m come punto di arrivo."
+    },
+    {
+      "id": "gmaj9_arp",
+      "label": "Gmaj9",
+      "sub": "♭VII · solo/outro",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#fbbf24",
+      "chordRef": "G_solo",
+      "tip": "G–B–D–F#–A. La nona A è la tonica — note comune fondamentale con Amaj9. La settima F# è la stessa di F#m: G risolve verso A portando F#→G#(in A). Mayer usa questo arpeggio come 'lancio': frasi che partono da G e risalgono verso A."
+    },
+    {
+      "id": "gsharp_arp",
+      "label": "G#maj7",
+      "sub": "VII cromatico · outro ⚡",
+      "rootPC": 8,
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "color": "#c084fc",
+      "chordRef": "Gsharp_outro",
+      "tip": "G#–C(=B#)–D#–G(=Fx). L'accordo più alieno del brano. Il D# (♭5 di A) è il tritono della tonica — massima frizione in un solo accordo. Usa l'arpeggio come approccio: suona G#maj7 brevemente (una o due note) prima di risolvere su A. Non tenerlo: è un accordo di tensione momentanea, non di permanenza."
+    },
+    {
+      "id": "bm9_arp",
+      "label": "Bm9",
+      "sub": "ii · verse B",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        2
+      ],
+      "color": "#818cf8",
+      "chordRef": "Bm9",
+      "tip": "B–D–F#–A–C#. Il C# (nona) è lo stesso del C# successivo — voice leading diretto tra Bm9 e C#. La settima A è la tonica di A — nota di continuità. L'arpeggio Bm9 fluisce naturalmente verso C#7 e poi verso F#m: ii→V/vi→vi, una progressione jazz completa."
+    }
+  ],
+  "improv": {
+    "intro": {
+      "primary": "A Ionio — solo note diatoniche, massima chiarezza",
+      "secondary": "Amaj9 arpeggio",
+      "tip": "L'intro è fingerpicked e silenzioso. Mayer non suona note estranee all'arpeggio. La tecnica è minimalista: ogni nota deve risuonare e decadere. Non fraseggiare — arpeggiare."
+    },
+    "verse_a": {
+      "primary": "A pentatonica maggiore + A Ionio",
+      "secondary": "Arpeggi Amaj9–E9–F#m11–Dmaj9 come guide",
+      "tip": "Mayer usa prevalentemente pentatonica maggiore nel verse, con C naturale (blue note) come colore occasionale su A o E. La sfida è la dinamica: il verse è soft, le note devono essere leggere. Hybrid picking (plettro + dita) per articolare accordi e melodia simultaneamente."
+    },
+    "verse_b": {
+      "primary": "A Ionio (su D/A/Bm) + C# Lidia Dominante (sul C#) + A Ionio (su D/F#)",
+      "secondary": "Segui il voice leading: C# nel Bm9 → fondamentale del C#7",
+      "tip": "Il C# (dominante secondaria) è il momento di massima tensione del verse. Sul C#: suona C# Lidia Dom o semplicemente l'arpeggio C#7 (C#–F–G#–B). La nota F naturale è il cambio di colore che segnala la dominante secondaria. Risolvi su F# quando arrivi a F#m."
+    },
+    "chorus": {
+      "primary": "A Ionio — enfatizza G# (settima maggiore) sul A, D# (terza) sul E",
+      "secondary": "D/F# come punto melodico: F# nel basso, note alte dell'accordo in melodia",
+      "tip": "La scelta di Mayer nel chorus è essenzialmente melodica: frasi che seguono il canto. Il D/F# con voicing alto (x97770) invita frasi che usano le corde alte. Sul E alto (x79797) enfatizza G# — è la sensibile di A che chiede risoluzione."
+    },
+    "solo": {
+      "primary": "Scala blues composita (A Ionio + pentat. minore: A–B–C–C#–D–E–F#–G)",
+      "secondary": "A Misolidio sul G — G naturale come nota di 'apertura' del solo",
+      "tip": "La tecnica di Mayer nel solo: (1) inizia con pentatonica maggiore sicura, (2) aggiungi C naturale (♭3) sulle parti di A o E per colore blues, (3) usa G naturale sul G (bVII) come nota di arrivo e di respiro, (4) nella sezione half-time: frasi lunghe e vuoti — il silenzio conta quanto le note. Mayer ha dichiarato che il segreto di SRV era 'what you don't play'."
+    },
+    "outro": {
+      "primary": "G→G# cromatico: approccio per semitoni, poi A Ionio/Misolidio sull'A finale",
+      "secondary": "G#maj7 arpeggio brevissimo prima di risolvere su A",
+      "tip": "L'outro è la parte più jazz: G→G#→A come approccio cromatico. Sul G#: o silenzio (lascia risuonare il voicing), o suona G#–D# (fondamentale e quinta) — due note bastano. Sul A finale: torna all'Amaj9 aperto e lascia risuonare. Mayer chiude sempre sull'apertura, mai sulla chiusura."
+    }
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "schema": "harmonic-analysis/1.0",
+
+  "song": {
+    "title": "Axis: Bold as Love",
+    "artist": "Jimi Hendrix",
+    "album": "Axis: Bold as Love",
+    "year": 1967,
+    "tuning": "Eb Standard (Eb Ab Db Gb Bb Eb) — mezzo tono sotto",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "~70 BPM",
+    "accentColor": "#c084fc"
+  },
+
+  "analysis": {
+    "tonicNote": "A",
+    "tonicPC": 9,
+    "primaryMode": "A Ionio (maggiore) con bVII da A Misolidio e voicing jazz",
+    "complexity": 3,
+    "alienChord": "G (bVII) + E7#9 'The Hendrix Chord'",
+    "alienReason": "Il G (bVII) è preso da A Misolidio — la stessa mossa del rock anglosassone, ma qui arriva nel chorus come apertura verso il cielo. L'E7#9 è il 'Hendrix Chord': contiene simultaneamente il terzo maggiore (Sol#) e il terzo minore (#9 = Sol naturale) — una dissonanza major/minor che incarna perfettamente la dualità spirituale del brano.",
+    "technique": "Axis progression I-V-vi-IV trattata con voicing jazz (9e, maj7, sus, inversioni). Secondary dominant impliciti nei voicing. Sostituzione bVII al posto di V nel chorus.",
+    "bassMotion": "Primo verso: basso discende per gradi A→G#→F#→E (voice leading cromatico nelle voci interne). Bridge: IV→I→ii→bVII crea cadenza modale circolare.",
+    "summary": "Se Black Hole Sun è un labirinto cromatico, Bold as Love è un arco da cattedrale: la progressione I-V-vi-IV è tra le più naturali della musica occidentale, ma Hendrix la trasforma in qualcosa di trascendente attraverso i voicing. Non è la struttura accordale a fare la complessità — è l'architettura dei suoni dentro ogni accordo: noni, settimane maggiori, sospensioni, inversioni. L'E7#9 nel bridge è il sigillo — un accordo che dice simultaneamente 'sì' e 'no', maggiore e minore, terra e cielo."
+  },
+
+  "sections": [
+    {
+      "id": "verse_a",
+      "label": "Verse — Parte A",
+      "chords": ["A", "E", "F#m", "D"],
+      "note": "I - V - vi - IV: la progressione 'Axis' nella sua forma più pura. Hendrix la veste con Amaj9, E9, F#m7, Dmaj9."
+    },
+    {
+      "id": "verse_b",
+      "label": "Verse — Parte B (Pre-chorus)",
+      "chords": ["D2", "A2", "Bm", "G", "G6"],
+      "note": "IV - I - ii - bVII: il basso sale cromaticamente D→E→F#→G. Il Bm (ii) è la mossa jazz — inusuale nel rock puro."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus",
+      "chords": ["A3", "E2", "F#m2", "G2"],
+      "note": "I - V - vi - bVII: G al posto di IV — il cambio che trasforma la progressione da 'pop' a 'cosmica'. Hendrix usa E7#9 qui."
+    },
+    {
+      "id": "outro",
+      "label": "Outro / Guitar Solo",
+      "chords": ["G3", "A4"],
+      "note": "Vamp bVII→I: il loop ipnotico su cui Hendrix costruisce il suo assolo psichedelico. Il G crea tensione perpetua che non risolve mai davvero — sospensione infinita."
+    }
+  ],
+
+  "chords": [
+    {
+      "id": "A",
+      "symbol": "A / Amaj9",
+      "degree": "I",
+      "modalOrigin": "A Ionio (maggiore)",
+      "function": "Tonica — punto di partenza e di ritorno",
+      "tetrad": "Amaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Hendrix quasi mai suona il semplice A — usa Amaj9 (x02120) o Asus2/Asus4 con hammer-on. Il Sol# (maj7) nel voicing crea luminosità immediata."
+    },
+    {
+      "id": "A2",
+      "symbol": "A / A7sus4",
+      "degree": "I",
+      "modalOrigin": "A Ionio / Misolidio",
+      "function": "Tonica nel pre-chorus — più ambigua",
+      "tetrad": "A7sus4",
+      "tensions": ["sus4"],
+      "tetradFull": "A7sus4",
+      "voicing": "x02230",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Nel pre-chorus l'A appare più teso — Hendrix aggiunge la sus4 o il 7° per preparare il Bm che segue."
+    },
+    {
+      "id": "A3",
+      "symbol": "A / A9",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica del chorus — trionfante",
+      "tetrad": "A9",
+      "tensions": ["add9"],
+      "tetradFull": "A9",
+      "voicing": "x02020",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Nel chorus Hendrix spesso usa A9 o A con abbellimenti pentatonici sull'accordo stesso."
+    },
+    {
+      "id": "A4",
+      "symbol": "A",
+      "degree": "I",
+      "modalOrigin": "A Ionio",
+      "function": "Tonica nell'outro — polo di risoluzione nel vamp G-A",
+      "tetrad": "Amaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Amaj9",
+      "voicing": "x02120",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Nel vamp outro l'A è il polo di 'casa' — il G che lo precede non risolve mai completamente, creando la sospensione dell'assolo."
+    },
+    {
+      "id": "E",
+      "symbol": "E / E9",
+      "degree": "V",
+      "modalOrigin": "A Ionio (dominante funzionale)",
+      "function": "Dominante — il più forte V-I del brano",
+      "tetrad": "E7",
+      "tensions": ["add9"],
+      "tetradFull": "E9",
+      "voicing": "020132",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Hendrix usa E9 (020132) o E7 — il 9° (Fa#) aggiunge il sapore jazz che distingue il suo approccio dal rock standard."
+    },
+    {
+      "id": "E2",
+      "symbol": "E7#9",
+      "degree": "V7#9",
+      "modalOrigin": "A Ionio — dominante alterata",
+      "function": "Dominante alterata — 'The Hendrix Chord' ⚡",
+      "tetrad": "E7#9",
+      "tensions": ["#9"],
+      "tetradFull": "E7#9",
+      "voicing": "x76788",
+      "rootPC": 4,
+      "isAlien": true,
+      "note": "IL chord di Hendrix: E-G#-D-G natural (sulle corde medie). Contiene simultaneamente il 3° maggiore (Sol#) e il #9 che equivale al 3° minore (Sol nat.). Dualità major/minor in un solo accordo — il suono più rappresentativo di Hendrix."
+    },
+    {
+      "id": "F#m",
+      "symbol": "F#m / F#m7",
+      "degree": "vi",
+      "modalOrigin": "A Ionio (relativa minore)",
+      "function": "Relativa minore — colore malinconico nel verse",
+      "tetrad": "F#m7",
+      "tensions": ["add11"],
+      "tetradFull": "F#m11",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": "F#m7 è la relativa minore naturale di A — non è un interscambio ma un colore malinconico dentro alla tonalità maggiore."
+    },
+    {
+      "id": "F#m2",
+      "symbol": "F#m7",
+      "degree": "vi",
+      "modalOrigin": "A Ionio",
+      "function": "Relativa minore nel chorus",
+      "tetrad": "F#m7",
+      "tensions": ["add11"],
+      "tetradFull": "F#m11",
+      "voicing": "244222",
+      "rootPC": 6,
+      "isAlien": false,
+      "note": "Nel chorus il F#m7 è il momento di 'caduta' emotiva prima del G che porta verso l'alto."
+    },
+    {
+      "id": "D",
+      "symbol": "D / Dmaj9",
+      "degree": "IV",
+      "modalOrigin": "A Ionio (sottodominante naturale)",
+      "function": "Sottodominante — momento di apertura e respiro",
+      "tetrad": "Dmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Dmaj9",
+      "voicing": "x00232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Hendrix usa Dmaj9 (x00232) o D/F# (200232) — il basso F# nel D/F# crea un movimento cromatico discendente verso E (dominante): F#→E nella linea del basso."
+    },
+    {
+      "id": "D2",
+      "symbol": "D / D/F#",
+      "degree": "IV / IV6",
+      "modalOrigin": "A Ionio",
+      "function": "Sottodominante — apertura del pre-chorus",
+      "tetrad": "Dmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Dmaj9",
+      "voicing": "200232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Nel pre-chorus Hendrix usa spesso D/F# (200232) — il basso F# prepara il salita cromatica verso A poi Bm poi G."
+    },
+    {
+      "id": "Bm",
+      "symbol": "Bm7",
+      "degree": "ii",
+      "modalOrigin": "A Ionio (supertonica minore)",
+      "function": "Supertonica minore — mossa jazz inusuale nel rock",
+      "tetrad": "Bm7",
+      "tensions": ["add11"],
+      "tetradFull": "Bm11",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il Bm (ii) è naturale in A maggiore ma quasi mai appare nel rock standard. La sua presenza nella progressione IV-I-ii-bVII denuncia l'influenza jazz di Hendrix — è una mossa da turnaround jazz (ii→V→I)."
+    },
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "bVII",
+      "modalOrigin": "A Misolidio / A Aeoliano",
+      "function": "Interscambio modale — apertura cosmica nel pre-chorus ⚡",
+      "tetrad": "Gmaj7",
+      "tensions": ["add6", "add9"],
+      "tetradFull": "G6 / Gmaj9",
+      "voicing": "320003",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "Il bVII preso da A Misolidio — non è il V (E) che ci aspetteremmo per risolvere su A. Invece apre verso l'alto. Hendrix usa G6 (320030) o G con hammer-on sulla corda B — il 6° (Mi) è la tonica A una ottava sopra, che crea legame diretto con il I."
+    },
+    {
+      "id": "G2",
+      "symbol": "G / G6",
+      "degree": "bVII",
+      "modalOrigin": "A Misolidio",
+      "function": "Interscambio modale nel chorus — sostituisce IV (D)",
+      "tetrad": "G6",
+      "tensions": ["add6"],
+      "tetradFull": "G6",
+      "voicing": "320030",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "Nel chorus il G (bVII) sostituisce il D (IV) della progressione del verse — questo cambio trasforma la progressione da I-V-vi-IV (pop) a I-V-vi-bVII (cosmica). G6 (320030) è il voicing preferito da Hendrix qui."
+    },
+    {
+      "id": "G3",
+      "symbol": "G",
+      "degree": "bVII",
+      "modalOrigin": "A Misolidio",
+      "function": "Polo di tensione nell'outro — non risolve mai",
+      "tetrad": "G6",
+      "tensions": ["add6"],
+      "tetradFull": "G6",
+      "voicing": "320030",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "Nell'outro vamp G-A il G crea una tensione perpetua: vuole risolvere su A ma il loop ricomincia da G — sospensione armonica infinita, base perfetta per l'assolo psichedelico."
+    },
+    {
+      "id": "G6",
+      "symbol": "G6",
+      "degree": "bVII6",
+      "modalOrigin": "A Misolidio",
+      "function": "Variante di chiusura del pre-chorus — ancora più sospesa",
+      "tetrad": "G6",
+      "tensions": ["add6"],
+      "tetradFull": "G6",
+      "voicing": "320030",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "G6 = G-B-D-E. La nota E (6°) è la tonica A una terza minore sotto — nota comune con A tonica, che rende la transizione G6→A quasi impercettibile e fluida."
+    }
+  ],
+
+  "modes": [
+    {
+      "id": "major",
+      "label": "A Ionio (Maggiore)",
+      "sub": "Verse A, Verse B — primaria",
+      "rootPC": 9,
+      "intervals": [0, 2, 4, 5, 7, 9, 11],
+      "color": "#c084fc",
+      "sections": ["verse_a", "verse_b"],
+      "tip": "La scala madre del brano. Copre A, E, F#m, D, Bm perfettamente. Su G (bVII) abbassa il 7° a Sol naturale — automaticamente diventa A Misolidio"
+    },
+    {
+      "id": "mixolydian",
+      "label": "A Misolidio",
+      "sub": "Chorus, Outro — su G (bVII)",
+      "rootPC": 9,
+      "intervals": [0, 2, 4, 5, 7, 9, 10],
+      "color": "#38bdf8",
+      "sections": ["chorus", "outro"],
+      "tip": "Identica all'Ionio ma con Sol naturale al posto di Sol#. Copre G (bVII) perfettamente — il Sol nat. è la settima di A Misolidio e la fondamentale del G. Usala nel chorus e nell'outro per abbracciare il G6 con naturalezza"
+    },
+    {
+      "id": "major_pentatonic",
+      "label": "A Pentat. Maggiore",
+      "sub": "Tutto il brano — la voce di Hendrix",
+      "rootPC": 9,
+      "intervals": [0, 2, 4, 7, 9],
+      "color": "#f59e0b",
+      "sections": ["verse_a", "verse_b", "chorus", "outro"],
+      "tip": "LA scala di Hendrix sul brano. Cinque note che funzionano su tutto. Hendrix la usa come base e aggiunge cromatismi di approccio. Sul G (bVII) la quinta (Mi = E) è la tonica — crea un legame melodico perfetto verso A"
+    },
+    {
+      "id": "minor_pentatonic",
+      "label": "A Pentat. Minore",
+      "sub": "Sul E7#9 e nell'outro — blues",
+      "rootPC": 9,
+      "intervals": [0, 3, 5, 7, 10],
+      "color": "#f87171",
+      "sections": ["chorus", "outro"],
+      "tip": "Sul E7#9 (Hendrix chord) il Sol nat. della pentatonica minore è già il #9 dell'accordo — perfetta sovrapposizione. Nell'outro combina pentatonica maggiore e minore (scale blues composita) come fa Hendrix nell'assolo originale"
+    },
+    {
+      "id": "dorian",
+      "label": "F# Dorico",
+      "sub": "Sul F#m7 — colore jazz",
+      "rootPC": 6,
+      "intervals": [0, 2, 3, 5, 7, 9, 10],
+      "color": "#34d399",
+      "sections": ["verse_a", "chorus"],
+      "tip": "Su F#m7 il F# Dorico aggiunge il 6° (Re#) — nota inusuale che dà colore jazz. Hendrix usa questa sfumatura spesso nelle sue frasi melodiche sulla relativa minore"
+    }
+  ],
+
+  "arpeggios": [
+    {
+      "id": "amaj9",
+      "label": "Amaj9",
+      "sub": "I · verse / chorus",
+      "rootPC": 9,
+      "intervals": [0, 4, 7, 11, 2],
+      "color": "#c084fc",
+      "chordRef": "A",
+      "tip": "La 9a (Si) e la maj7 (Sol#) sono le note caratteristiche di Hendrix su questo accordo. Arpeggio: A–C#–E–G#–B. Il Sol# risolve meravigliosamente verso La o verso il Sol nat. del G bVII"
+    },
+    {
+      "id": "e9",
+      "label": "E9",
+      "sub": "V · verse",
+      "rootPC": 4,
+      "intervals": [0, 4, 7, 10, 2],
+      "color": "#38bdf8",
+      "chordRef": "E",
+      "tip": "E–G#–B–D–F#. Il Re (b7) è la nota di tensione che vuole salire a Mi (risoluzione su A). Il Fa# (9a) aggiunge il sapore jazz. Usa questo arpeggio come frase ascendente verso il tasto 12"
+    },
+    {
+      "id": "e7sharp9",
+      "label": "E7#9",
+      "sub": "V7#9 · chorus — Hendrix chord ⚡",
+      "rootPC": 4,
+      "intervals": [0, 4, 7, 10, 3],
+      "color": "#f87171",
+      "chordRef": "E2",
+      "tip": "E–G#–B–D–G nat. Il G nat. (#9 = terzo minore) contro il G# (3° maggiore) crea la famosa 'tensione Hendrix'. Suona questo arpeggio lentamente per sentire la dissonanza risolvere. Il G nat. tende a scendere verso F# o salire verso A"
+    },
+    {
+      "id": "f#m7",
+      "label": "F#m7",
+      "sub": "vi · verse / chorus",
+      "rootPC": 6,
+      "intervals": [0, 3, 7, 10],
+      "color": "#818cf8",
+      "chordRef": "F#m",
+      "tip": "F#–A–C#–E. Il La (bIII) è nota comune con A tonica — voice leading diretto. Il Mi (min7) porta al Re# del Amaj7 o al Re del G6. Hendrix usa spesso questo arpeggio in discesa come fill tra gli accordi"
+    },
+    {
+      "id": "dmaj9",
+      "label": "Dmaj9",
+      "sub": "IV · verse",
+      "rootPC": 2,
+      "intervals": [0, 4, 7, 11, 2],
+      "color": "#6ee7b7",
+      "chordRef": "D",
+      "tip": "D–F#–A–C#–E. Il C# (maj7) è la terza di A tonica — nota comune perfetta. L'E (9a) è la dominante — prepara la tensione verso V (E). Hendrix usa spesso D/F# con l'F# nel basso per muoversi verso E: F#→E basso cromatico"
+    },
+    {
+      "id": "bm7",
+      "label": "Bm7",
+      "sub": "ii · pre-chorus — mossa jazz",
+      "rootPC": 11,
+      "intervals": [0, 3, 7, 10],
+      "color": "#fcd34d",
+      "chordRef": "Bm",
+      "tip": "B–D–F#–A. Questo arpeggio ha 3 note in comune con Amaj7 (D, F#, A) — suona quasi come un Amaj7/B. Il Si (fondamentale) è il 9° di A e vuole risolvere verso A. Jazz puro nel mezzo di una canzone rock."
+    },
+    {
+      "id": "g6",
+      "label": "G6",
+      "sub": "bVII · chorus / outro",
+      "rootPC": 7,
+      "intervals": [0, 4, 7, 9],
+      "color": "#fb923c",
+      "chordRef": "G",
+      "tip": "G–B–D–E. Il Mi (6°) è la tonica A spostata — 3 note dell'arpeggio (B, D, E) sono nella scala di A maggiore e anche nella scala pentatonica di A. Sul vamp G-A dell'outro usa questo arpeggio come 'rampa di lancio' verso A"
+    }
+  ],
+
+  "improv": {
+    "verse_a": {
+      "primary": "A Ionio (maggiore)",
+      "secondary": "A pentatonica maggiore — la più hendrixiana",
+      "tip": "Nel verse A la progressione I-V-vi-IV respira — hai tempo per frasi lunghe. Hendrix usa la pentatonica maggiore come ossatura e aggiunge il 4° (Re) e il 7° (Sol#) come note di colore. Voice leading suggerito: tieni il Sol# (7° di Amaj9) come nota di fuga verso il Sol nat. quando arriva G"
+    },
+    "verse_b": {
+      "primary": "A Ionio — segui il basso D→A→B→G",
+      "secondary": "Sul Bm7: F# Dorico (aggiunge il 6° = Re#)",
+      "tip": "Il pre-chorus D-A-Bm-G ha un basso che sale D→E→F#→G (cromatismo). Segui questo movimento con le frasi. Sul Bm usa il Re# (6° dorico) come nota di colore jazz. Sul G finale: abbassa immediatamente il Sol# a Sol nat. per entrare in A Misolidio"
+    },
+    "chorus": {
+      "primary": "A Misolidio — Sol naturale è la chiave",
+      "secondary": "A pentatonica maggiore + A pentatonica minore (blues composita)",
+      "tip": "Nel chorus il G (bVII) sostituisce il IV — devi avere Sol naturale disponibile. Sul E7#9 usa A pentatonica minore: il Sol nat. della penta minore coincide con il #9 dell'accordo — magia hendrixiana. Mescola pentatonica maggiore (frasi ascendenti luminose) e minore (frasi discendenti blues)"
+    },
+    "outro": {
+      "primary": "A Misolidio + A pentatonica composita (maggiore + minore)",
+      "secondary": "Arpeggi G6 → Amaj9 come struttura dell'assolo",
+      "tip": "L'assolo originale di Hendrix alterna frasi pentatoniche veloci a accordi arpeggiati. Il segreto: usa il vamp G-A come 'domanda-risposta' — G è la domanda (tensione), A è la risposta (risoluzione). Hendrix non risolve mai completamente su A — lascia sempre qualcosa di irrisolto. Usa bend verso note della pentatonica minore su G, poi risolvi sulla pentatonica maggiore su A"
+    }
+  }
+}

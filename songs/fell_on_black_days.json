@@ -1,0 +1,367 @@
+{
+  "schema": "harmonic-analysis/1.0",
+
+  "song": {
+    "title": "Fell on Black Days",
+    "artist": "Soundgarden",
+    "album": "Superunknown",
+    "year": 1994,
+    "tuning": "Open C (CGCGCE)",
+    "capo": 0,
+    "timeSignature": "6/4",
+    "tempo": "~72 BPM",
+    "accentColor": "#a78bfa"
+  },
+
+  "analysis": {
+    "tonicNote": "E",
+    "tonicPC": 4,
+    "primaryMode": "E Aeoliano con modal mixture — iv minore nel bridge",
+    "complexity": 4,
+    "alienChord": "Dm (iv)",
+    "alienReason": "Sottodominante minore al posto della maggiore (A=IV). In teoria classica è il 'modo minore della sottodominante' — la stessa mossa di Schubert e Chopin per iniettare dolore improvviso. Cornell la porta nel grunge.",
+    "technique": "Voice leading cromatico nel basso del bridge: E→F#→G con moto contrario nelle voci interne del Dm",
+    "bassMotion": "Bridge: basso sale cromaticamente E→F#→G, poi Dm crea moto contrario nelle voci interne (Re→Do)",
+    "summary": "Dipinto monocromatico con una pennellata di rosso: tutto si muove nell'Aeoliano tranne il Dm nel bridge, che arriva come un colpo allo stomaco. Il 6/4 amplifica il peso emotivo — ogni accordo respira due tempi in più rispetto al 4/4."
+  },
+
+  "sections": [
+    {
+      "id": "verse",
+      "label": "Verse (6/4)",
+      "chords": ["E", "Bm", "C", "Bm2", "A"],
+      "note": "Ostinato ipnotico in 6/4 — i tempi 5 e 6 lasciano risuonare il Cmaj7 prima del cambio"
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus",
+      "chords": ["E2", "Bm3", "C2", "D"],
+      "note": "Stesso materiale del verse compresso — D appare come tensione pre-risoluzione"
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge — Cuore armonico",
+      "chords": ["E3", "DoverFsharp", "G", "Dm"],
+      "note": "Il Dm è l'accordo alieno — iv minore al posto di IV. Basso sale cromaticamente E→F#→G poi cade su Dm"
+    }
+  ],
+
+  "chords": [
+    {
+      "id": "E",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Aeoliano / misto",
+      "function": "Tonica — ambigua maj/min, mai confermata da V→I classico",
+      "tetrad": "Esus4 / Eadd9",
+      "tensions": ["sus4", "add9"],
+      "tetradFull": "Eadd9",
+      "voicing": "022102",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "La sospensione sus4 è già scritta nel riff originale — evita di dichiarare maggiore o minore"
+    },
+    {
+      "id": "E2",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica",
+      "tetrad": "Eadd9",
+      "tensions": ["add9"],
+      "tetradFull": "Eadd9",
+      "voicing": "022102",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Chorus — stesso accordo del verse"
+    },
+    {
+      "id": "E3",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica — punto di partenza del bridge",
+      "tetrad": "Eadd9",
+      "tensions": ["add9"],
+      "tetradFull": "Eadd9",
+      "voicing": "022102",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Bridge — il basso inizia la salita cromatica E→F#→G"
+    },
+    {
+      "id": "Bm",
+      "symbol": "Bm",
+      "degree": "Vm",
+      "modalOrigin": "E Aeoliano",
+      "function": "v minore — evita la dominante classica B7",
+      "tetrad": "Bm7",
+      "tensions": ["add11"],
+      "tetradFull": "Bm11",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "v minore invece di V maggiore — rifiuto della cadenza funzionale classica, firma stilistica di Cornell"
+    },
+    {
+      "id": "Bm2",
+      "symbol": "Bm",
+      "degree": "Vm",
+      "modalOrigin": "E Aeoliano",
+      "function": "v minore — ritorno",
+      "tetrad": "Bm7",
+      "tensions": ["add11"],
+      "tetradFull": "Bm11",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Seconda occorrenza nel verse"
+    },
+    {
+      "id": "Bm3",
+      "symbol": "Bm",
+      "degree": "Vm",
+      "modalOrigin": "E Aeoliano",
+      "function": "v minore",
+      "tetrad": "Bm7",
+      "tensions": ["add11"],
+      "tetradFull": "Bm11",
+      "voicing": "x24232",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Nel chorus"
+    },
+    {
+      "id": "C",
+      "symbol": "C",
+      "degree": "bVI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale — colore freddo e malinconico",
+      "tetrad": "Cmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32000",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "Già scritto come Cmaj7 nell'originale — il voicing aperto con Mi in cima crea legame melodico con E tonica"
+    },
+    {
+      "id": "C2",
+      "symbol": "C",
+      "degree": "bVI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Cmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32000",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "Chorus"
+    },
+    {
+      "id": "A",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Dorico / E Ionio",
+      "function": "Sottodominante — momento di respiro naturale",
+      "tetrad": "Asus2",
+      "tensions": ["add9"],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "La IV naturale — dopo il viaggio modale bVI e Vm, questo accordo suona come 'casa'"
+    },
+    {
+      "id": "D",
+      "symbol": "D",
+      "degree": "bVII",
+      "modalOrigin": "E Misolidio / Aeoliano",
+      "function": "Interscambio modale — tensione pre-risoluzione nel chorus",
+      "tetrad": "Dsus2",
+      "tensions": ["add9"],
+      "tetradFull": "Dsus2",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "bVII dal Misolidio — tipico del rock modale. Nel chorus prepara il ritorno alla tonica"
+    },
+    {
+      "id": "DoverFsharp",
+      "symbol": "D/F#",
+      "degree": "bVII/3°",
+      "modalOrigin": "E Aeoliano — basso cromatico",
+      "function": "Punto di transizione — basso sale da E a F# (secondo passo cromatico)",
+      "tetrad": "Dmaj7/F#",
+      "tensions": [],
+      "tetradFull": "Dmaj7/F#",
+      "voicing": "200232",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "L'F# nel basso è il cuore del voice leading del bridge — crea aspettativa verso G"
+    },
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "bIII",
+      "modalOrigin": "E Aeoliano / Frigio",
+      "function": "Interscambio modale — terzo passo del basso cromatico",
+      "tetrad": "Gmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Gmaj9",
+      "voicing": "320002",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "Apice del movimento cromatico E→F#→G. Prepara la caduta sul Dm che segue"
+    },
+    {
+      "id": "Dm",
+      "symbol": "Dm",
+      "degree": "iv",
+      "modalOrigin": "E Aeoliano → Frigio",
+      "function": "Sottodominante MINORE — accordo alieno, dolore improvviso",
+      "tetrad": "Dm7",
+      "tensions": [],
+      "tetradFull": "Dm7",
+      "voicing": "xx0231",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "LA mossa più sofisticata del brano. iv minore al posto di IV maggiore (A). La stessa tecnica di Schubert applicata al grunge. Il Re-Do nella tetrade crea moto contrario rispetto alla salita del basso."
+    }
+  ],
+
+  "modes": [
+    {
+      "id": "aeolian",
+      "label": "E Aeoliano",
+      "sub": "Verse, Chorus, Bridge — primaria",
+      "rootPC": 4,
+      "intervals": [0, 2, 3, 5, 7, 8, 10],
+      "color": "#a78bfa",
+      "sections": ["verse", "chorus", "bridge"],
+      "tip": "Copre E (I), Bm (Vm), C (bVI), A (IV), D (bVII) — scala principale per tutto il brano"
+    },
+    {
+      "id": "dorian",
+      "label": "E Dorico",
+      "sub": "Verse / Pre-chorus",
+      "rootPC": 4,
+      "intervals": [0, 2, 3, 5, 7, 9, 10],
+      "color": "#38bdf8",
+      "sections": ["verse"],
+      "tip": "Aggiunge il #6 (Do#) rispetto all'Aeoliano — colore leggermente più luminoso, copre bene l'accordo A (IV)"
+    },
+    {
+      "id": "phrygian",
+      "label": "E Frigio",
+      "sub": "Bridge — sul Dm",
+      "rootPC": 4,
+      "intervals": [0, 1, 3, 5, 7, 8, 10],
+      "color": "#f87171",
+      "sections": ["bridge"],
+      "tip": "Il Do naturale copre sia G (bIII) che Dm (iv). Il Fa copre Dm. Il Sib crea tensione extra su E — approccio avanzato"
+    },
+    {
+      "id": "pentatonic",
+      "label": "E min. Pentat.",
+      "sub": "Tutto il brano — safe",
+      "rootPC": 4,
+      "intervals": [0, 3, 5, 7, 10],
+      "color": "#fb923c",
+      "sections": ["verse", "chorus", "bridge"],
+      "tip": "Approccio rock classico — meno colorato ma funziona su tutto. Aggiunge il Bb come blue note per tensione extra"
+    }
+  ],
+
+  "arpeggios": [
+    {
+      "id": "eadd9",
+      "label": "Eadd9",
+      "sub": "I · verse / chorus / bridge",
+      "rootPC": 4,
+      "intervals": [0, 4, 7, 2],
+      "color": "#a78bfa",
+      "chordRef": "E",
+      "tip": "Open string molto risonante. La nona (Fa#) è il suono sospeso caratteristico del brano"
+    },
+    {
+      "id": "bm7",
+      "label": "Bm7",
+      "sub": "Vm · verse",
+      "rootPC": 11,
+      "intervals": [0, 3, 7, 10],
+      "color": "#818cf8",
+      "chordRef": "Bm",
+      "tip": "La settima (La) è nota comune con A (IV) — voice leading diretto tra Bm7 e Asus2"
+    },
+    {
+      "id": "cmaj9",
+      "label": "Cmaj9",
+      "sub": "bVI · verse / chorus",
+      "rootPC": 0,
+      "intervals": [0, 4, 7, 11, 2],
+      "color": "#6ee7b7",
+      "chordRef": "C",
+      "tip": "Il Mi (3° di C) è la tonica E — nota comune con I. La nona (Re) prepara il Bm che segue"
+    },
+    {
+      "id": "asus2",
+      "label": "Asus2",
+      "sub": "IV · verse",
+      "rootPC": 9,
+      "intervals": [0, 2, 7],
+      "color": "#fcd34d",
+      "chordRef": "A",
+      "tip": "Open e luminoso — il momento di 'respiro' nel verse. La quinta E è la tonica: crea continuità"
+    },
+    {
+      "id": "dmaj7_fsharp",
+      "label": "Dmaj7/F#",
+      "sub": "bVII/3° · bridge",
+      "rootPC": 2,
+      "intervals": [0, 4, 7, 11],
+      "color": "#fb923c",
+      "chordRef": "DoverFsharp",
+      "tip": "Suona l'arpeggio con l'F# nel basso — è il passo cromatico che porta al G. La settima Do# crea tensione verso G"
+    },
+    {
+      "id": "gmaj7",
+      "label": "Gmaj7",
+      "sub": "bIII · bridge",
+      "rootPC": 7,
+      "intervals": [0, 4, 7, 11],
+      "color": "#34d399",
+      "chordRef": "G",
+      "tip": "Apice del bridge — la settima Fa# è la nota più acuta. Prepara emotivamente il Dm che segue"
+    },
+    {
+      "id": "dm7",
+      "label": "Dm7",
+      "sub": "iv · bridge ⚡ alieno",
+      "rootPC": 2,
+      "intervals": [0, 3, 7, 10],
+      "color": "#f87171",
+      "chordRef": "Dm",
+      "tip": "L'arpeggio più commovente: D–F–A–C. Il Do naturale è la nota che crea il dolore — moto contrario rispetto alla salita del basso"
+    }
+  ],
+
+  "improv": {
+    "verse": {
+      "primary": "E Aeoliano",
+      "secondary": "E minore pentatonica",
+      "tip": "E Aeoliano copre tutti gli accordi del verse perfettamente. Evidenzia il Do naturale su Cmaj7 — è la bVI che dà al brano il suo colore malinconico"
+    },
+    "chorus": {
+      "primary": "E Aeoliano",
+      "secondary": "Su D (bVII): vira momentaneamente verso D Misolidio",
+      "tip": "Il chorus è una versione compressa del verse. Su D puoi enfatizzare il Do naturale (settima di D) come nota di colore"
+    },
+    "bridge": {
+      "primary": "E Aeoliano per E/D/F#/G — poi arpeggio Dm7 su Dm",
+      "secondary": "E Frigio sull'intero bridge per approccio avanzato",
+      "tip": "Segui il basso cromatico E→F#→G con slide o note singole. Sul Dm7 usa l'arpeggio D–F–A–C enfatizzando il Do — è la nota del dolore"
+    }
+  }
+}

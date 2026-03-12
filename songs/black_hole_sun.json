@@ -1,0 +1,296 @@
+{
+  "schema": "harmonic-analysis/1.0",
+
+  "song": {
+    "title": "Black Hole Sun",
+    "artist": "Soundgarden",
+    "album": "Superunknown",
+    "year": 1994,
+    "tuning": "Standard (EADGBe)",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "~60 BPM",
+    "accentColor": "#38bdf8"
+  },
+
+  "analysis": {
+    "tonicNote": "G",
+    "tonicPC": 7,
+    "primaryMode": "G Dorico / Aeoliano con mixture massiccio",
+    "complexity": 5,
+    "alienChord": "Db (bV)",
+    "alienReason": "Quinta abbassata di G — presente nel modo Frigio. Crea disorientamento psichedelico, suona letteralmente 'da un altro pianeta' rispetto alla tonica.",
+    "technique": "Modal interchange massiccio da modi paralleli — ogni accordo può provenire da un modo diverso",
+    "bassMotion": "Cromatismo discendente nel verse: G→F#→F→E→Eb→Db — sei semitoni in discesa",
+    "summary": "Capolavoro di armonia modale rock: pur non avendo un V7→I in nessun punto, il centro tonale su G è chiarissimo. Cornell costruisce tensione non con la dominante classica ma con la distanza cromatica degli accordi prestati — soprattutto il Db che è la quinta abbassata di G."
+  },
+
+  "sections": [
+    {
+      "id": "verse",
+      "label": "Verse",
+      "chords": ["G", "Bb", "F", "C", "Csharpdim", "Eb", "Db", "F2"],
+      "note": "Discesa cromatica del basso per sei semitoni — G→F#→F→E→Eb→Db"
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus",
+      "chords": ["Eb", "Bb", "F", "C"],
+      "note": "Risoluzione relativa — tutti accordi del campo aeoliano"
+    }
+  ],
+
+  "chords": [
+    {
+      "id": "G",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio (maggiore)",
+      "function": "Tonica",
+      "tetrad": "Gmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Gmaj9",
+      "voicing": "320002",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Bb",
+      "symbol": "Bb",
+      "degree": "bIII",
+      "modalOrigin": "G Aeoliano / Frigio",
+      "function": "Interscambio modale",
+      "tetrad": "Bbmaj7",
+      "tensions": ["add9", "#11"],
+      "tetradFull": "Bbmaj7#11",
+      "voicing": "x13231",
+      "rootPC": 10,
+      "isAlien": true,
+      "note": "Prima mossa sorprendente — bIII preso da G Aeoliano"
+    },
+    {
+      "id": "F",
+      "symbol": "F",
+      "degree": "bVII",
+      "modalOrigin": "G Misolidio / Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Fmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Fmaj9",
+      "voicing": "103213",
+      "rootPC": 5,
+      "isAlien": true,
+      "note": "bVII — tipico del rock modale anglosassone"
+    },
+    {
+      "id": "C",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio (naturale)",
+      "function": "Sottodominante",
+      "tetrad": "Cmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Cmaj9",
+      "voicing": "x32030",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "L'unico accordo 'naturale' in G maggiore — momento di respiro"
+    },
+    {
+      "id": "Csharpdim",
+      "symbol": "C#dim",
+      "degree": "#IVdim",
+      "modalOrigin": "Cromatico / passante",
+      "function": "Accordo di passaggio cromatico C→Eb",
+      "tetrad": "C#dim7",
+      "tensions": [],
+      "tetradFull": "C#dim7",
+      "voicing": "x4545x",
+      "rootPC": 1,
+      "isAlien": true,
+      "note": "Voice leading nel basso: C→C#→Eb per semitoni — scrittura degna di Chopin"
+    },
+    {
+      "id": "Eb",
+      "symbol": "Eb",
+      "degree": "bVI",
+      "modalOrigin": "G Aeoliano",
+      "function": "Interscambio modale",
+      "tetrad": "Ebmaj7",
+      "tensions": ["add9", "#11"],
+      "tetradFull": "Ebmaj7#11",
+      "voicing": "x68788",
+      "rootPC": 3,
+      "isAlien": true,
+      "note": "bVI da G Aeoliano — colore scuro e malinconico"
+    },
+    {
+      "id": "Db",
+      "symbol": "Db",
+      "degree": "bV",
+      "modalOrigin": "G Frigio / cromatico",
+      "function": "Accordo alieno — massima tensione psichedelica",
+      "tetrad": "Dbmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Dbmaj9",
+      "voicing": "x43221",
+      "rootPC": 1,
+      "isAlien": true,
+      "note": "LA mossa più audace del brano. Quinta abbassata — assente in qualsiasi progressione rock normale. Crea disorientamento totale."
+    },
+    {
+      "id": "F2",
+      "symbol": "F",
+      "degree": "bVII",
+      "modalOrigin": "G Misolidio / Aeoliano",
+      "function": "Risoluzione verso la tonica",
+      "tetrad": "Fmaj7",
+      "tensions": ["add9"],
+      "tetradFull": "Fmaj9",
+      "voicing": "103213",
+      "rootPC": 5,
+      "isAlien": true,
+      "note": "Seconda occorrenza di F — porta alla risoluzione su G"
+    }
+  ],
+
+  "modes": [
+    {
+      "id": "dorian",
+      "label": "G Dorico",
+      "sub": "Verse & Chorus — primaria",
+      "rootPC": 7,
+      "intervals": [0, 2, 3, 5, 7, 9, 10],
+      "color": "#38bdf8",
+      "sections": ["verse", "chorus"],
+      "tip": "Copre G, Bb, F, C contemporaneamente — la scala più utile sul brano intero"
+    },
+    {
+      "id": "pentatonic",
+      "label": "G min. Pentat.",
+      "sub": "Verse — safe & rock",
+      "rootPC": 7,
+      "intervals": [0, 3, 5, 7, 10],
+      "color": "#fb923c",
+      "sections": ["verse", "chorus"],
+      "tip": "Approccio rock classico — funziona sempre, meno colorato ma sicuro"
+    },
+    {
+      "id": "lydian_eb",
+      "label": "Eb Lidio",
+      "sub": "Sul bVI (Eb)",
+      "rootPC": 3,
+      "intervals": [0, 2, 4, 6, 7, 9, 11],
+      "color": "#c084fc",
+      "sections": ["verse"],
+      "tip": "Su Eb: Lidia crea tensione luminosa. Il #4 (La naturale) suona sospeso e alieno sul Ebmaj7#11"
+    },
+    {
+      "id": "lydian_db",
+      "label": "Db Lidio",
+      "sub": "Sul bV (Db) — massima tensione",
+      "rootPC": 1,
+      "intervals": [0, 2, 4, 6, 7, 9, 11],
+      "color": "#f87171",
+      "sections": ["verse"],
+      "tip": "La scala più 'aliena' rispetto a G — usa su Db per tensione massima, poi risolvi cromaticamente verso G"
+    },
+    {
+      "id": "diminished",
+      "label": "C# dim (½-T)",
+      "sub": "Sul C#dim — passante",
+      "rootPC": 1,
+      "intervals": [0, 1, 3, 4, 6, 7, 9, 10],
+      "color": "#34d399",
+      "sections": ["verse"],
+      "tip": "Scala diminuita semitono-tono su C#dim7 — nota percussive e cromatiche di passaggio"
+    }
+  ],
+
+  "arpeggios": [
+    {
+      "id": "gmaj9",
+      "label": "Gmaj9",
+      "sub": "I · verse / chorus",
+      "rootPC": 7,
+      "intervals": [0, 4, 7, 11, 2],
+      "color": "#38bdf8",
+      "chordRef": "G",
+      "tip": "Parti dalla radice G (corda 6 tasto 3) — la nona (La) è la tensione caratteristica"
+    },
+    {
+      "id": "bbmaj7",
+      "label": "Bbmaj7",
+      "sub": "bIII · verse",
+      "rootPC": 10,
+      "intervals": [0, 4, 7, 11],
+      "color": "#fb923c",
+      "chordRef": "Bb",
+      "tip": "Shape Fmaj7 trasportato al II tasto — evidenzia la settima maggiore (La) come tensione principale"
+    },
+    {
+      "id": "fmaj7",
+      "label": "Fmaj7",
+      "sub": "bVII · verse / chorus",
+      "rootPC": 5,
+      "intervals": [0, 4, 7, 11],
+      "color": "#fcd34d",
+      "chordRef": "F",
+      "tip": "La settima maggiore (Mi) è nota comune con G tonica — ottimo collegamento di voice leading"
+    },
+    {
+      "id": "cmaj9",
+      "label": "Cmaj9",
+      "sub": "IV · verse / chorus",
+      "rootPC": 0,
+      "intervals": [0, 4, 7, 11, 2],
+      "color": "#6ee7b7",
+      "chordRef": "C",
+      "tip": "Il momento di maggior 'respiro' — usa la nona (Re) per creare legame melodico con il Cmaj7 dell'accordo"
+    },
+    {
+      "id": "csharpdim7",
+      "label": "C#dim7",
+      "sub": "#IVdim · passante",
+      "rootPC": 1,
+      "intervals": [0, 3, 6, 9],
+      "color": "#a78bfa",
+      "chordRef": "Csharpdim",
+      "tip": "Arpeggio simmetrico — ogni inversione è uguale. Usalo come nota di passaggio cromatica tra C e Eb"
+    },
+    {
+      "id": "ebmaj7",
+      "label": "Ebmaj7#11",
+      "sub": "bVI · verse",
+      "rootPC": 3,
+      "intervals": [0, 4, 7, 11, 6],
+      "color": "#c084fc",
+      "chordRef": "Eb",
+      "tip": "Il #11 (La naturale) è la nota aliena — enfatizzala per il colore psichedelico massimo"
+    },
+    {
+      "id": "dbmaj7",
+      "label": "Dbmaj7",
+      "sub": "bV · verse — il più alieno",
+      "rootPC": 1,
+      "intervals": [0, 4, 7, 11],
+      "color": "#f87171",
+      "chordRef": "Db",
+      "tip": "Shape Amaj7 al IV tasto. La settima (Do naturale) crea tensione massima vs la tonica G — risolvi scendendo cromaticamente"
+    }
+  ],
+
+  "improv": {
+    "verse": {
+      "primary": "G Dorico",
+      "secondary": "G minore pentatonica",
+      "tip": "G Dorico copre G, Bb, F, C contemporaneamente. Su C#dim usa l'arpeggio dim7 come passaggio. Su Eb e Db: accordo per accordo con Lidia"
+    },
+    "chorus": {
+      "primary": "G Dorico / G Aeoliano",
+      "secondary": "Arpeggi tetradici Ebmaj7 → Bbmaj7 → Fmaj7 → Cmaj7",
+      "tip": "Tutto nel campo di G Aeoliano/Dorico — il chorus è il momento più 'stabile' per improvvisare melodie"
+    }
+  }
+}
