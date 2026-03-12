@@ -1,0 +1,552 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "The River",
+    "artist": "Bruce Springsteen",
+    "album": "The River",
+    "year": 1980,
+    "tuning": "Standard (EADGBe) — shapes in G, concert pitch G",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "♩≈96 BPM",
+    "accentColor": "#64748b"
+  },
+  "analysis": {
+    "tonicNote": "G",
+    "tonicPC": 7,
+    "primaryMode": "G Ionio — diatonica quasi assoluta, I–IV–vi–V con desinenza deceptiva D→Em",
+    "complexity": 2,
+    "alienChord": "Am (ii — cadenza deceptiva D→Am nel bridge, il momento più scuro)",
+    "alienReason": "The River è costruita su G Ionio senza alcuna nota estranea alla scala — I, IV, V, vi sono tutti diatonici. L'Am (ii minore) è tecnicamente diatonica in G Ionio, ma funzionalmente è il punto di rottura emotiva: appare nel bridge esattamente dove il testo passa dalla speranza giovanile alla perdita adulta ('Now those memories come back to haunt me'). La sua funzione non è armonica in senso tradizionale — è narrativa. Am è il ii grado che introduce la 'sottodominante minore' del racconto, l'ombra che non aveva ancora attraversato la progressione. La bassa complessità armonica è intenzionale: Springsteen vuole che l'ascoltatore percepisca la perdita attraverso il testo e la melodia, non attraverso l'armonia. La semplicità degli accordi rende il peso del testo ancora più nudo.",
+    "technique": "La sofisticazione di The River non è armonica ma ritmica e narrativa. La progressione G–C–G–C del verso è quasi un ostinato — crea il senso di ripetizione inevitabile della vita lavorativa descritta nel testo. La cadenza deceptiva D→Em (V→vi invece di V→I) appare nei momenti di massima emotività: l'orecchio si aspetta la risoluzione su G e invece trova Em, il relativo minore — musicalmente è la stessa sensazione di aprire una porta e trovare un posto diverso da quello che ci si aspettava. Il pedale di G nel basso durante i passaggi C–D–Em crea continuità e senso di destino inevitabile.",
+    "bassMotion": "Verso: basso ostinato G–G–C–C (I–I–IV–IV), movimento per quarti. Nella sezione Em: G/B (basso sulla terza di G) → C → D → Em crea una discesa G→F#→E nel basso (basso che scende per gradi). Bridge: Am–C–G–D — basso sale A→C poi scende G→D, andamento a onda. Il basso di Garry Tallent mantiene fondamentali pulite senza inversioni — il contrario della complessità di Thunder Road.",
+    "summary": "The River è la canzone più austera della raccolta armonica: G Ionio puro, cinque accordi, zero note estranee alla scala. La sua profondità non sta nell'armonia ma nel rapporto tra la semplicità degli accordi e la complessità del testo. La progressione I–IV–I–IV del verso funziona come una macchina che gira, sempre uguale — rispecchia la vita in fabbrica descritta nel testo. La cadenza deceptiva D→Em è l'unico momento in cui l'armonia 'tradisce' l'aspettativa: il V risolve sul vi invece che sul I, come una vita che risolve su una perdita invece che su una speranza. La complessità è 2/5 — ma questa è la complessità di Schubert quando scriveva i Lieder più devastanti: meno accordi, più dolore."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro — armonica sola",
+      "chords": [
+        "G_intro",
+        "C_intro"
+      ],
+      "note": "L'armonica suona da sola su G e C — come Thunder Road, Springsteen apre con strumento solista prima che entri la band. Il vamp G–C è già la totalità armonica della canzone: ciò che senti qui è tutto ciò che sentirai."
+    },
+    {
+      "id": "verse_ostinato",
+      "label": "Verse A — ostinato I–IV",
+      "chords": [
+        "G_verse",
+        "C_verse"
+      ],
+      "note": "La progressione G–C ripetuta per tutta la sezione narrativa del verso. Il ritmo è regolare, ostinato, implacabile — come il lavoro in fabbrica del testo. Nessuna variazione armonica per molte battute: la ripetizione è il messaggio."
+    },
+    {
+      "id": "verse_turn",
+      "label": "Verse B — svolta vi–IV–V",
+      "chords": [
+        "G_turn",
+        "Em_turn",
+        "C_turn",
+        "D_turn"
+      ],
+      "note": "Il 'giro' del verso: G–Em–C–D (I–vi–IV–V). È qui che la melodia vocale sale verso il picco emotivo della frase. L'Em introduce il colore minore per la prima volta — brevemente, prima che C e D riportino verso la tonica."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — cadenza IV–V–I",
+      "chords": [
+        "C_chorus",
+        "D_chorus",
+        "G_chorus"
+      ],
+      "note": "Il chorus è una semplice cadenza IV→V→I (C→D→G). Springsteen non inventa nulla armonicamente — la liberazione del chorus viene dalla dinamica e dalla voce, non dall'armonia. La tonica G del chorus suona come un respiro, non come una vittoria."
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge — ii entra con Am",
+      "chords": [
+        "Am_bridge",
+        "C_bridge",
+        "G_bridge",
+        "D_bridge"
+      ],
+      "note": "Il bridge introduce Am (ii) — l'accordo più scuro della canzone, il colore della perdita adulta contro la speranza giovanile del verso. La progressione Am–C–G–D è il ii–IV–I–V: una cadenza che inizia dal lato 'ombra' (ii minore) invece che dalla tonica."
+    },
+    {
+      "id": "deceptive",
+      "label": "Cadenza deceptiva — V→vi",
+      "chords": [
+        "D_dec",
+        "Em_dec"
+      ],
+      "note": "Il momento armonico più significativo: D (V) risolve su Em (vi) invece che su G (I). La cadenza deceptiva è la firma emotiva di The River — l'orecchio si aspetta la risoluzione e trova invece il relativo minore. È il suono musicale di una speranza che non si realizza."
+    }
+  ],
+  "chords": [
+    {
+      "id": "G_intro",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio",
+      "function": "Tonica — vamp di apertura",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": "Il G aperto con corde aperte (320033) è il voicing americano per eccellenza — B e G risuonano insieme, creando una quinta aperta G–D. Springsteen e la sua band usano questo voicing largo, mai stretto."
+    },
+    {
+      "id": "C_intro",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio",
+      "function": "Sottodominante — paio fisso con la tonica nel vamp",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "C in posizione aperta — x32010. La quinta G è condivisa con la tonica G: G–B–C–E nel voicing. Il C del vamp intro e il G formano una coppia che non si risolve mai in modo definitivo — oscillano come le maree del fiume del titolo."
+    },
+    {
+      "id": "G_verse",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio",
+      "function": "Tonica — battuta dispari dell'ostinato",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": "Nel verso l'ostinato G–C occupa due battute ciascuno. La ripetizione è così lunga che l'orecchio smette di 'aspettare' un cambio armonico e si abbandona alla narrazione. È la strategia armonica dell'ipnosi — la stessa di Philip Glass nel minimalismo."
+    },
+    {
+      "id": "C_verse",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio",
+      "function": "Sottodominante — battuta pari dell'ostinato",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "Due battute su C come risposta alle due battute su G. Il IV non crea tensione verso V — rimane sospeso come alternativa alla tonica, non come preparazione alla dominante. È il suono dell'ambivalenza: né qui né lì."
+    },
+    {
+      "id": "G_turn",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio",
+      "function": "Tonica — inizio della svolta melodica del verso",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Em_turn",
+      "symbol": "Em",
+      "degree": "vi",
+      "modalOrigin": "G Ionio — relativa minore",
+      "function": "Relativa minore — prima apparizione del colore minore nel verso",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Em aperto (022000) — E–B–E–G–B–E. Tutte corde aperte tranne la seconda: il suono più 'vuoto' e risonante possibile. Springsteen usa Em come il primo accenno al lato oscuro della storia. Non è alieno — è il relativo minore di G — ma la sua qualità minore introduce un'ombra nell'ostinato maggiore del verso."
+    },
+    {
+      "id": "C_turn",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio",
+      "function": "Sottodominante — terzo passo della svolta, apre verso D",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "D_turn",
+      "symbol": "D",
+      "degree": "V",
+      "modalOrigin": "G Ionio",
+      "function": "Dominante — tensione verso la tonica del chorus o deceptive verso Em",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Il D è il punto di biforcazione della canzone: può risolvere su G (cadenza autentica, attesa) oppure su Em (cadenza deceptiva, sorpresa). Springsteen usa entrambe le risoluzioni in punti diversi della canzone — la stessa dominante D porta a luoghi emotivi diversi a seconda del contesto."
+    },
+    {
+      "id": "C_chorus",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio",
+      "function": "Sottodominante — inizio cadenza IV–V–I del chorus",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "Il chorus inizia sul IV (C) invece che sul I (G) — è già in movimento verso la risoluzione. IV→V→I è la cadenza 'plagale-autentica' composta: il C crea un'attesa verso D che poi risolve su G. Springsteen non usa mai I→V→I nel chorus — parte sempre da IV per dare slancio ascendente."
+    },
+    {
+      "id": "D_chorus",
+      "symbol": "D",
+      "degree": "V",
+      "modalOrigin": "G Ionio",
+      "function": "Dominante — tensione prima della risoluzione tonica del chorus",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Nel chorus il D risolve su G (non su Em) — è la cadenza autentica, la risoluzione 'corretta'. Ma questa correttezza non suona vittoriosa: suona come un ritorno inevitabile, non come una conquista. La differenza emotiva tra D→G (autentica) e D→Em (deceptiva) è tutta la differenza tra speranza e rassegnazione."
+    },
+    {
+      "id": "G_chorus",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio",
+      "function": "Tonica — risoluzione del chorus",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": "La tonica del chorus è la stessa del verso — G aperto, sempre uguale. Non c'è differenza armonica tra il G del verso e il G del chorus: la differenza è solo dinamica e melodica. Questo rende il 'ritorno' della tonica nel chorus meno trionfante e più circolare — la ruota gira, torna sempre allo stesso posto."
+    },
+    {
+      "id": "Am_bridge",
+      "symbol": "Am",
+      "degree": "ii",
+      "modalOrigin": "G Ionio — sopradominante minore ⚡",
+      "function": "Sopradominante minore — il colore più scuro della canzone, narrativamente la perdita",
+      "tetrad": "Am7",
+      "tensions": [],
+      "tetradFull": "Am7",
+      "voicing": "x02210",
+      "rootPC": 9,
+      "isAlien": true,
+      "note": "Am è il ii grado di G Ionio — diatonico in senso stretto, ma funzionalmente il punto di rottura emotiva di The River. Appare nel bridge quando il testo smette di raccontare il passato e affronta il presente ('Now those memories come back to haunt me'). Il salto da C e G (accordi 'aperti') ad Am (accordo 'chiuso', minore) è la mossa armonica che fa da specchio alla chiusura emotiva del testo. Am → C → G → D è la progressione che inizia dall'ombra invece che dalla luce."
+    },
+    {
+      "id": "C_bridge",
+      "symbol": "C",
+      "degree": "IV",
+      "modalOrigin": "G Ionio",
+      "function": "Sottodominante — risposta all'Am, primo accordo 'aperto' del bridge",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": false,
+      "note": "Il C dopo l'Am suona come un respiro — il movimento Am→C è una terza minore ascendente, la stessa relazione di vi→I relativa. C è la nota di continuità tra l'Am oscuro e il G luminoso."
+    },
+    {
+      "id": "G_bridge",
+      "symbol": "G",
+      "degree": "I",
+      "modalOrigin": "G Ionio",
+      "function": "Tonica — terzo passo del bridge, sempre più vicina alla dominante",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "D_bridge",
+      "symbol": "D",
+      "degree": "V",
+      "modalOrigin": "G Ionio",
+      "function": "Dominante — chiusura del bridge, apre di nuovo verso la cadenza deceptiva o autentica",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Nel bridge il D risolve verso Em (deceptiva) o verso G (autentica) a seconda della ripetizione. Ogni volta che il D non risolve come atteso, il testo ha già detto qualcosa di irreparabile."
+    },
+    {
+      "id": "D_dec",
+      "symbol": "D",
+      "degree": "V",
+      "modalOrigin": "G Ionio",
+      "function": "Dominante nella cadenza deceptiva — attende G, trova Em",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": false,
+      "note": "Il D della cadenza deceptiva suona identico al D di qualsiasi altra progressione — la 'tradizione' avviene nella risoluzione, non nell'accordo stesso. L'orecchio ha imparato dalla ripetizione del verso che D risolve su G. Quando invece trova Em, l'effetto è di sorpresa e malinconia."
+    },
+    {
+      "id": "Em_dec",
+      "symbol": "Em",
+      "degree": "vi",
+      "modalOrigin": "G Ionio — cadenza deceptiva V→vi",
+      "function": "Relativa minore come risoluzione inaspettata — la firma emotiva della canzone",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Em come risoluzione deceptiva di D. In teoria armonica classica V→vi è la 'cadenza d'inganno' (Trugschluss in tedesco) — l'accordo che inganna l'orecchio. Springsteen la usa nei momenti in cui il testo descrive qualcosa che non è andata come previsto. La stessa progressione è usata da Bach nei corali luterani per testi di perdita e redenzione. In The River ha lo stesso peso semantico: aspetti la luce, trovi l'ombra."
+    }
+  ],
+  "modes": [
+    {
+      "id": "g_ionian",
+      "label": "G Ionio (Maggiore)",
+      "sub": "Tutto il brano — unica scala",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#64748b",
+      "sections": [
+        "intro",
+        "verse_ostinato",
+        "verse_turn",
+        "chorus",
+        "bridge",
+        "deceptive"
+      ],
+      "tip": "G–A–B–C–D–E–F#. Copre ogni accordo della canzone senza eccezioni. Su G e C usa G, B, D come note melodiche di stabilità. Su Em usa E, G, B — stesse note di G, radice diversa. Su D usa D, F#, A — il F# è la sensibile di G, la nota che 'vuole' tornare a G. Su Am usa A, C, E — le note più 'scure' della scala."
+    },
+    {
+      "id": "g_major_pent",
+      "label": "G Pentatonica Maggiore",
+      "sub": "Base improv — tutto il brano",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#94a3b8",
+      "sections": [
+        "verse_ostinato",
+        "verse_turn",
+        "chorus"
+      ],
+      "tip": "G–A–B–D–E. Cinque note che funzionano su ogni accordo della canzone. Su G: G, B, D (tonica, terza, quinta). Su C: G ed E (quinta e terza), A e B come tensioni. Su Em: E, G, B (tutti e tre i gradi dell'accordo). Su D: D, A (fondamentale e quinta), B come nona. La pentatonica maggiore di G è il 'linguaggio' dell'armonica di Springsteen in questo brano."
+    },
+    {
+      "id": "e_minor_pent",
+      "label": "E Pentatonica Minore",
+      "sub": "Sul Em e Am — colore blues",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#475569",
+      "sections": [
+        "verse_turn",
+        "bridge",
+        "deceptive"
+      ],
+      "tip": "E–G–A–B–D. La pentatonica minore di E è la relativa minore di G pentatonica maggiore — stesse note, radice su E. Usala sui momenti minori (Em, Am) per enfatizzare il colore scuro. La nota D (settima minore di E) crea un colore blues naturale sopra Em e Am. Alterna G pentatonica maggiore e E pentatonica minore come Springsteen alterna speranza e malinconia nel testo."
+    },
+    {
+      "id": "g_dorian",
+      "label": "G Dorico — variante modale",
+      "sub": "Sul Am — colore blues avanzato",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        9,
+        10
+      ],
+      "color": "#334155",
+      "sections": [
+        "bridge"
+      ],
+      "tip": "G Dorico abbassa il terzo (B→Bb) e il settimo (F#→F) rispetto a G Ionio. Non è la scala di The River, ma aggiunge note blues (Bb, F) che colorano l'Am del bridge. Tecnica avanzata: usa una o due note doriche (Bb o F) sopra Am nel bridge per intensificare il colore scuro senza uscire da un'estetica blues-folk americana."
+    },
+    {
+      "id": "deceptive_voice",
+      "label": "Cadenza deceptiva V→vi",
+      "sub": "Tecnica armonica — D risolve su Em",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "color": "#1e293b",
+      "sections": [
+        "deceptive"
+      ],
+      "tip": "Non è una scala ma il momento tecnico più importante della canzone. Sul D (V): usa F# come nota melodica prominente — è la sensibile, la nota che 'promette' di risolvere su G. Quando invece il D risolve su Em, tieni F# (ora diventato la terza di Em) come nota legata: il F# che si aspettava di salire a G rimane fermo su Em. Questo ritardo melodico cattura perfettamente la sensazione di una promessa non mantenuta."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "g_arp",
+      "label": "G",
+      "sub": "I · tutto il brano",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#64748b",
+      "chordRef": "G_verse",
+      "tip": "G–B–D. Arpeggio di tonica aperto — usa il voicing 320033 con le corde aperte come risonatori. B (terza) è la nota che definisce il colore maggiore. D (quinta) è condivisa con Am: G e Am hanno D come quinta e terza rispettivamente — nota di continuità tra i due accordi."
+    },
+    {
+      "id": "c_arp",
+      "label": "C",
+      "sub": "IV · tutto il brano",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#94a3b8",
+      "chordRef": "C_verse",
+      "tip": "C–E–G. La quinta G è la tonica — ogni C porta in sé la tonica come quinta, creando un legame permanente con G. E (terza di C) è la fondamentale di Em: nota di continuità tra IV e vi. Sul C dell'ostinato usa frasi lunghe che attraversano G–E–C — le tre note dell'accordo come guide melodiche."
+    },
+    {
+      "id": "em_arp",
+      "label": "Em7",
+      "sub": "vi · verse/deceptive",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#475569",
+      "chordRef": "Em_turn",
+      "tip": "E–G–B–D. La settima D è la quinta di G: nota di continuità tra Em e G. G (terza minore) è la tonica — Em porta sempre la tonica dentro di sé come terza minore. Sul Em della cadenza deceptiva: usa l'arpeggio completo Em7 (con D) per enfatizzare la settima — D crea tensione verso C o G e segnala che la deceptiva non è un punto di arrivo ma di transizione."
+    },
+    {
+      "id": "d_arp",
+      "label": "D",
+      "sub": "V · tutto il brano",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#cbd5e1",
+      "chordRef": "D_turn",
+      "tip": "D–F#–A. Il F# (sensibile di G) è la nota melodica più importante dell'arpeggio — è quella che 'promette' la risoluzione su G. Enfatizza sempre F# sopra D. Quando il D risolve su Em invece di G, il F# rimane come terza di Em — la promessa si trasforma in malinconia, non in tradimento."
+    },
+    {
+      "id": "am_arp",
+      "label": "Am7",
+      "sub": "ii · bridge ⚡",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#1e293b",
+      "chordRef": "Am_bridge",
+      "tip": "A–C–E–G. La settima G è la tonica — Am porta la tonica come settima minore, creando una tensione irrisolta verso G. C (terza minore) è condivisa con C maggiore: Am e C hanno C come nota comune — voice leading diretto Am→C. L'arpeggio Am7 nel bridge suona come un G visto da sotto, dall'ombra: tutte le note della tonica ci sono, ma riorganizzate in modo che il colore sia minore invece di maggiore."
+    },
+    {
+      "id": "g_pentatonic_arp",
+      "label": "G Pentatonica",
+      "sub": "Improv base — tutto il brano",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#64748b",
+      "chordRef": "G_verse",
+      "tip": "G–A–B–D–E. Le cinque note dell'armonica di Springsteen. Nota che E (quinta di Am) e A (fondamentale di Am) sono entrambe presenti — la pentatonica di G funziona anche sull'Am del bridge. L'unica nota 'tensiva' sull'Am è B (seconda maggiore): usala come nota di passaggio, non come nota di arrivo."
+    }
+  ],
+  "improv": {
+    "intro": {
+      "primary": "G pentatonica maggiore — frasi dell'armonica, aperte e lente",
+      "secondary": "G e C arpeggiati con corde aperte",
+      "tip": "Imita l'approccio dell'armonica: frasi brevi su G, respiri lunghi, note tenute. Non riempire il silenzio — The River vive nel silenzio tra le note. Usa esclusivamente note del voicing G e C (G, B, D, C, E) senza ornamentazioni. Il tempo è lento e narrativo."
+    },
+    "verse_ostinato": {
+      "primary": "G pentatonica maggiore — frasi narrative che seguono il testo",
+      "secondary": "Ostinato ritmico G–C come base armonica",
+      "tip": "Nel verso l'ostinato G–C è così lungo che l'improv deve creare interesse interno alla ripetizione. Tecnica: inizia ogni frase sulla tonica G, sviluppala verso C (A o E come note di approccio), concludi di nuovo su G. La ripetizione del pattern melodico rispecchia la ripetizione del pattern armonico — è la musica che racconta il lavoro in fabbrica."
+    },
+    "verse_turn": {
+      "primary": "G Ionio — segui il giro G–Em–C–D",
+      "secondary": "E pentatonica minore sull'Em per il colore scuro",
+      "tip": "Sul giro G–Em–C–D usa guide tones: G→E (da G a Em, scendi di terza), E→C (da Em a C, scendi ancora), C→D (da C a D, sali di seconda). Questo movimento melodico discendente G→E→C con salto ascendente verso D rispecchia il contorno emotivo del verso: riflessione (discesa) seguita da domanda (salita)."
+    },
+    "chorus": {
+      "primary": "G pentatonica maggiore — frasi ampie e aperte",
+      "secondary": "G Ionio per note di passaggio cromatiche",
+      "tip": "Il chorus è più dinamico del verso ma armonicamente identico (C–D–G). Usa frasi che attraversano l'intero range dello strumento — dal basso all'acuto. Il momento di massima espressione è sul D (V) prima della risoluzione G: suona la sensibile F# e lasciala risolvere su G con il cambio d'accordo."
+    },
+    "bridge": {
+      "primary": "E pentatonica minore — enfatizza il colore scuro dell'Am",
+      "secondary": "G Ionio per il G del bridge, Am7 arpeggio sull'Am",
+      "tip": "Il bridge è il momento più oscuro della canzone. Sull'Am usa A e C come note di atterraggio (fondamentale e terza minore) — non B, che è la nota più 'luminosa' sopra Am. Sul C del bridge: E come nota melodica (è la terza di C e crea continuità con l'Am precedente). Il basso nel bridge sale A→C→G→D: crea frasi melodiche che scendono in direzione opposta al basso — moto contrario."
+    },
+    "deceptive": {
+      "primary": "G Ionio — tieni F# sul D, lasciala restare su Em come terza",
+      "secondary": "Em7 arpeggio come risoluzione della cadenza deceptiva",
+      "tip": "Questo è il momento tecnico chiave: sul D suona F# (sensibile) come nota melodica prominente. Quando il D risolve su Em invece di G, non muovere il F# — lascialo dove è. Il F# è ora la terza di Em, la nota che tiene l'accordo sospeso tra maggiore e minore. Il silenzio dopo Em è più potente di qualsiasi nota: lascia risuonare l'accordo e non aggiungere nulla finché la canzone non riparte."
+    }
+  }
+}

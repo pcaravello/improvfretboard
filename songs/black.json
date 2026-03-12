@@ -1,0 +1,464 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Black",
+    "artist": "Pearl Jam",
+    "album": "Ten",
+    "year": 1991,
+    "tuning": "Standard (EADGBe) — McCready suona voicing tipo Hendrix con thumb sul basso",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "♩≈69 BPM",
+    "accentColor": "#0ea5e9"
+  },
+  "analysis": {
+    "tonicNote": "E",
+    "tonicPC": 4,
+    "primaryMode": "Verso: E Ionio (I–IV ostinato). Chorus: E Aeoliano parallelo (♭VI–im–♭VII) — cambio modale parallelo",
+    "complexity": 3,
+    "alienChord": "C (♭VI — da E Aeoliano parallelo, segna il pivot modale Ionio→Aeoliano nel chorus)",
+    "alienReason": "Il verso di Black vive in E Ionio puro: E–A/Asus2, tutto diatonico, luce e spazio aperto. Poi arriva il chorus e tutto cambia: C–Em–D sono ♭VI, i (parallelo minore), ♭VII — gli accordi di E Aeoliano, non di E Ionio. C maggiore (♭VI) è la prima nota aliena, la porta che si apre sul lato oscuro. Questo pivot modale parallelo — da E maggiore a E minore mantenendo la stessa tonica — è la firma armonica del grunge di Seattle: Pearl Jam, Soundgarden, Alice in Chains lo usano tutti, ma nessuno con la semplicità emotiva di questa canzone. Il C è l'accordo che trasforma la perdita descritta nel testo da racconto a sensazione fisica.",
+    "technique": "Il pivot modale parallelo E Ionio → E Aeoliano divide la canzone in due universi emotivi: il verso (E–A) è aperto, sospeso, quasi ottimista nel timbro — corrisponde testualmente al passato con lei. Il chorus (C–Em–D) è oscuro e conclusivo — corrisponde al presente senza di lei. McCready suona il verso con voicing Hendrix spalancati (E con quinta aperta, Asus2 senza terza) che aumentano l'ambiguità modale: Asus2 non ha terza, quindi non definisce maggiore o minore. Solo nel chorus gli accordi diventano definitivi. Tecnica di improv di McCready: pentatonica maggiore di E nel verso, pentatonica minore di E nel chorus — specchiamento perfetto del pivot modale.",
+    "bassMotion": "Verso: basso E–A in quarti, fondamentali pulite. Chorus: C(basso C)→Em(basso E)→D(basso D) — basso sale C→E poi scende verso D, contorno ad arco. Il basso di Jeff Ament mantiene fondamentali nette su tutti gli accordi, senza inversioni, enfatizzando il cambio di registro grave tra E/A del verso (corde aperte basse) e C/D del chorus (corde più alte).",
+    "summary": "Black è costruita su un pivot modale parallelo — il dispositivo armonico più usato nel grunge — ma lo esegue con un'economia di mezzi assoluta: due accordi nel verso (E–A), tre nel chorus (C–Em–D), cinque accordi in totale. La complessità non è nel numero di accordi ma nel loro significato contestuale: E Ionio per il passato luminoso, E Aeoliano per il presente oscuro. McCready applica la lezione di Hendrix al grunge: voicing estesi, thumb chord, pentatonica che scivola tra le note degli accordi invece di suonarle. L'Asus2 del verso (senza terza) è particolarmente rivelatore — mantiene aperta la domanda modale 'maggiore o minore?' finché il chorus non risponde definitivamente: minore."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro — E e Asus2 arpeggiati",
+      "chords": [
+        "E_intro",
+        "Asus2_intro"
+      ],
+      "note": "McCready arpeggia E e Asus2 con voicing Hendrix aperti. L'Asus2 (senza terza) mantiene l'ambiguità modale fin dall'inizio — non sappiamo ancora se la canzone sarà maggiore o minore."
+    },
+    {
+      "id": "verse",
+      "label": "Verse — ostinato E Ionio I–IV",
+      "chords": [
+        "E_verse",
+        "Asus2_verse"
+      ],
+      "note": "L'ostinato E–Asus2 del verso è il suono del passato — aperto, sospeso, senza risoluzione. McCready alterna E e Asus4 come Hendrix alternava accordi e fills. Tutta E Ionio, tutta luce relativa."
+    },
+    {
+      "id": "prechorus",
+      "label": "Pre-chorus — C entra, pivot modale",
+      "chords": [
+        "C_pre",
+        "Em_pre"
+      ],
+      "note": "Il C (♭VI) è il primo accordo alieno rispetto a E Ionio: qui avviene il pivot modale. L'orecchio percepisce che qualcosa è cambiato — non un singolo accordo strano, ma un intero cambio di universo modale. 'And now my bitter hands...' — il testo cambia tono esattamente con l'armonia."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — E Aeoliano ♭VI–i–♭VII",
+      "chords": [
+        "C_chorus",
+        "Em_chorus",
+        "D_chorus"
+      ],
+      "note": "C–Em–D: ♭VI–im–♭VII in E. Tutti e tre gli accordi appartengono a E Aeoliano (minore naturale), nessuno a E Ionio. Il chorus è il presente oscuro. Em (im) è la tonica minore parallela — la risposta oscura all'E maggiore del verso."
+    },
+    {
+      "id": "outro",
+      "label": "Outro — solo su E Aeoliano",
+      "chords": [
+        "C_outro",
+        "Em_outro",
+        "D_outro"
+      ],
+      "note": "McCready improvvisa il solo sulla progressione del chorus (C–Em–D) usando E pentatonica minore. Il solo di Black è uno dei più emotivamente compiuti del grunge: nessuna tecnica di virtuosismo, solo note scelte."
+    }
+  ],
+  "chords": [
+    {
+      "id": "E_intro",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — voicing Hendrix aperto",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "McCready usa E in position di accordo A-shape sul VII tasto (alternativa al 022100 open) per voicing più pieno nel registro medio. Il suono aperto della corda E bassa risuona come pedale sotto."
+    },
+    {
+      "id": "Asus2_intro",
+      "symbol": "Asus2",
+      "degree": "IVsus2",
+      "modalOrigin": "E Ionio — IV senza terza",
+      "function": "Sottodominante sospesa — ambiguità modale by design",
+      "tetrad": "Asus2",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "L'Asus2 (A–B–E, senza C#) è la scelta più importante del verso: senza la terza C# non definisce il modo maggiore. In questo modo il verso rimane armonicamente ambiguo — maggiore? minore? — finché il chorus non rivela E Aeoliano. È la stessa tecnica di Springsteen in Thunder Road con Asus2."
+    },
+    {
+      "id": "E_verse",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — centro del verso",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "Asus2_verse",
+      "symbol": "Asus2",
+      "degree": "IVsus2",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante sospesa — risposta alla tonica nel verso",
+      "tetrad": "Asus2",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Asus2",
+      "voicing": "x02200",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Nel verso McCready alterna E e Asus2 con fills Hendrix tra un cambio e l'altro. I fills usano E pentatonica maggiore (G#, B, C#, F#) — note che spariscono nel chorus, dove la pentatonica diventa minore."
+    },
+    {
+      "id": "C_pre",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano parallelo — primo accordo alieno ⚡",
+      "function": "Accordo pivot — segna l'ingresso in E Aeoliano, abbandona E Ionio",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "C maggiore è il ♭VI di E Ionio — non appartiene alla scala di E maggiore (che ha C#). La sua comparsa nel pre-chorus è il momento in cui la canzone 'cambia colore'. Il basso scende da E ad A nel verso e ora sale a C — il salto di terza minore A→C è fisicamente percepibile come un ingresso in territorio emotivo diverso."
+    },
+    {
+      "id": "Em_pre",
+      "symbol": "Em",
+      "degree": "im",
+      "modalOrigin": "E Aeoliano parallelo",
+      "function": "Tonica minore parallela — risponde al C nel pre-chorus",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": true,
+      "note": "Em è la tonica minore — in E Ionio il I grado è E maggiore. L'Em del chorus è E come accordo minore, il lato oscuro della stessa radice. C → Em è una progressione ♭VI → im che in E Aeoliano equivale a IV → I: fa da cadenza all'interno del sistema modale minore."
+    },
+    {
+      "id": "C_chorus",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Sottodominante minore — apertura del chorus oscuro",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": "Nel chorus C–Em–D si ripete. C è sempre il punto di ingresso: ogni chorus inizia tornando a C prima di scendere su Em e D. È la struttura della perdita che si ripresenta — il C è 'ricordarsi che hai perso qualcosa'."
+    },
+    {
+      "id": "Em_chorus",
+      "symbol": "Em",
+      "degree": "im",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica minore — il 'presente' della canzone",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": true,
+      "note": "Em aperto (022000) — il voicing più vuoto e risonante. McCready lo lascia risuonare a lungo dopo il colpo. L'Em del chorus è il punto di massima oscurità — la tonica minore come polo opposto all'E maggiore del verso."
+    },
+    {
+      "id": "D_chorus",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano",
+      "function": "Settimo abbassato — da E Misolidio/Aeoliano, non risolve su I",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": "D (♭VII) come accordo di chiusura del chorus. In E Aeoliano il VII grado è D naturale — è diatonico al minore naturale. Il D non risolve su Em come V→i ma si comporta da ♭VII cadenzale — chiude il chorus in modo sospeso, senza vera risoluzione. Questa non-risoluzione è coerente con il testo: 'all I taught her was everything' — nessuna risposta, nessuna risoluzione."
+    },
+    {
+      "id": "C_outro",
+      "symbol": "C",
+      "degree": "♭VI",
+      "modalOrigin": "E Aeoliano",
+      "function": "Apertura del vamp del solo",
+      "tetrad": "Cmaj7",
+      "tensions": [],
+      "tetradFull": "C",
+      "voicing": "x32010",
+      "rootPC": 0,
+      "isAlien": true,
+      "note": ""
+    },
+    {
+      "id": "Em_outro",
+      "symbol": "Em",
+      "degree": "im",
+      "modalOrigin": "E Aeoliano",
+      "function": "Tonica minore — base del solo di McCready",
+      "tetrad": "Em7",
+      "tensions": [],
+      "tetradFull": "Em7",
+      "voicing": "022000",
+      "rootPC": 4,
+      "isAlien": true,
+      "note": "McCready improvvisa il solo dell'outro su C–Em–D in E pentatonica minore. Il solo è il momento più puro di Black: nessun gimmick tecnico, solo note che respirano. Ogni nota è una parola che Vedder non ha cantato."
+    },
+    {
+      "id": "D_outro",
+      "symbol": "D",
+      "degree": "♭VII",
+      "modalOrigin": "E Aeoliano",
+      "function": "Chiusura sospesa del ciclo armonico del solo",
+      "tetrad": "Dmaj7",
+      "tensions": [],
+      "tetradFull": "D",
+      "voicing": "xx0232",
+      "rootPC": 2,
+      "isAlien": true,
+      "note": ""
+    }
+  ],
+  "modes": [
+    {
+      "id": "e_ionian",
+      "label": "E Ionio",
+      "sub": "Verso — passato luminoso",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#0ea5e9",
+      "sections": [
+        "intro",
+        "verse"
+      ],
+      "tip": "E–F#–G#–A–B–C#–D#. Copre E e Asus2 del verso. Note caratteristiche: G# (terza maggiore, colore ottimista), C# (sesta, risuona sopra A). McCready usa G#–B–C#–E nel verso come fills Hendrix. Sul Asus2: A–B–E — non suonare C# sopra Asus2 perché ne definirebbe il modo maggiore e perderebbe l'ambiguità."
+    },
+    {
+      "id": "e_aeolian",
+      "label": "E Aeoliano (Minore)",
+      "sub": "Chorus/Outro — presente oscuro",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#0369a1",
+      "sections": [
+        "prechorus",
+        "chorus",
+        "outro"
+      ],
+      "tip": "E–F#–G–A–B–C–D. Copre C (♭VI), Em (im), D (♭VII). Note caratteristiche: G naturale (♭3, la differenza dal Ionio), C naturale (♭6), D naturale (♭7). Queste tre note (G, C, D) non esistono in E Ionio — sono le note del cambio modale. Sul solo dell'outro usa G naturale come nota di colore blues: è il suono più dark della scala."
+    },
+    {
+      "id": "e_minor_pent",
+      "label": "E Pentatonica Minore",
+      "sub": "Chorus/Solo — McCready base",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#075985",
+      "sections": [
+        "chorus",
+        "outro"
+      ],
+      "tip": "E–G–A–B–D. La scala del solo di Black. Copre tutte le note degli accordi C–Em–D senza tensioni: G è nella triade di C ed Em, A è nella triade di C, D è fondamentale del D, B è quinta di Em. McCready suona questa pentatonica con bending da SRV/Hendrix — il suono blues-rock attraverso il filtro del grunge."
+    },
+    {
+      "id": "e_major_pent",
+      "label": "E Pentatonica Maggiore",
+      "sub": "Verso — fills luminosi",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#38bdf8",
+      "sections": [
+        "intro",
+        "verse"
+      ],
+      "tip": "E–F#–G#–B–C#. Funziona su E e Asus2 del verso. Il G# è la nota chiave — definisce il colore maggiore del verso. Quando McCready suona fills tra E e Asus2 usa questa pentatonica. La nota G# sparisce completamente nel chorus (E Aeoliano ha G naturale) — questo cambio G#→G è il suono fisico del pivot modale."
+    },
+    {
+      "id": "modal_pivot",
+      "label": "Pivot Modale E Ionio → Aeoliano",
+      "sub": "Tecnica strutturale — cambio G# → G",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "color": "#7dd3fc",
+      "sections": [
+        "prechorus"
+      ],
+      "tip": "Il pivot modale di Black si riconosce in una sola nota: G# (terza maggiore, Ionio) vs G naturale (terza minore, Aeoliano). Nel pre-chorus questa nota cambia per la prima volta. Se improvvisi sul confine verso/chorus: suona G# sul verso (calda, solare), passa a G naturale sul pre-chorus (fredda, oscura). Questo singolo semitono contiene tutta la distanza emotiva della canzone."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "e_arp",
+      "label": "E",
+      "sub": "I · verso",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#0ea5e9",
+      "chordRef": "E_verse",
+      "tip": "E–G#–B. Il G# è la nota-chiave del verso. Arpeggia con corde aperte: E6 (vuota), G# (corda 3 tasto 1), B5 (vuota). McCready usa questo arpeggio come texture tra le frasi vocali — non riempie, lascia risuonare."
+    },
+    {
+      "id": "asus2_arp",
+      "label": "Asus2",
+      "sub": "IVsus2 · verso",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        2,
+        7
+      ],
+      "color": "#38bdf8",
+      "chordRef": "Asus2_verse",
+      "tip": "A–B–E (senza terza). L'assenza della terza C# è intenzionale: Asus2 è un accordo che 'aspetta'. Suonalo arpeggiato con corde 5, 4, 3 aperte (x02200): il B (seconda) è la nota fluttuante che dà il carattere sospeso."
+    },
+    {
+      "id": "c_arp",
+      "label": "C",
+      "sub": "♭VI · chorus ⚡",
+      "rootPC": 0,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#0369a1",
+      "chordRef": "C_chorus",
+      "tip": "C–E–G. La fondamentale C è la nota aliena rispetto a E Ionio — è il primo suono nuovo del chorus. E (terza) è la stessa tonica del verso: nota di continuità tra i due universi modali. G (quinta) è la terza minore di Em — prepara il colore oscuro dell'Em successivo."
+    },
+    {
+      "id": "em_arp",
+      "label": "Em7",
+      "sub": "im · chorus/outro",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "color": "#075985",
+      "chordRef": "Em_chorus",
+      "tip": "E–G–B–D. La tonica minore parallela. G naturale (♭3) è la nota che distingue questo accordo dall'E del verso. D (♭7) crea tensione verso C o G. Sul solo dell'outro: suona E–G–D come arpeggio ascendente — le tre note più 'scure' di Em7, il suono dell'irreversibilità del chorus."
+    },
+    {
+      "id": "d_arp",
+      "label": "D",
+      "sub": "♭VII · chorus",
+      "rootPC": 2,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#0c4a6e",
+      "chordRef": "D_chorus",
+      "tip": "D–F#–A. Il F# sopra D crea un contrasto interessante: F# è la seconda di E, una nota che 'appartiene' al mondo del verso. Sopra D (♭VII) suona come un residuo del passato dentro il presente oscuro. Tecnica: suona F# come nota melodica tenuta sopra il D — è la nota che collega i due universi modali della canzone."
+    },
+    {
+      "id": "e_minor_pent_arp",
+      "label": "E Pent. Minore",
+      "sub": "Solo outro — McCready",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#164e63",
+      "chordRef": "Em_outro",
+      "tip": "E–G–A–B–D esteso su tutto il manico. McCready nel solo usa principalmente la posizione al XII tasto (stesso pattern del II tasto, ottava alta). Tecnica specifica: bending di un tono sulla corda B (da B a C#) — C# è una nota di E Ionio che irrompe nel contesto Aeoliano, creando un momento di 'memoria del verso' dentro il solo dell'outro."
+    }
+  ],
+  "improv": {
+    "intro": {
+      "primary": "E pentatonica maggiore — arpeggi aperti, stile McCready",
+      "secondary": "E Ionio per note di passaggio",
+      "tip": "L'intro è fingerpicked e sospeso. Arpeggia E (022100) e Asus2 (x02200) con le dita, lascia risuonare le corde aperte a lungo. Non fraseggiare melodicamente — crea texture. Ogni nota deve avere spazio prima e dopo."
+    },
+    "verse": {
+      "primary": "E pentatonica maggiore — fills Hendrix tra E e Asus2",
+      "secondary": "G# come nota-chiave del colore maggiore",
+      "tip": "Il verso è il momento 'luminoso'. Usa G# come nota melodica prominente nei fills (corda 3 tasto 1 o corda 2 tasto 4). McCready inserisce double-stops G#–B sopra E: è il suono Hendrix applicato al grunge. Evita G naturale nel verso — usarla anticiperebbe il pivot modale e distruggerebbe il contrasto."
+    },
+    "prechorus": {
+      "primary": "Transizione: ultima G# poi G naturale su C",
+      "secondary": "E pentatonica minore inizia qui",
+      "tip": "Il pre-chorus è la porta tra i due universi. Sul C: suona G naturale come prima nota — è il momento in cui la G# del verso scompare e nasce la G naturale del chorus. Questo singolo cambio di semitono (G#→G) deve essere udibile nella melodia improvvisata. Tienila, falla sentire."
+    },
+    "chorus": {
+      "primary": "E pentatonica minore — G naturale, D naturale come note strutturali",
+      "secondary": "E Aeoliano per note di passaggio (C, F#)",
+      "tip": "Il chorus è il presente oscuro. Sul C: atterrare su G (quinta di C, terza minore di Em). Su Em: E e B come note di stabilità, G come colore blues. Sul D: F# come nota tenuta (seconda di E, quinta di B — crea ambiguità). McCready usa bending da B a C sopra Em — C è ♭6 di E, la nota più 'tragica' di E Aeoliano."
+    },
+    "outro": {
+      "primary": "E pentatonica minore — solo libero stile McCready",
+      "secondary": "Bending B→C# (nota di E Ionio che irrompe nel contesto Aeoliano)",
+      "tip": "Il solo dell'outro è il cuore espressivo della canzone. Tecnica: inizia in posizione alta (XII tasto), usa bending generosi. Il bending B→C# è il gesto melodico più riconoscibile — C# è una nota 'sbagliata' rispetto a E Aeoliano (che ha C naturale) ma proprio per questo crea il momento di massima tensione emotiva. È come sentire una nota del passato che affiora nel presente oscuro."
+    }
+  }
+}
