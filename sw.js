@@ -1,13 +1,14 @@
-const CACHE = 'fretboard-v3';
+const CACHE = 'fretboard-v4';
 const PRECACHE = [
   './', './index.html', './manifest.json',
+  './songs/index.json',
   './songs/black_hole_sun.json',
   './songs/fell_on_black_days.json',
   './songs/axis_bold_as_love.json',
+  './songs/bold_as_love_mayer.json',
   './songs/paranoid_android.json',
   './songs/something.json',
   './songs/down_in_a_hole.json',
-  './songs/bold_as_love_mayer.json',
   'https://unpkg.com/react@18/umd/react.production.min.js',
   'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js',
   'https://unpkg.com/@babel/standalone/babel.min.js',

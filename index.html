@@ -150,244 +150,47 @@ async function idbLoadAll() {
   });
 }
 
-const DEFAULT_SONGS = {
-  bhs: {
-    schema:"harmonic-analysis/1.0",
-    song:{ title:"Black Hole Sun", artist:"Soundgarden", album:"Superunknown", year:1994,
-           tuning:"Standard (EADGBe)", capo:0, timeSignature:"4/4", tempo:"~60 BPM", accentColor:"#38bdf8" },
-    analysis:{ tonicNote:"G", tonicPC:7, primaryMode:"G Dorico / Aeoliano con mixture massiccio",
-      complexity:5, alienChord:"Db (bV)",
-      alienReason:"Quinta abbassata di G — presente nel modo Frigio. Crea disorientamento psichedelico, suona letteralmente da un altro pianeta rispetto alla tonica.",
-      technique:"Modal interchange massiccio da modi paralleli",
-      bassMotion:"Cromatismo discendente nel verse: G→F#→F→E→Eb→Db",
-      summary:"Capolavoro di armonia modale rock: pur senza un V7→I, il centro tonale su G è chiarissimo. Cornell costruisce tensione con la distanza cromatica degli accordi prestati — soprattutto il Db, quinta abbassata di G." },
-    sections:[
-      { id:"verse", label:"Verse", chords:["G","Bb","F","C","Csharpdim","Eb","Db","F2"], note:"Discesa cromatica del basso per sei semitoni: G→F#→F→E→Eb→Db" },
-      { id:"chorus", label:"Chorus", chords:["Eb","Bb","F","C"], note:"Risoluzione relativa — tutti accordi del campo aeoliano" }
-    ],
-    chords:[
-      { id:"G", symbol:"G", degree:"I", modalOrigin:"G Ionio", function:"Tonica", tetrad:"Gmaj7", tensions:["add9"], tetradFull:"Gmaj9", voicing:"320002", rootPC:7, isAlien:false, note:"" },
-      { id:"Bb", symbol:"Bb", degree:"bIII", modalOrigin:"G Aeoliano/Frigio", function:"Interscambio modale", tetrad:"Bbmaj7", tensions:["add9","#11"], tetradFull:"Bbmaj7#11", voicing:"x13231", rootPC:10, isAlien:true, note:"Prima mossa sorprendente — bIII da G Aeoliano" },
-      { id:"F", symbol:"F", degree:"bVII", modalOrigin:"G Misolidio/Aeoliano", function:"Interscambio modale", tetrad:"Fmaj7", tensions:["add9"], tetradFull:"Fmaj9", voicing:"103213", rootPC:5, isAlien:true, note:"bVII — tipico del rock modale anglosassone" },
-      { id:"C", symbol:"C", degree:"IV", modalOrigin:"G Ionio (naturale)", function:"Sottodominante", tetrad:"Cmaj7", tensions:["add9"], tetradFull:"Cmaj9", voicing:"x32030", rootPC:0, isAlien:false, note:"L'unico accordo naturale in G maggiore" },
-      { id:"Csharpdim", symbol:"C#dim", degree:"#IVdim", modalOrigin:"Cromatico/passante", function:"Accordo di passaggio C→Eb", tetrad:"C#dim7", tensions:[], tetradFull:"C#dim7", voicing:"x4545x", rootPC:1, isAlien:true, note:"Voice leading basso: C→C#→Eb per semitoni" },
-      { id:"Eb", symbol:"Eb", degree:"bVI", modalOrigin:"G Aeoliano", function:"Interscambio modale", tetrad:"Ebmaj7", tensions:["add9","#11"], tetradFull:"Ebmaj7#11", voicing:"x68788", rootPC:3, isAlien:true, note:"bVI — colore scuro e malinconico" },
-      { id:"Db", symbol:"Db", degree:"bV", modalOrigin:"G Frigio/cromatico", function:"Accordo alieno — massima tensione", tetrad:"Dbmaj7", tensions:["add9"], tetradFull:"Dbmaj9", voicing:"x43221", rootPC:1, isAlien:true, note:"LA mossa più audace: quinta abbassata, assente nel rock normale." },
-      { id:"F2", symbol:"F", degree:"bVII", modalOrigin:"G Misolidio/Aeoliano", function:"Risoluzione verso tonica", tetrad:"Fmaj7", tensions:["add9"], tetradFull:"Fmaj9", voicing:"103213", rootPC:5, isAlien:true, note:"Porta alla risoluzione su G" }
-    ],
-    modes:[
-      { id:"dorian", label:"G Dorico", sub:"Verse & Chorus — primaria", rootPC:7, intervals:[0,2,3,5,7,9,10], color:"#38bdf8", sections:["verse","chorus"], tip:"Copre G, Bb, F, C contemporaneamente — la scala più utile sul brano intero" },
-      { id:"pentatonic", label:"G min. Pentat.", sub:"Verse — safe & rock", rootPC:7, intervals:[0,3,5,7,10], color:"#fb923c", sections:["verse","chorus"], tip:"Approccio rock classico — funziona sempre, meno colorato ma sicuro" },
-      { id:"lydian_eb", label:"Eb Lidio", sub:"Sul bVI (Eb)", rootPC:3, intervals:[0,2,4,6,7,9,11], color:"#c084fc", sections:["verse"], tip:"Il #4 (La nat.) suona sospeso e alieno sul Ebmaj7#11" },
-      { id:"lydian_db", label:"Db Lidio", sub:"Sul bV (Db) — massima tensione", rootPC:1, intervals:[0,2,4,6,7,9,11], color:"#f87171", sections:["verse"], tip:"La scala più aliena rispetto a G — poi risolvi cromaticamente verso G" },
-      { id:"diminished", label:"C# dim (½-T)", sub:"Sul C#dim — passante", rootPC:1, intervals:[0,1,3,4,6,7,9,10], color:"#34d399", sections:["verse"], tip:"Scala dim semitono-tono — note cromatiche di passaggio" }
-    ],
-    arpeggios:[
-      { id:"gmaj9", label:"Gmaj9", sub:"I · verse/chorus", rootPC:7, intervals:[0,4,7,11,2], color:"#38bdf8", chordRef:"G", tip:"Parti da G (6ª tasto 3) — la nona La è la tensione caratteristica" },
-      { id:"bbmaj7", label:"Bbmaj7", sub:"bIII · verse", rootPC:10, intervals:[0,4,7,11], color:"#fb923c", chordRef:"Bb", tip:"Shape Fmaj7 al II tasto — settima La come tensione" },
-      { id:"fmaj7", label:"Fmaj7", sub:"bVII · verse/chorus", rootPC:5, intervals:[0,4,7,11], color:"#fcd34d", chordRef:"F", tip:"Settima Mi = tonica G — ottimo voice leading" },
-      { id:"cmaj9", label:"Cmaj9", sub:"IV · verse/chorus", rootPC:0, intervals:[0,4,7,11,2], color:"#6ee7b7", chordRef:"C", tip:"Momento di respiro — usa la nona Re per legame melodico" },
-      { id:"csharpdim7", label:"C#dim7", sub:"#IVdim · passante", rootPC:1, intervals:[0,3,6,9], color:"#a78bfa", chordRef:"Csharpdim", tip:"Arpeggio simmetrico — usalo come passaggio tra C e Eb" },
-      { id:"ebmaj7", label:"Ebmaj7#11", sub:"bVI · verse", rootPC:3, intervals:[0,4,7,11,6], color:"#c084fc", chordRef:"Eb", tip:"Il #11 La nat. è la nota aliena — enfatizzala per il colore psichedelico" },
-      { id:"dbmaj7", label:"Dbmaj7", sub:"bV · verse — alieno", rootPC:1, intervals:[0,4,7,11], color:"#f87171", chordRef:"Db", tip:"La settima Do crea tensione massima vs G — risolvi scendendo cromaticamente" }
-    ],
-    improv:{
-      verse:{ primary:"G Dorico", secondary:"G minore pentatonica", tip:"G Dorico copre G, Bb, F, C contemporaneamente. Su C#dim usa l'arpeggio dim7. Su Eb e Db: scala Lidia per accordo." },
-      chorus:{ primary:"G Dorico / G Aeoliano", secondary:"Arpeggi tetradici Eb→Bb→F→C", tip:"Il chorus è il momento più stabile — ottimo per melodie lunghe in G Aeoliano" }
+
+// ── Dynamic song loader from songs/index.json ───────────────────────────
+// To add a new song: put the JSON in songs/ and add its filename to songs/index.json
+// No changes to index.html needed.
+
+async function loadSongsFromManifest() {
+  const resp  = await fetch('./songs/index.json');
+  const files = await resp.json();
+  const songs = {};
+  await Promise.all(files.map(async filename => {
+    try {
+      const r    = await fetch(`./songs/${filename}`);
+      const data = await r.json();
+      const key  = filename.replace('.json', '');
+      songs[key] = data;
+    } catch(e) {
+      console.warn(`Could not load song: ${filename}`, e);
     }
-  },
-  fobd: {
-    schema:"harmonic-analysis/1.0",
-    song:{ title:"Fell on Black Days", artist:"Soundgarden", album:"Superunknown", year:1994,
-           tuning:"Open C (CGCGCE)", capo:0, timeSignature:"6/4", tempo:"~72 BPM", accentColor:"#a78bfa" },
-    analysis:{ tonicNote:"E", tonicPC:4, primaryMode:"E Aeoliano con modal mixture — iv minore nel bridge",
-      complexity:4, alienChord:"Dm (iv)",
-      alienReason:"Sottodominante minore al posto della maggiore (A=IV). La stessa mossa di Schubert e Chopin per iniettare dolore improvviso — Cornell la porta nel grunge.",
-      technique:"Voice leading cromatico nel basso del bridge: E→F#→G con moto contrario nelle voci interne del Dm",
-      bassMotion:"Bridge: basso sale cromaticamente E→F#→G, poi Dm crea moto contrario interno (Re→Do)",
-      summary:"Dipinto monocromatico con una pennellata di rosso: tutto si muove nell'Aeoliano tranne il Dm nel bridge, che arriva come un colpo allo stomaco. Il 6/4 amplifica il peso emotivo — ogni accordo respira due tempi in più." },
-    sections:[
-      { id:"verse", label:"Verse (6/4)", chords:["E","Bm","C","Bm2","A"], note:"Ostinato ipnotico in 6/4 — i tempi 5 e 6 lasciano risuonare il Cmaj7" },
-      { id:"chorus", label:"Chorus", chords:["E2","Bm3","C2","D"], note:"Stesso materiale del verse compresso — D (bVII) aggiunge tensione" },
-      { id:"bridge", label:"Bridge — Cuore armonico", chords:["E3","DoverFsharp","G","Dm"], note:"Basso sale E→F#→G poi caduta su Dm — voice leading cromatico" }
-    ],
-    chords:[
-      { id:"E", symbol:"E", degree:"I", modalOrigin:"E Aeoliano/misto", function:"Tonica — ambigua maj/min", tetrad:"Esus4/Eadd9", tensions:["sus4","add9"], tetradFull:"Eadd9", voicing:"022102", rootPC:4, isAlien:false, note:"La sus4 evita di dichiarare maggiore o minore — ambiguità voluta" },
-      { id:"E2", symbol:"E", degree:"I", modalOrigin:"E Aeoliano", function:"Tonica", tetrad:"Eadd9", tensions:["add9"], tetradFull:"Eadd9", voicing:"022102", rootPC:4, isAlien:false, note:"Chorus" },
-      { id:"E3", symbol:"E", degree:"I", modalOrigin:"E Aeoliano", function:"Tonica — inizio basso cromatico", tetrad:"Eadd9", tensions:["add9"], tetradFull:"Eadd9", voicing:"022102", rootPC:4, isAlien:false, note:"Bridge — il basso inizia la salita E→F#→G" },
-      { id:"Bm", symbol:"Bm", degree:"Vm", modalOrigin:"E Aeoliano", function:"v minore — evita la dominante classica", tetrad:"Bm7", tensions:["add11"], tetradFull:"Bm11", voicing:"x24232", rootPC:11, isAlien:false, note:"v minore invece di V7 — rifiuto della cadenza funzionale classica" },
-      { id:"Bm2", symbol:"Bm", degree:"Vm", modalOrigin:"E Aeoliano", function:"v minore — ritorno", tetrad:"Bm7", tensions:["add11"], tetradFull:"Bm11", voicing:"x24232", rootPC:11, isAlien:false, note:"Seconda occorrenza nel verse" },
-      { id:"Bm3", symbol:"Bm", degree:"Vm", modalOrigin:"E Aeoliano", function:"v minore", tetrad:"Bm7", tensions:["add11"], tetradFull:"Bm11", voicing:"x24232", rootPC:11, isAlien:false, note:"Chorus" },
-      { id:"C", symbol:"C", degree:"bVI", modalOrigin:"E Aeoliano", function:"Interscambio modale — colore freddo", tetrad:"Cmaj7", tensions:["add9"], tetradFull:"Cmaj9", voicing:"x32000", rootPC:0, isAlien:true, note:"Già scritto come Cmaj7 nell'originale — Mi in cima = tonica E" },
-      { id:"C2", symbol:"C", degree:"bVI", modalOrigin:"E Aeoliano", function:"Interscambio modale", tetrad:"Cmaj7", tensions:["add9"], tetradFull:"Cmaj9", voicing:"x32000", rootPC:0, isAlien:true, note:"Chorus" },
-      { id:"A", symbol:"A", degree:"IV", modalOrigin:"E Dorico/Ionio", function:"Sottodominante — respiro naturale", tetrad:"Asus2", tensions:["add9"], tetradFull:"Asus2", voicing:"x02200", rootPC:9, isAlien:false, note:"La IV — dopo bVI e Vm suona come casa" },
-      { id:"D", symbol:"D", degree:"bVII", modalOrigin:"E Misolidio/Aeoliano", function:"Interscambio modale — tensione chorus", tetrad:"Dsus2", tensions:["add9"], tetradFull:"Dsus2", voicing:"xx0232", rootPC:2, isAlien:true, note:"bVII dal Misolidio — prepara il ritorno alla tonica" },
-      { id:"DoverFsharp", symbol:"D/F#", degree:"bVII/3°", modalOrigin:"E Aeoliano — basso crom.", function:"Basso cromatico — secondo passo E→F#", tetrad:"Dmaj7/F#", tensions:[], tetradFull:"Dmaj7/F#", voicing:"200232", rootPC:2, isAlien:true, note:"F# nel basso = cuore del voice leading del bridge" },
-      { id:"G", symbol:"G", degree:"bIII", modalOrigin:"E Aeoliano/Frigio", function:"Interscambio modale — apice basso cromatico", tetrad:"Gmaj7", tensions:["add9"], tetradFull:"Gmaj9", voicing:"320002", rootPC:7, isAlien:true, note:"Terzo passo E→F#→G. Prepara la caduta sul Dm" },
-      { id:"Dm", symbol:"Dm", degree:"iv", modalOrigin:"E Aeoliano→Frigio", function:"Sottodominante MINORE — dolore improvviso ⚡", tetrad:"Dm7", tensions:[], tetradFull:"Dm7", voicing:"xx0231", rootPC:2, isAlien:true, note:"LA mossa più sofisticata. iv minore invece di IV maggiore. Moto contrario: basso saliva verso G, le voci interne Re→Do scendono." }
-    ],
-    modes:[
-      { id:"aeolian", label:"E Aeoliano", sub:"Verse, Chorus, Bridge — primaria", rootPC:4, intervals:[0,2,3,5,7,8,10], color:"#a78bfa", sections:["verse","chorus","bridge"], tip:"Copre E, Bm, C, A, D — scala principale per tutto il brano" },
-      { id:"dorian", label:"E Dorico", sub:"Verse / Pre-chorus", rootPC:4, intervals:[0,2,3,5,7,9,10], color:"#38bdf8", sections:["verse"], tip:"Aggiunge il #6 (Do#) — più luminoso dell'Aeoliano, copre bene A (IV)" },
-      { id:"phrygian", label:"E Frigio", sub:"Bridge — sul Dm", rootPC:4, intervals:[0,1,3,5,7,8,10], color:"#f87171", sections:["bridge"], tip:"Do nat. copre G e Dm. Fa copre Dm. Sib crea tensione extra su E — approccio avanzato" },
-      { id:"pentatonic", label:"E min. Pentat.", sub:"Tutto il brano — safe", rootPC:4, intervals:[0,3,5,7,10], color:"#fb923c", sections:["verse","chorus","bridge"], tip:"Funziona su tutto. Aggiungi Bb come blue note per tensione extra" }
-    ],
-    arpeggios:[
-      { id:"eadd9", label:"Eadd9", sub:"I · verse/chorus/bridge", rootPC:4, intervals:[0,4,7,2], color:"#a78bfa", chordRef:"E", tip:"Open string risonante. La nona Fa# è il suono sospeso caratteristico del brano" },
-      { id:"bm7", label:"Bm7", sub:"Vm · verse", rootPC:11, intervals:[0,3,7,10], color:"#818cf8", chordRef:"Bm", tip:"La settima La = nota comune con A (IV) — voice leading diretto" },
-      { id:"cmaj9", label:"Cmaj9", sub:"bVI · verse/chorus", rootPC:0, intervals:[0,4,7,11,2], color:"#6ee7b7", chordRef:"C", tip:"Mi (3° di C) è la tonica E — nota comune con I. La nona Re prepara Bm" },
-      { id:"asus2", label:"Asus2", sub:"IV · verse", rootPC:9, intervals:[0,2,7], color:"#fcd34d", chordRef:"A", tip:"Open e luminoso — la quinta E è la tonica: continuità garantita" },
-      { id:"dmaj7_f", label:"Dmaj7/F#", sub:"bVII/3° · bridge", rootPC:2, intervals:[0,4,7,11], color:"#fb923c", chordRef:"DoverFsharp", tip:"Suona con F# nel basso — è il passo cromatico verso G" },
-      { id:"gmaj7", label:"Gmaj7", sub:"bIII · bridge", rootPC:7, intervals:[0,4,7,11], color:"#34d399", chordRef:"G", tip:"Apice del bridge — la settima F# è la nota più acuta. Prepara il Dm" },
-      { id:"dm7", label:"Dm7", sub:"iv · bridge ⚡", rootPC:2, intervals:[0,3,7,10], color:"#f87171", chordRef:"Dm", tip:"D–F–A–C. Il Do nat. è la nota del dolore — moto contrario rispetto alla salita del basso" }
-    ],
-    improv:{
-      verse:{ primary:"E Aeoliano", secondary:"E minore pentatonica", tip:"Evidenzia Do nat. su Cmaj7 — è la bVI che dà il colore malinconico. Il 6/4 ti dà spazio per note lunghe." },
-      chorus:{ primary:"E Aeoliano", secondary:"Su D (bVII): vira verso D Misolidio", tip:"Su D enfatizza Do nat. (settima) come nota di colore" },
-      bridge:{ primary:"E Aeoliano su E/D/F#/G — arpeggio Dm7 su Dm", secondary:"E Frigio sull'intero bridge (avanzato)", tip:"Segui il basso cromatico E→F#→G. Sul Dm7 usa D–F–A–C enfatizzando il Do — è la nota del dolore." }
-    }
-  },
-  axis: {"schema":"harmonic-analysis/1.0","song":{"title":"Axis: Bold as Love","artist":"Jimi Hendrix","album":"Axis: Bold as Love","year":1967,"tuning":"Eb Standard (Eb Ab Db Gb Bb Eb) — mezzo tono sotto","capo":0,"timeSignature":"4/4","tempo":"~70 BPM","accentColor":"#c084fc"},"analysis":{"tonicNote":"A","tonicPC":9,"primaryMode":"A Ionio (maggiore) con bVII da A Misolidio e voicing jazz","complexity":3,"alienChord":"G (bVII) + E7#9 'The Hendrix Chord'","alienReason":"Il G (bVII) è preso da A Misolidio — la stessa mossa del rock anglosassone, ma qui arriva nel chorus come apertura verso il cielo. L'E7#9 è il 'Hendrix Chord': contiene simultaneamente il terzo maggiore (Sol#) e il terzo minore (#9 = Sol naturale) — una dissonanza major/minor che incarna perfettamente la dualità spirituale del brano.","technique":"Axis progression I-V-vi-IV trattata con voicing jazz (9e, maj7, sus, inversioni). Secondary dominant impliciti nei voicing. Sostituzione bVII al posto di V nel chorus.","bassMotion":"Primo verso: basso discende per gradi A→G#→F#→E (voice leading cromatico nelle voci interne). Bridge: IV→I→ii→bVII crea cadenza modale circolare.","summary":"Se Black Hole Sun è un labirinto cromatico, Bold as Love è un arco da cattedrale: la progressione I-V-vi-IV è tra le più naturali della musica occidentale, ma Hendrix la trasforma in qualcosa di trascendente attraverso i voicing. Non è la struttura accordale a fare la complessità — è l'architettura dei suoni dentro ogni accordo: noni, settimane maggiori, sospensioni, inversioni. L'E7#9 nel bridge è il sigillo — un accordo che dice simultaneamente 'sì' e 'no', maggiore e minore, terra e cielo."},"sections":[{"id":"verse_a","label":"Verse — Parte A","chords":["A","E","F#m","D"],"note":"I - V - vi - IV: la progressione 'Axis' nella sua forma più pura. Hendrix la veste con Amaj9, E9, F#m7, Dmaj9."},{"id":"verse_b","label":"Verse — Parte B (Pre-chorus)","chords":["D2","A2","Bm","G","G6"],"note":"IV - I - ii - bVII: il basso sale cromaticamente D→E→F#→G. Il Bm (ii) è la mossa jazz — inusuale nel rock puro."},{"id":"chorus","label":"Chorus","chords":["A3","E2","F#m2","G2"],"note":"I - V - vi - bVII: G al posto di IV — il cambio che trasforma la progressione da 'pop' a 'cosmica'. Hendrix usa E7#9 qui."},{"id":"outro","label":"Outro / Guitar Solo","chords":["G3","A4"],"note":"Vamp bVII→I: il loop ipnotico su cui Hendrix costruisce il suo assolo psichedelico. Il G crea tensione perpetua che non risolve mai davvero — sospensione infinita."}],"chords":[{"id":"A","symbol":"A / Amaj9","degree":"I","modalOrigin":"A Ionio (maggiore)","function":"Tonica — punto di partenza e di ritorno","tetrad":"Amaj7","tensions":["add9"],"tetradFull":"Amaj9","voicing":"x02120","rootPC":9,"isAlien":false,"note":"Hendrix quasi mai suona il semplice A — usa Amaj9 (x02120) o Asus2/Asus4 con hammer-on. Il Sol# (maj7) nel voicing crea luminosità immediata."},{"id":"A2","symbol":"A / A7sus4","degree":"I","modalOrigin":"A Ionio / Misolidio","function":"Tonica nel pre-chorus — più ambigua","tetrad":"A7sus4","tensions":["sus4"],"tetradFull":"A7sus4","voicing":"x02230","rootPC":9,"isAlien":false,"note":"Nel pre-chorus l'A appare più teso — Hendrix aggiunge la sus4 o il 7° per preparare il Bm che segue."},{"id":"A3","symbol":"A / A9","degree":"I","modalOrigin":"A Ionio","function":"Tonica del chorus — trionfante","tetrad":"A9","tensions":["add9"],"tetradFull":"A9","voicing":"x02020","rootPC":9,"isAlien":false,"note":"Nel chorus Hendrix spesso usa A9 o A con abbellimenti pentatonici sull'accordo stesso."},{"id":"A4","symbol":"A","degree":"I","modalOrigin":"A Ionio","function":"Tonica nell'outro — polo di risoluzione nel vamp G-A","tetrad":"Amaj7","tensions":["add9"],"tetradFull":"Amaj9","voicing":"x02120","rootPC":9,"isAlien":false,"note":"Nel vamp outro l'A è il polo di 'casa' — il G che lo precede non risolve mai completamente, creando la sospensione dell'assolo."},{"id":"E","symbol":"E / E9","degree":"V","modalOrigin":"A Ionio (dominante funzionale)","function":"Dominante — il più forte V-I del brano","tetrad":"E7","tensions":["add9"],"tetradFull":"E9","voicing":"020132","rootPC":4,"isAlien":false,"note":"Hendrix usa E9 (020132) o E7 — il 9° (Fa#) aggiunge il sapore jazz che distingue il suo approccio dal rock standard."},{"id":"E2","symbol":"E7#9","degree":"V7#9","modalOrigin":"A Ionio — dominante alterata","function":"Dominante alterata — 'The Hendrix Chord' ⚡","tetrad":"E7#9","tensions":["#9"],"tetradFull":"E7#9","voicing":"x76788","rootPC":4,"isAlien":true,"note":"IL chord di Hendrix: E-G#-D-G natural (sulle corde medie). Contiene simultaneamente il 3° maggiore (Sol#) e il #9 che equivale al 3° minore (Sol nat.). Dualità major/minor in un solo accordo — il suono più rappresentativo di Hendrix."},{"id":"F#m","symbol":"F#m / F#m7","degree":"vi","modalOrigin":"A Ionio (relativa minore)","function":"Relativa minore — colore malinconico nel verse","tetrad":"F#m7","tensions":["add11"],"tetradFull":"F#m11","voicing":"244222","rootPC":6,"isAlien":false,"note":"F#m7 è la relativa minore naturale di A — non è un interscambio ma un colore malinconico dentro alla tonalità maggiore."},{"id":"F#m2","symbol":"F#m7","degree":"vi","modalOrigin":"A Ionio","function":"Relativa minore nel chorus","tetrad":"F#m7","tensions":["add11"],"tetradFull":"F#m11","voicing":"244222","rootPC":6,"isAlien":false,"note":"Nel chorus il F#m7 è il momento di 'caduta' emotiva prima del G che porta verso l'alto."},{"id":"D","symbol":"D / Dmaj9","degree":"IV","modalOrigin":"A Ionio (sottodominante naturale)","function":"Sottodominante — momento di apertura e respiro","tetrad":"Dmaj7","tensions":["add9"],"tetradFull":"Dmaj9","voicing":"x00232","rootPC":2,"isAlien":false,"note":"Hendrix usa Dmaj9 (x00232) o D/F# (200232) — il basso F# nel D/F# crea un movimento cromatico discendente verso E (dominante): F#→E nella linea del basso."},{"id":"D2","symbol":"D / D/F#","degree":"IV / IV6","modalOrigin":"A Ionio","function":"Sottodominante — apertura del pre-chorus","tetrad":"Dmaj7","tensions":["add9"],"tetradFull":"Dmaj9","voicing":"200232","rootPC":2,"isAlien":false,"note":"Nel pre-chorus Hendrix usa spesso D/F# (200232) — il basso F# prepara il salita cromatica verso A poi Bm poi G."},{"id":"Bm","symbol":"Bm7","degree":"ii","modalOrigin":"A Ionio (supertonica minore)","function":"Supertonica minore — mossa jazz inusuale nel rock","tetrad":"Bm7","tensions":["add11"],"tetradFull":"Bm11","voicing":"x24232","rootPC":11,"isAlien":false,"note":"Il Bm (ii) è naturale in A maggiore ma quasi mai appare nel rock standard. La sua presenza nella progressione IV-I-ii-bVII denuncia l'influenza jazz di Hendrix — è una mossa da turnaround jazz (ii→V→I)."},{"id":"G","symbol":"G","degree":"bVII","modalOrigin":"A Misolidio / A Aeoliano","function":"Interscambio modale — apertura cosmica nel pre-chorus ⚡","tetrad":"Gmaj7","tensions":["add6","add9"],"tetradFull":"G6 / Gmaj9","voicing":"320003","rootPC":7,"isAlien":true,"note":"Il bVII preso da A Misolidio — non è il V (E) che ci aspetteremmo per risolvere su A. Invece apre verso l'alto. Hendrix usa G6 (320030) o G con hammer-on sulla corda B — il 6° (Mi) è la tonica A una ottava sopra, che crea legame diretto con il I."},{"id":"G2","symbol":"G / G6","degree":"bVII","modalOrigin":"A Misolidio","function":"Interscambio modale nel chorus — sostituisce IV (D)","tetrad":"G6","tensions":["add6"],"tetradFull":"G6","voicing":"320030","rootPC":7,"isAlien":true,"note":"Nel chorus il G (bVII) sostituisce il D (IV) della progressione del verse — questo cambio trasforma la progressione da I-V-vi-IV (pop) a I-V-vi-bVII (cosmica). G6 (320030) è il voicing preferito da Hendrix qui."},{"id":"G3","symbol":"G","degree":"bVII","modalOrigin":"A Misolidio","function":"Polo di tensione nell'outro — non risolve mai","tetrad":"G6","tensions":["add6"],"tetradFull":"G6","voicing":"320030","rootPC":7,"isAlien":true,"note":"Nell'outro vamp G-A il G crea una tensione perpetua: vuole risolvere su A ma il loop ricomincia da G — sospensione armonica infinita, base perfetta per l'assolo psichedelico."},{"id":"G6","symbol":"G6","degree":"bVII6","modalOrigin":"A Misolidio","function":"Variante di chiusura del pre-chorus — ancora più sospesa","tetrad":"G6","tensions":["add6"],"tetradFull":"G6","voicing":"320030","rootPC":7,"isAlien":true,"note":"G6 = G-B-D-E. La nota E (6°) è la tonica A una terza minore sotto — nota comune con A tonica, che rende la transizione G6→A quasi impercettibile e fluida."}],"modes":[{"id":"major","label":"A Ionio (Maggiore)","sub":"Verse A, Verse B — primaria","rootPC":9,"intervals":[0,2,4,5,7,9,11],"color":"#c084fc","sections":["verse_a","verse_b"],"tip":"La scala madre del brano. Copre A, E, F#m, D, Bm perfettamente. Su G (bVII) abbassa il 7° a Sol naturale — automaticamente diventa A Misolidio"},{"id":"mixolydian","label":"A Misolidio","sub":"Chorus, Outro — su G (bVII)","rootPC":9,"intervals":[0,2,4,5,7,9,10],"color":"#38bdf8","sections":["chorus","outro"],"tip":"Identica all'Ionio ma con Sol naturale al posto di Sol#. Copre G (bVII) perfettamente — il Sol nat. è la settima di A Misolidio e la fondamentale del G. Usala nel chorus e nell'outro per abbracciare il G6 con naturalezza"},{"id":"major_pentatonic","label":"A Pentat. Maggiore","sub":"Tutto il brano — la voce di Hendrix","rootPC":9,"intervals":[0,2,4,7,9],"color":"#f59e0b","sections":["verse_a","verse_b","chorus","outro"],"tip":"LA scala di Hendrix sul brano. Cinque note che funzionano su tutto. Hendrix la usa come base e aggiunge cromatismi di approccio. Sul G (bVII) la quinta (Mi = E) è la tonica — crea un legame melodico perfetto verso A"},{"id":"minor_pentatonic","label":"A Pentat. Minore","sub":"Sul E7#9 e nell'outro — blues","rootPC":9,"intervals":[0,3,5,7,10],"color":"#f87171","sections":["chorus","outro"],"tip":"Sul E7#9 (Hendrix chord) il Sol nat. della pentatonica minore è già il #9 dell'accordo — perfetta sovrapposizione. Nell'outro combina pentatonica maggiore e minore (scale blues composita) come fa Hendrix nell'assolo originale"},{"id":"dorian","label":"F# Dorico","sub":"Sul F#m7 — colore jazz","rootPC":6,"intervals":[0,2,3,5,7,9,10],"color":"#34d399","sections":["verse_a","chorus"],"tip":"Su F#m7 il F# Dorico aggiunge il 6° (Re#) — nota inusuale che dà colore jazz. Hendrix usa questa sfumatura spesso nelle sue frasi melodiche sulla relativa minore"}],"arpeggios":[{"id":"amaj9","label":"Amaj9","sub":"I · verse / chorus","rootPC":9,"intervals":[0,4,7,11,2],"color":"#c084fc","chordRef":"A","tip":"La 9a (Si) e la maj7 (Sol#) sono le note caratteristiche di Hendrix su questo accordo. Arpeggio: A–C#–E–G#–B. Il Sol# risolve meravigliosamente verso La o verso il Sol nat. del G bVII"},{"id":"e9","label":"E9","sub":"V · verse","rootPC":4,"intervals":[0,4,7,10,2],"color":"#38bdf8","chordRef":"E","tip":"E–G#–B–D–F#. Il Re (b7) è la nota di tensione che vuole salire a Mi (risoluzione su A). Il Fa# (9a) aggiunge il sapore jazz. Usa questo arpeggio come frase ascendente verso il tasto 12"},{"id":"e7sharp9","label":"E7#9","sub":"V7#9 · chorus — Hendrix chord ⚡","rootPC":4,"intervals":[0,4,7,10,3],"color":"#f87171","chordRef":"E2","tip":"E–G#–B–D–G nat. Il G nat. (#9 = terzo minore) contro il G# (3° maggiore) crea la famosa 'tensione Hendrix'. Suona questo arpeggio lentamente per sentire la dissonanza risolvere. Il G nat. tende a scendere verso F# o salire verso A"},{"id":"f#m7","label":"F#m7","sub":"vi · verse / chorus","rootPC":6,"intervals":[0,3,7,10],"color":"#818cf8","chordRef":"F#m","tip":"F#–A–C#–E. Il La (bIII) è nota comune con A tonica — voice leading diretto. Il Mi (min7) porta al Re# del Amaj7 o al Re del G6. Hendrix usa spesso questo arpeggio in discesa come fill tra gli accordi"},{"id":"dmaj9","label":"Dmaj9","sub":"IV · verse","rootPC":2,"intervals":[0,4,7,11,2],"color":"#6ee7b7","chordRef":"D","tip":"D–F#–A–C#–E. Il C# (maj7) è la terza di A tonica — nota comune perfetta. L'E (9a) è la dominante — prepara la tensione verso V (E). Hendrix usa spesso D/F# con l'F# nel basso per muoversi verso E: F#→E basso cromatico"},{"id":"bm7","label":"Bm7","sub":"ii · pre-chorus — mossa jazz","rootPC":11,"intervals":[0,3,7,10],"color":"#fcd34d","chordRef":"Bm","tip":"B–D–F#–A. Questo arpeggio ha 3 note in comune con Amaj7 (D, F#, A) — suona quasi come un Amaj7/B. Il Si (fondamentale) è il 9° di A e vuole risolvere verso A. Jazz puro nel mezzo di una canzone rock."},{"id":"g6","label":"G6","sub":"bVII · chorus / outro","rootPC":7,"intervals":[0,4,7,9],"color":"#fb923c","chordRef":"G","tip":"G–B–D–E. Il Mi (6°) è la tonica A spostata — 3 note dell'arpeggio (B, D, E) sono nella scala di A maggiore e anche nella scala pentatonica di A. Sul vamp G-A dell'outro usa questo arpeggio come 'rampa di lancio' verso A"}],"improv":{"verse_a":{"primary":"A Ionio (maggiore)","secondary":"A pentatonica maggiore — la più hendrixiana","tip":"Nel verse A la progressione I-V-vi-IV respira — hai tempo per frasi lunghe. Hendrix usa la pentatonica maggiore come ossatura e aggiunge il 4° (Re) e il 7° (Sol#) come note di colore. Voice leading suggerito: tieni il Sol# (7° di Amaj9) come nota di fuga verso il Sol nat. quando arriva G"},"verse_b":{"primary":"A Ionio — segui il basso D→A→B→G","secondary":"Sul Bm7: F# Dorico (aggiunge il 6° = Re#)","tip":"Il pre-chorus D-A-Bm-G ha un basso che sale D→E→F#→G (cromatismo). Segui questo movimento con le frasi. Sul Bm usa il Re# (6° dorico) come nota di colore jazz. Sul G finale: abbassa immediatamente il Sol# a Sol nat. per entrare in A Misolidio"},"chorus":{"primary":"A Misolidio — Sol naturale è la chiave","secondary":"A pentatonica maggiore + A pentatonica minore (blues composita)","tip":"Nel chorus il G (bVII) sostituisce il IV — devi avere Sol naturale disponibile. Sul E7#9 usa A pentatonica minore: il Sol nat. della penta minore coincide con il #9 dell'accordo — magia hendrixiana. Mescola pentatonica maggiore (frasi ascendenti luminose) e minore (frasi discendenti blues)"},"outro":{"primary":"A Misolidio + A pentatonica composita (maggiore + minore)","secondary":"Arpeggi G6 → Amaj9 come struttura dell'assolo","tip":"L'assolo originale di Hendrix alterna frasi pentatoniche veloci a accordi arpeggiati. Il segreto: usa il vamp G-A come 'domanda-risposta' — G è la domanda (tensione), A è la risposta (risoluzione). Hendrix non risolve mai completamente su A — lascia sempre qualcosa di irrisolto. Usa bend verso note della pentatonica minore su G, poi risolvi sulla pentatonica maggiore su A"}}}
-};
-
-// ── Pitch helpers ────────────────────────────────────────────────────────
-const OPEN_PC = [4, 9, 2, 7, 11, 4];
-const STR_LBL = ["E","A","D","G","B","e"];
-const NOTE_NM = ["C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B"];
-const DEG_MAP = {0:"R",1:"♭2",2:"2",3:"♭3",4:"3",5:"4",6:"♭5",7:"5",8:"♭6",9:"6",10:"♭7",11:"7"};
-const pc = (s, f) => (OPEN_PC[s] + f) % 12;
-
-// ── SVG layout ───────────────────────────────────────────────────────────
-const FW=50, SH=44, NUT_X=56, NUT_W=8, BX=NUT_X+NUT_W, OPEN_X=NUT_X-24;
-const PT=44, PB=28, PR=22;
-const SVG_W = BX + 12*FW + PR;
-const SVG_H = PT + 5*SH + PB;
-const nX = f => f===0 ? OPEN_X : BX + (f-0.5)*FW;
-const sY = s => PT + (5-s)*SH;
-
-// ── THEME PALETTES ───────────────────────────────────────────────────────
-const THEMES = {
-  dark: {
-    id: "dark",
-    // backgrounds
-    bg:             "#040810",
-    bgPage:         "#040810",
-    bgCard:         "#070e18",
-    bgCardAlt:      "#080e14",
-    bgCardHi:       "#0a1525",
-    bgInput:        "#060d16",
-    // borders
-    borderFaint:    "#0e1e28",
-    borderMid:      "#162030",
-    borderStrong:   "#1e3040",
-    // text
-    textPrimary:    "#ddeeff",
-    textSecondary:  "#b8cede",
-    textMid:        "#8aacb8",
-    textDim:        "#4a7a90",
-    textFaint:      "#2a4058",
-    textGhost:      "#1e3040",
-    // fretboard
-    neckBg:         "#080e14",
-    neckShadow:     "#020509",
-    stringCol:      "#5a7a90",
-    nutCol:         "#c8a434",
-    fretCol:        "#111e2a",
-    fretActive:     "#4a6a7a",
-    markerCol:      "#131f2a",
-    // labels
-    fretNumActive:  "#8aaabf",
-    fretNumIdle:    "#1e3040",
-    strLabelCol:    "#2a4058",
-  },
-  light: {
-    id: "light",
-    bg:             "#eef2f7",
-    bgPage:         "#eef2f7",
-    bgCard:         "#ffffff",
-    bgCardAlt:      "#f4f8fc",
-    bgCardHi:       "#e8f0f8",
-    bgInput:        "#f8fafc",
-    borderFaint:    "#ccd8e4",
-    borderMid:      "#aabccc",
-    borderStrong:   "#7a9ab0",
-    textPrimary:    "#0e1e2c",
-    textSecondary:  "#1e3040",
-    textMid:        "#2a4a60",
-    textDim:        "#3a6070",
-    textFaint:      "#5a7a8a",
-    textGhost:      "#8aaabf",
-    neckBg:         "#dce8f0",
-    neckShadow:     "#c0d0e0",
-    stringCol:      "#4a6878",
-    nutCol:         "#b89030",
-    fretCol:        "#b0c4d4",
-    fretActive:     "#6a8a9a",
-    markerCol:      "#c0d4e4",
-    fretNumActive:  "#3a5060",
-    fretNumIdle:    "#a0b8c8",
-    strLabelCol:    "#6a8898",
-  }
-};
-
-// ── Stars ────────────────────────────────────────────────────────────────
-const Stars = ({ n, color }) => (
-  <span>
-    {Array.from({length:5},(_,i)=>(
-      <span key={i} style={{color: i<n ? color : '#3a4a5a', fontSize:12}}>★</span>
-    ))}
-  </span>
-);
-
-// ── Voicing diagram ──────────────────────────────────────────────────────
-const VoicingDot = ({ voicing, color, T }) => {
-  if (!voicing) return null;
-  const frets = voicing.split("").map(c => c==='x'?-1:parseInt(c));
-  const played = frets.filter(f=>f>0);
-  if (!played.length) return null;
-  const minF = Math.min(...played), maxF = Math.max(...played);
-  const span = Math.max(maxF - minF + 1, 4);
-  const cellW=13, cellH=13;
-  const w=6*cellW+10, h=span*cellH+18;
-  return (
-    <svg width={w} height={h} style={{display:"block",margin:"0 auto"}}>
-      {minF<=1 && <rect x={8} y={12} width={6*cellW} height={2} fill={T.nutCol} rx={1}/>}
-      {Array.from({length:span+1},(_,row)=>(
-        <line key={row} x1={8} y1={14+row*cellH} x2={8+6*cellW} y2={14+row*cellH}
-          stroke={T.borderStrong} strokeWidth={1}/>
-      ))}
-      {frets.map((_,s)=>(
-        <line key={s} x1={8+s*cellW+cellW/2} y1={14} x2={8+s*cellW+cellW/2} y2={14+span*cellH}
-          stroke={T.stringCol} strokeWidth={[2.2,1.8,1.5,1.2,1,0.7][s]}/>
-      ))}
-      {frets.map((f,s)=>{
-        if(f<0) return <text key={s} x={8+s*cellW+cellW/2} y={10} textAnchor="middle" fontSize={8} fill="#f87171">×</text>;
-        if(f===0) return <circle key={s} cx={8+s*cellW+cellW/2} cy={10} r={3} fill="none" stroke={color} strokeWidth={1.5}/>;
-        const row = f-minF;
-        return <circle key={s} cx={8+s*cellW+cellW/2} cy={14+row*cellH+cellH/2} r={4.5} fill={color}/>;
-      })}
-      {minF>1 && <text x={2} y={14+cellH/2+4} fontSize={7} fill={T.textFaint}>{minF}</text>}
-    </svg>
-  );
-};
+  }));
+  return songs;
+}
 
 // ════════════════════════════════════════════════════════════════════════
 // MAIN APP
 // ════════════════════════════════════════════════════════════════════════
 function App() {
-  const [data,      setData]     = useState(DEFAULT_SONGS.bhs);
+  const [data,      setData]     = useState(null);        // null while loading
   const [mainTab,   setMainTab]  = useState("fretboard");
   const [scaleTab,  setScaleTab] = useState("modes");
-  const [selId,     setSelId]    = useState(DEFAULT_SONGS.bhs.modes[0].id);
+  const [selId,     setSelId]    = useState('');
   const [boxStart,  setBoxStart] = useState(0);
   const [showDeg,   setShowDeg]  = useState(false);
   const [jsonError, setJsonError]= useState(null);
   const [themeId,   setThemeId]  = useState("dark");
   const [userSongs, setUserSongs]= useState({});   // { id: songData } — loaded from IndexedDB
+  const [catalogSongs, setCatalogSongs] = useState({});  // loaded from songs/index.json
+  const [loading,    setLoading]   = useState(true);
   const fileRef = useRef();
 
   const T  = THEMES[themeId];
-  const ac = data.song.accentColor;
+  const ac = data?.song?.accentColor ?? '#38bdf8';
 
   // sync body class for scrollbar + banner theming
   React.useEffect(() => {
@@ -395,13 +198,31 @@ function App() {
     try { localStorage.setItem('fb-theme', themeId); } catch(e){}
   }, [themeId]);
 
-  // restore saved theme + load user songs from IndexedDB on startup
+  // On startup: restore theme, load catalog from manifest, load user songs from IndexedDB
   React.useEffect(() => {
+    // Theme
     try {
       const saved = localStorage.getItem('fb-theme');
       if (saved === 'light' || saved === 'dark') setThemeId(saved);
     } catch(e){}
 
+    // Load catalog songs from songs/index.json
+    loadSongsFromManifest().then(catalog => {
+      setCatalogSongs(catalog);
+      // Set first catalog song as active
+      const firstKey = Object.keys(catalog)[0];
+      if (firstKey) {
+        const first = catalog[firstKey];
+        setData(first);
+        setSelId(first.modes[0]?.id ?? '');
+      }
+      setLoading(false);
+    }).catch(err => {
+      console.error('Failed to load catalog:', err);
+      setLoading(false);
+    });
+
+    // Load user songs from IndexedDB (runs in parallel)
     idbLoadAll().then(rows => {
       const map = {};
       rows.forEach(row => { map[row.id] = row.data; });
@@ -439,9 +260,9 @@ function App() {
       delete next[id];
       // if current song is being deleted, switch to first default
       if (data === prev[id]) {
-        const firstDefault = DEFAULT_SONGS[Object.keys(DEFAULT_SONGS)[0]];
-        setData(firstDefault);
-        setSelId(firstDefault.modes[0]?.id ?? "");
+        const allCatalog = Object.values(catalogSongs);
+        const firstDefault = allCatalog[0] ?? null;
+        if (firstDefault) { setData(firstDefault); setSelId(firstDefault.modes[0]?.id ?? ""); }
         setBoxStart(0);
       }
       return next;
@@ -449,7 +270,7 @@ function App() {
   };
 
   // Fretboard logic
-  const items = scaleTab==="modes" ? data.modes : data.arpeggios;
+  const items = data ? (scaleTab==="modes" ? data.modes : data.arpeggios) : [];
   const cur   = useMemo(()=>items.find(x=>x.id===selId)??items[0],[items,selId]);
   const pcs   = useMemo(()=>new Set(cur?.intervals.map(i=>(cur.rootPC+i)%12)??[]),[cur]);
   const pcDeg = useMemo(()=>{const m={};cur?.intervals.forEach(i=>{m[(cur.rootPC+i)%12]=i;});return m;},[cur]);
@@ -506,6 +327,24 @@ function App() {
   );
 
   // ────────────────────────────────────────────────────────────────────────
+  // Loading screen
+  if (loading) {
+    return (
+      <div style={{
+        background: themeId==="dark" ? "#040810" : "#eef2f7",
+        minHeight:"100vh", display:"flex", flexDirection:"column",
+        alignItems:"center", justifyContent:"center",
+        fontFamily:"'Courier New',Courier,monospace",
+        gap: 20,
+      }}>
+        <div style={{fontSize:32, letterSpacing:4, color:"#10b981", animation:"pulse 1.5s infinite"}}>♩</div>
+        <div style={{fontSize:11, letterSpacing:6, color: themeId==="dark" ? "#2a4058" : "#6a8898",
+          textTransform:"uppercase"}}>caricamento brani...</div>
+        <style>{`@keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }`}</style>
+      </div>
+    );
+  }
+
   return (
     <div style={{
       background:T.bgPage, minHeight:"100vh", padding:"16px 10px 40px",
@@ -517,8 +356,8 @@ function App() {
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",
                    flexWrap:"wrap",gap:8,maxWidth:860,margin:"0 auto 16px"}}>
         <div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>
-          {Object.entries(DEFAULT_SONGS).map(([key,s])=>{
-            const active = data.song.title===s.song.title && data.song.artist===s.song.artist;
+          {Object.entries(catalogSongs).map(([key,s])=>{
+            const active = data && data.song.title===s.song.title && data.song.artist===s.song.artist;
             return (
               <button key={key}
                 onClick={()=>{setData(s);setScaleTab("modes");setSelId(s.modes[0]?.id??"");setBoxStart(0);setJsonError(null);}}
