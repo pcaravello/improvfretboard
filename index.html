@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="apple-mobile-web-app-title" content="Fretboard"/>
@@ -11,14 +12,26 @@
   <link rel="manifest" href="./manifest.json"/>
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23040810'/%3E%3Crect x='18' y='78' width='144' height='24' rx='4' fill='%230a1525'/%3E%3Crect x='32' y='72' width='6' height='36' rx='2' fill='%23c8a434'/%3E%3Cline x1='32' y1='86' x2='162' y2='86' stroke='%232a4050' stroke-width='3'/%3E%3Cline x1='32' y1='90' x2='162' y2='90' stroke='%232a4050' stroke-width='2'/%3E%3Ccircle cx='70' cy='90' r='9' fill='%2338bdf8'/%3E%3Ccircle cx='100' cy='86' r='9' fill='%23a78bfa' opacity='0.8'/%3E%3C/svg%3E"/>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { transition: background 0.25s; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    html, body { transition: background 0.3s; }
     body.dark  { background: #040810; }
-    body.light { background: #eef2f7; }
-    ::-webkit-scrollbar { width: 4px; height: 4px; }
-    body.dark  ::-webkit-scrollbar-thumb { background: #1e3040; border-radius: 2px; }
-    body.light ::-webkit-scrollbar-thumb { background: #b0c4d4; border-radius: 2px; }
+    body.light { background: #f0f4f8; }
 
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    body.dark  ::-webkit-scrollbar-track  { background: #040810; }
+    body.dark  ::-webkit-scrollbar-thumb  { background: #1e3040; border-radius: 2px; }
+    body.light ::-webkit-scrollbar-track  { background: #f0f4f8; }
+    body.light ::-webkit-scrollbar-thumb  { background: #b0c4d4; border-radius: 2px; }
+
+    /* Hide scrollbar on song strip but keep functional */
+    .song-strip            { -ms-overflow-style: none; scrollbar-width: none; }
+    .song-strip::-webkit-scrollbar { display: none; }
+    .pill-strip            { -ms-overflow-style: none; scrollbar-width: none; }
+    .pill-strip::-webkit-scrollbar { display: none; }
+
+    /* Install banner */
     #install-banner {
       display:none; position:fixed; bottom:0; left:0; right:0; z-index:999;
       padding:12px 20px; flex-direction:row; align-items:center;
@@ -26,30 +39,36 @@
     }
     #install-banner.visible { display:flex; }
     body.dark  #install-banner { background:#0a1525; border-top:1px solid #1e3040; }
-    body.light #install-banner { background:#ffffff; border-top:1px solid #c0d0e0; }
-    #install-banner p  { font-size:11px; letter-spacing:1px; flex:1; }
+    body.light #install-banner { background:#ffffff;  border-top:1px solid #c0d0e0; }
+    #install-banner p  { font-size:12px; letter-spacing:1px; flex:1; }
     body.dark  #install-banner p { color:#4a7a90; }
     body.light #install-banner p { color:#3a5a70; }
     #install-banner button {
       background:transparent; border:1px solid #38bdf8; color:#38bdf8;
-      padding:6px 14px; font-family:inherit; font-size:10px;
-      letter-spacing:2px; cursor:pointer; border-radius:2px; white-space:nowrap;
+      padding:8px 16px; font-family:inherit; font-size:11px;
+      letter-spacing:2px; cursor:pointer; border-radius:3px; white-space:nowrap; min-height:44px;
     }
     #install-banner .dismiss { border-color:#8aaabf; color:#8aaabf; }
-    #ios-hint { display:none; position:fixed; bottom:0; left:0; right:0; z-index:999;
-      padding:14px 20px; font-family:'Courier New',monospace; text-align:center; }
+    #ios-hint {
+      display:none; position:fixed; bottom:0; left:0; right:0; z-index:999;
+      padding:16px 20px; font-family:'Courier New',monospace; text-align:center;
+    }
     #ios-hint.visible { display:block; }
     body.dark  #ios-hint { background:#0a1525; border-top:1px solid #1e3040; }
-    body.light #ios-hint { background:#ffffff; border-top:1px solid #c0d0e0; }
-    #ios-hint p { font-size:11px; letter-spacing:1px; line-height:1.8; }
+    body.light #ios-hint { background:#ffffff;  border-top:1px solid #c0d0e0; }
+    #ios-hint p { font-size:12px; letter-spacing:1px; line-height:1.9; }
     body.dark  #ios-hint p { color:#4a7a90; }
     body.light #ios-hint p { color:#3a5a70; }
     #ios-hint button {
       background:transparent; border:1px solid #8aaabf; color:#8aaabf;
-      padding:4px 12px; font-family:inherit; font-size:9px;
-      letter-spacing:2px; cursor:pointer; border-radius:2px; margin-top:8px;
+      padding:6px 14px; font-family:inherit; font-size:10px;
+      letter-spacing:2px; cursor:pointer; border-radius:3px; margin-top:8px; min-height:44px;
     }
     #root { min-height:100vh; }
+
+    @keyframes pulse { 0%,100%{opacity:.2} 50%{opacity:1} }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in { animation: fadeIn 0.3s ease forwards; }
   </style>
 </head>
 <body class="dark">
@@ -100,7 +119,6 @@
 
 <script type="text/babel" data-presets="react">
 
-
 // ── IndexedDB persistence ────────────────────────────────────────────────
 const DB_NAME    = 'fretboard-songs';
 const STORE_NAME = 'user-songs';
@@ -150,7 +168,6 @@ async function idbLoadAll() {
   });
 }
 
-
 // ── Dynamic song loader from songs/index.json ───────────────────────────
 // To add a new song: put the JSON in songs/ and add its filename to songs/index.json
 // No changes to index.html needed.
@@ -171,8 +188,6 @@ async function loadSongsFromManifest() {
   }));
   return songs;
 }
-
-
 // ── Pitch helpers ────────────────────────────────────────────────────────
 const OPEN_PC = [4, 9, 2, 7, 11, 4]; // low-E → high-e
 const STR_LBL = ["E","A","D","G","B","e"];
@@ -292,41 +307,97 @@ const VoicingDot = ({ voicing, color, T }) => {
 // ════════════════════════════════════════════════════════════════════════
 // MAIN APP
 // ════════════════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════════════
+// RESPONSIVE APP
+// ═══════════════════════════════════════════════════════════════════════
+
+// ── Viewport hook ────────────────────────────────────────────────────────
+function useViewport() {
+  const [vw, setVw] = React.useState(window.innerWidth);
+  React.useEffect(() => {
+    const handler = () => setVw(window.innerWidth);
+    window.addEventListener('resize', handler);
+    window.addEventListener('orientationchange', () => setTimeout(handler, 100));
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  return vw;
+}
+
+// ── Responsive scale config ───────────────────────────────────────────────
+function useR(vw) {
+  // Breakpoints:  xs < 480   sm < 768   md < 1024   lg ≥ 1024
+  const xs = vw < 480, sm = vw < 768, md = vw < 1024;
+  return {
+    // padding
+    pagePad:     xs ? '10px 8px 48px'  : sm ? '12px 14px 48px' : '16px 20px 48px',
+    // font sizes
+    fs6:         xs ? 9  : 10,
+    fs7:         xs ? 10 : 11,
+    fs8:         xs ? 11 : 12,
+    fs9:         xs ? 12 : 13,
+    fs10:        xs ? 13 : 14,
+    fs11:        xs ? 14 : 15,
+    fs13:        xs ? 15 : 17,
+    fsSongTitle: xs ? 20 : sm ? 24 : 30,
+    // chord card grid
+    chordCols:   xs ? 'repeat(auto-fill,minmax(160px,1fr))' : 'repeat(auto-fill,minmax(220px,1fr))',
+    // analysis grid
+    analysisCols:xs ? '1fr' : '1fr 1fr',
+    // fretboard container
+    fbMaxW:      sm ? '100%' : '860px',
+    // buttons
+    btnPadMain:  xs ? '9px 16px' : '8px 20px',
+    btnPadSm:    xs ? '8px 12px' : '6px 14px',
+    btnPadTab:   xs ? '8px 14px' : '6px 18px',
+    btnMinH:     44,    // touch target
+    // pill subtabs
+    pillMinW:    xs ? 70 : 90,
+    pillFontSub: xs ? 9  : 9,
+    // top bar
+    showStars:   !xs,
+    topGap:      xs ? 6 : 8,
+    // interval card
+    ivMinW:      xs ? 40 : 46,
+    // bool helpers
+    xs, sm, md,
+  };
+}
+
 function App() {
-  const [data,      setData]     = useState(null);        // null while loading
-  const [mainTab,   setMainTab]  = useState("fretboard");
-  const [scaleTab,  setScaleTab] = useState("modes");
-  const [selId,     setSelId]    = useState('');
-  const [boxStart,  setBoxStart] = useState(0);
-  const [showDeg,   setShowDeg]  = useState(false);
-  const [jsonError, setJsonError]= useState(null);
-  const [themeId,   setThemeId]  = useState("dark");
-  const [userSongs, setUserSongs]= useState({});   // { id: songData } — loaded from IndexedDB
-  const [catalogSongs, setCatalogSongs] = useState({});  // loaded from songs/index.json
-  const [loading,    setLoading]   = useState(true);
+  const [data,         setData]        = useState(null);
+  const [mainTab,      setMainTab]     = useState("fretboard");
+  const [scaleTab,     setScaleTab]    = useState("modes");
+  const [selId,        setSelId]       = useState('');
+  const [boxStart,     setBoxStart]    = useState(0);
+  const [showDeg,      setShowDeg]     = useState(false);
+  const [jsonError,    setJsonError]   = useState(null);
+  const [themeId,      setThemeId]     = useState("dark");
+  const [userSongs,    setUserSongs]   = useState({});
+  const [catalogSongs, setCatalogSongs]= useState({});
+  const [loading,      setLoading]     = useState(true);
   const fileRef = useRef();
 
+  const vw = useViewport();
+  const R  = useR(vw);
   const T  = THEMES[themeId];
   const ac = data?.song?.accentColor ?? '#38bdf8';
 
-  // sync body class for scrollbar + banner theming
+  // ── sync body class ──────────────────────────────────────────────────
   React.useEffect(() => {
     document.body.className = themeId;
-    try { localStorage.setItem('fb-theme', themeId); } catch(e){}
+    try { localStorage.setItem('fb-theme', themeId); } catch(e) {}
   }, [themeId]);
 
-  // On startup: restore theme, load catalog from manifest, load user songs from IndexedDB
+  // ── startup: restore theme + load catalog + load user songs ──────────
   React.useEffect(() => {
-    // Theme
     try {
       const saved = localStorage.getItem('fb-theme');
       if (saved === 'light' || saved === 'dark') setThemeId(saved);
-    } catch(e){}
+    } catch(e) {}
 
-    // Load catalog songs from songs/index.json
     loadSongsFromManifest().then(catalog => {
       setCatalogSongs(catalog);
-      // Set first catalog song as active
       const firstKey = Object.keys(catalog)[0];
       if (firstKey) {
         const first = catalog[firstKey];
@@ -334,12 +405,8 @@ function App() {
         setSelId(first.modes[0]?.id ?? '');
       }
       setLoading(false);
-    }).catch(err => {
-      console.error('Failed to load catalog:', err);
-      setLoading(false);
-    });
+    }).catch(() => setLoading(false));
 
-    // Load user songs from IndexedDB (runs in parallel)
     idbLoadAll().then(rows => {
       const map = {};
       rows.forEach(row => { map[row.id] = row.data; });
@@ -347,95 +414,100 @@ function App() {
     }).catch(() => {});
   }, []);
 
-  // JSON loader — persists to IndexedDB
+  // ── JSON file loader ─────────────────────────────────────────────────
   const handleFile = e => {
     const file = e.target.files[0]; if (!file) return;
     const r = new FileReader();
     r.onload = ev => {
       try {
         const parsed = JSON.parse(ev.target.result);
-        if (!parsed.schema?.startsWith("harmonic-analysis")) throw new Error("Schema non riconosciuto");
-        // Use song title as stable key (slugified)
+        if (!parsed.schema?.startsWith("harmonic-analysis"))
+          throw new Error("Schema non riconosciuto");
         const id = (parsed.song.title + '_' + parsed.song.artist)
-          .toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/(^_|_$)/g,'');
+          .toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/(^_|_$)/g,'');
         idbSaveSong(id, parsed)
-          .then(() => setUserSongs(prev => ({...prev, [id]: parsed})))
-          .catch(() => setUserSongs(prev => ({...prev, [id]: parsed})));
+          .then(()  => setUserSongs(prev => ({...prev, [id]: parsed})))
+          .catch(()  => setUserSongs(prev => ({...prev, [id]: parsed})));
         setData(parsed); setMainTab("fretboard"); setScaleTab("modes");
-        setSelId(parsed.modes[0]?.id??""); setBoxStart(0); setJsonError(null);
+        setSelId(parsed.modes[0]?.id ?? ''); setBoxStart(0); setJsonError(null);
       } catch(err) { setJsonError("JSON non valido: " + err.message); }
     };
-    r.readAsText(file); e.target.value="";
+    r.readAsText(file); e.target.value = "";
   };
 
-  // Delete a user song from IDB and state
+  // ── delete user song ─────────────────────────────────────────────────
   const deleteUserSong = (id, e) => {
     e.stopPropagation();
-    idbDeleteSong(id).catch(()=>{});
+    idbDeleteSong(id).catch(() => {});
     setUserSongs(prev => {
-      const next = {...prev};
-      delete next[id];
-      // if current song is being deleted, switch to first default
+      const next = {...prev}; delete next[id];
       if (data === prev[id]) {
-        const allCatalog = Object.values(catalogSongs);
-        const firstDefault = allCatalog[0] ?? null;
-        if (firstDefault) { setData(firstDefault); setSelId(firstDefault.modes[0]?.id ?? ""); }
+        const first = Object.values(catalogSongs)[0] ?? null;
+        if (first) { setData(first); setSelId(first.modes[0]?.id ?? ''); }
         setBoxStart(0);
       }
       return next;
     });
   };
 
-  // Fretboard logic
-  const items = data ? (scaleTab==="modes" ? data.modes : data.arpeggios) : [];
-  const cur   = useMemo(()=>items.find(x=>x.id===selId)??items[0],[items,selId]);
-  const pcs   = useMemo(()=>new Set(cur?.intervals.map(i=>(cur.rootPC+i)%12)??[]),[cur]);
-  const pcDeg = useMemo(()=>{const m={};cur?.intervals.forEach(i=>{m[(cur.rootPC+i)%12]=i;});return m;},[cur]);
-  const boxEnd = boxStart+4;
-  const inBox  = f => f>=boxStart && f<=boxEnd;
-  const rootFrets = s => Array.from({length:13},(_,f)=>f).filter(f=>cur&&pc(s,f)===cur.rootPC);
-  const r6 = useMemo(()=>rootFrets(0),[cur]);
-  const r5 = useMemo(()=>rootFrets(1).filter(f=>f>0),[cur]);
-  const jumpTo = si => { const rf=si===0?r6:r5; const b=rf.find(f=>f<=9); if(b!==undefined)setBoxStart(Math.max(0,b-2)); };
-  const noteLabel = p => showDeg ? (DEG_MAP[pcDeg[p]]??'') : NOTE_NM[p];
-  const boxX1 = boxStart===0 ? OPEN_X-10 : BX+(boxStart-1)*FW;
-  const boxX2 = BX+boxEnd*FW;
+  // ── fretboard logic ──────────────────────────────────────────────────
+  const items  = data ? (scaleTab === "modes" ? data.modes : data.arpeggios) : [];
+  const cur    = useMemo(() => items.find(x => x.id === selId) ?? items[0], [items, selId]);
+  const pcs    = useMemo(() => new Set(cur?.intervals.map(i => (cur.rootPC+i)%12) ?? []), [cur]);
+  const pcDeg  = useMemo(() => {
+    const m = {}; cur?.intervals.forEach(i => { m[(cur.rootPC+i)%12] = i; }); return m;
+  }, [cur]);
+  const boxEnd    = boxStart + 4;
+  const inBox     = f => f >= boxStart && f <= boxEnd;
+  const rootFrets = s => Array.from({length:13},(_,f)=>f).filter(f => cur && pc(s,f) === cur.rootPC);
+  const r6     = useMemo(() => rootFrets(0), [cur]);
+  const r5     = useMemo(() => rootFrets(1).filter(f=>f>0), [cur]);
+  const jumpTo = si => {
+    const rf = si===0 ? r6 : r5;
+    const b  = rf.find(f => f <= 9);
+    if (b !== undefined) setBoxStart(Math.max(0, b-2));
+  };
+  const noteLabel = p => showDeg ? (DEG_MAP[pcDeg[p]] ?? '') : NOTE_NM[p];
+  const boxX1 = boxStart===0 ? OPEN_X-10 : BX + (boxStart-1)*FW;
+  const boxX2 = BX + boxEnd * FW;
 
-  // Button style factory — theme-aware
+  // ── button style helpers ─────────────────────────────────────────────
   const btn = (active, color, extra={}) => ({
-    background: active ? `${color}22` : T.bgCard,
-    border: `1px solid ${active ? color : T.borderMid}`,
-    color:  active ? color : T.textMid,
-    borderRadius:3, cursor:"pointer", fontFamily:"inherit",
-    transition:"all 0.15s",
-    ...extra
-  });
-  const btnGhost = (active, color, extra={}) => ({
-    background: active ? `${color}18` : "transparent",
-    border: `1px solid ${active ? color : T.borderMid}`,
-    color:  active ? color : T.textFaint,
-    borderRadius:3, cursor:"pointer", fontFamily:"inherit",
-    ...extra
+    background:   active ? `${color}22` : T.bgCard,
+    border:       `1px solid ${active ? color : T.borderMid}`,
+    color:        active ? color : T.textMid,
+    borderRadius: 4, cursor: "pointer", fontFamily: "inherit",
+    minHeight:    R.btnMinH, transition: "all 0.15s", ...extra,
   });
 
-  // ── Section chord row ──────────────────────────────────────────────────
+  // ── section chord row ─────────────────────────────────────────────────
   const SectionChordsRow = ({ section }) => (
-    <div style={{marginBottom:16}}>
-      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
-        <div style={{fontSize:9,letterSpacing:3,textTransform:"uppercase",color:ac,fontWeight:700}}>{section.label}</div>
-        {section.note && <div style={{fontSize:8,color:T.textFaint,fontStyle:"italic"}}>{section.note}</div>}
+    <div style={{marginBottom: 18}}>
+      <div style={{display:"flex", alignItems:"center", gap:8, marginBottom:8}}>
+        <div style={{fontSize:R.fs9, letterSpacing:2, textTransform:"uppercase",
+          color:ac, fontWeight:700}}>{section.label}</div>
+        {section.note && !R.xs && (
+          <div style={{fontSize:R.fs7, color:T.textFaint, fontStyle:"italic",
+            lineHeight:1.4}}>{section.note}</div>
+        )}
       </div>
-      <div style={{display:"flex",flexWrap:"wrap",gap:4}}>
-        {section.chords.map((cid,i)=>{
-          const ch = data.chords.find(c=>c.id===cid); if(!ch) return null;
+      {section.note && R.xs && (
+        <div style={{fontSize:R.fs7, color:T.textFaint, fontStyle:"italic",
+          lineHeight:1.5, marginBottom:8}}>{section.note}</div>
+      )}
+      <div style={{display:"flex", flexWrap:"wrap", gap:6}}>
+        {section.chords.map((cid,i) => {
+          const ch = data.chords.find(c => c.id === cid); if (!ch) return null;
           return (
             <div key={i} style={{
-              padding:"7px 11px",borderRadius:3,minWidth:54,textAlign:"center",
-              background: ch.isAlien ? `${ac}15` : T.bgCardAlt,
-              border:`1px solid ${ch.isAlien ? ac : T.borderFaint}`,
+              padding: "9px 13px", borderRadius:4,
+              minWidth: R.xs ? 50 : 60, textAlign:"center",
+              background: ch.isAlien ? `${ac}18` : T.bgCardAlt,
+              border: `1px solid ${ch.isAlien ? ac : T.borderFaint}`,
             }}>
-              <div style={{fontSize:14,fontWeight:700,color: ch.isAlien ? ac : T.textPrimary}}>{ch.symbol}</div>
-              <div style={{fontSize:8,color:T.textFaint,marginTop:2}}>{ch.degree}</div>
+              <div style={{fontSize:R.fs13, fontWeight:700,
+                color: ch.isAlien ? ac : T.textPrimary}}>{ch.symbol}</div>
+              <div style={{fontSize:R.fs7, color:T.textFaint, marginTop:3}}>{ch.degree}</div>
             </div>
           );
         })}
@@ -443,249 +515,292 @@ function App() {
     </div>
   );
 
-  // ────────────────────────────────────────────────────────────────────────
-  // Loading screen
-  if (loading) {
-    return (
-      <div style={{
-        background: themeId==="dark" ? "#040810" : "#eef2f7",
-        minHeight:"100vh", display:"flex", flexDirection:"column",
-        alignItems:"center", justifyContent:"center",
-        fontFamily:"'Courier New',Courier,monospace",
-        gap: 20,
-      }}>
-        <div style={{fontSize:32, letterSpacing:4, color:"#10b981", animation:"pulse 1.5s infinite"}}>♩</div>
-        <div style={{fontSize:11, letterSpacing:6, color: themeId==="dark" ? "#2a4058" : "#6a8898",
-          textTransform:"uppercase"}}>caricamento brani...</div>
-        <style>{`@keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }`}</style>
-      </div>
-    );
-  }
+  // ── loading screen ───────────────────────────────────────────────────
+  if (loading) return (
+    <div style={{
+      background: themeId==="dark" ? "#040810" : "#eef2f7",
+      minHeight:"100vh", display:"flex", flexDirection:"column",
+      alignItems:"center", justifyContent:"center",
+      fontFamily:"'Courier New',Courier,monospace", gap:20,
+    }}>
+      <div style={{fontSize:36, color:"#10b981", animation:"pulse 1.4s infinite"}}>♩</div>
+      <div style={{fontSize:12, letterSpacing:6, textTransform:"uppercase",
+        color: themeId==="dark" ? "#2a4058" : "#6a8898"}}>caricamento brani...</div>
+      <style>{`@keyframes pulse{0%,100%{opacity:.2}50%{opacity:1}}`}</style>
+    </div>
+  );
 
+  // ════════════════════════════════════════════════════════════════════
   return (
     <div style={{
-      background:T.bgPage, minHeight:"100vh", padding:"16px 10px 40px",
-      fontFamily:"'Courier New',Courier,monospace", color:T.textSecondary,
+      background: T.bgPage, minHeight:"100vh", padding: R.pagePad,
+      fontFamily:"'Courier New',Courier,monospace", color: T.textSecondary,
       transition:"background 0.25s, color 0.25s",
     }}>
 
-      {/* ── TOP BAR ──────────────────────────────────────────────────── */}
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",
-                   flexWrap:"wrap",gap:8,maxWidth:860,margin:"0 auto 16px"}}>
-        <div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>
-          {Object.entries(catalogSongs).map(([key,s])=>{
-            const active = data && data.song.title===s.song.title && data.song.artist===s.song.artist;
-            return (
-              <button key={key}
-                onClick={()=>{setData(s);setScaleTab("modes");setSelId(s.modes[0]?.id??"");setBoxStart(0);setJsonError(null);}}
-                style={{...btn(active,s.song.accentColor),padding:"5px 11px",fontSize:9,letterSpacing:1}}>
-                {s.song.title}
-              </button>
-            );
-          })}
-          {/* ── User-saved songs from IndexedDB ── */}
-          {Object.entries(userSongs).map(([id,s])=>{
-            const active = data.song.title===s.song.title && data.song.artist===s.song.artist;
-            const color  = s.song.accentColor ?? "#4a8a9a";
-            return (
-              <div key={id} style={{display:"flex",alignItems:"center",gap:0}}>
-                <button
-                  onClick={()=>{setData(s);setScaleTab("modes");setSelId(s.modes[0]?.id??"");setBoxStart(0);setJsonError(null);}}
-                  style={{...btn(active,color),padding:"5px 11px",fontSize:9,letterSpacing:1,
-                    borderRadius:"3px 0 0 3px",borderRight:"none"}}>
+      {/* ── TOP BAR ────────────────────────────────────────────────── */}
+      <div style={{
+        maxWidth:900, margin:`0 auto ${R.xs?12:16}px`,
+        display:"flex", flexDirection:"column", gap: R.topGap,
+      }}>
+        {/* Song selector strip — horizontal scroll */}
+        <div style={{
+          display:"flex", alignItems:"center", gap:5,
+          overflowX:"auto", paddingBottom:4,
+          // hide scrollbar visually but keep functional
+          scrollbarWidth:"none", msOverflowStyle:"none",
+        }}>
+          <style>{`.song-strip::-webkit-scrollbar{display:none}`}</style>
+          <div className="song-strip" style={{display:"flex", gap:5, flexWrap: R.md ? "nowrap" : "wrap",
+            alignItems:"center", width:"100%", overflowX: R.md ? "auto" : "visible",
+            paddingBottom: R.md ? 4 : 0,
+          }}>
+            {Object.entries(catalogSongs).map(([key,s]) => {
+              const active = data?.song?.title===s.song.title && data?.song?.artist===s.song.artist;
+              return (
+                <button key={key}
+                  onClick={() => {setData(s);setScaleTab("modes");setSelId(s.modes[0]?.id??"");setBoxStart(0);setJsonError(null);}}
+                  style={{...btn(active, s.song.accentColor),
+                    padding:`7px 12px`, fontSize:R.fs8, letterSpacing:.5,
+                    whiteSpace:"nowrap", flexShrink:0,
+                  }}>
                   {s.song.title}
                 </button>
-                <button
-                  onClick={(e)=>deleteUserSong(id,e)}
-                  title="Rimuovi brano salvato"
-                  style={{
-                    background: active ? `${color}22` : T.bgCard,
-                    border:`1px solid ${active ? color : T.borderMid}`,
-                    borderLeft:"none",
-                    color: active ? color : T.textGhost,
-                    borderRadius:"0 3px 3px 0",
-                    cursor:"pointer", padding:"5px 7px", fontSize:9,
-                    lineHeight:1, transition:"all 0.15s",
-                  }}>✕</button>
-              </div>
-            );
-          })}
-          <button onClick={()=>fileRef.current.click()}
-            style={{...btn(false,"#4a8a9a"),padding:"5px 11px",fontSize:9,letterSpacing:1}}>
-            + JSON
-          </button>
-          <input ref={fileRef} type="file" accept=".json" style={{display:"none"}} onChange={handleFile}/>
-        </div>
-        {/* Right side: complexity + theme toggle */}
-        <div style={{display:"flex",alignItems:"center",gap:10}}>
-          <div style={{display:"flex",alignItems:"center",gap:5}}>
-            <span style={{fontSize:8,color:T.textGhost,letterSpacing:2}}>★</span>
-            <Stars n={data.analysis.complexity} color={ac}/>
+              );
+            })}
+            {Object.entries(userSongs).map(([id,s]) => {
+              const active = data?.song?.title===s.song.title && data?.song?.artist===s.song.artist;
+              const color  = s.song.accentColor ?? "#4a8a9a";
+              return (
+                <div key={id} style={{display:"flex", alignItems:"center", flexShrink:0}}>
+                  <button onClick={() => {setData(s);setScaleTab("modes");setSelId(s.modes[0]?.id??"");setBoxStart(0);setJsonError(null);}}
+                    style={{...btn(active,color), padding:`7px 12px`, fontSize:R.fs8,
+                      borderRadius:"4px 0 0 4px", borderRight:"none", whiteSpace:"nowrap"}}>
+                    {s.song.title}
+                  </button>
+                  <button onClick={e=>deleteUserSong(id,e)}
+                    style={{
+                      background: active?`${color}22`:T.bgCard,
+                      border:`1px solid ${active?color:T.borderMid}`, borderLeft:"none",
+                      color: active?color:T.textGhost, borderRadius:"0 4px 4px 0",
+                      cursor:"pointer", padding:`7px 9px`, fontSize:R.fs9, minHeight:R.btnMinH,
+                      lineHeight:1, transition:"all 0.15s",
+                    }}>✕</button>
+                </div>
+              );
+            })}
+            <button onClick={() => fileRef.current.click()}
+              style={{...btn(false,"#4a8a9a"), padding:`7px 12px`, fontSize:R.fs8,
+                letterSpacing:.5, flexShrink:0, whiteSpace:"nowrap"}}>
+              + JSON
+            </button>
+            <input ref={fileRef} type="file" accept=".json" style={{display:"none"}} onChange={handleFile}/>
           </div>
-          {/* ── THEME TOGGLE ── */}
-          <button
-            onClick={()=>setThemeId(t=>t==="dark"?"light":"dark")}
-            title={themeId==="dark" ? "Passa alla modalità chiara" : "Passa alla modalità scura"}
+        </div>
+
+        {/* Second row: theme toggle + complexity */}
+        <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+          {R.showStars ? (
+            <div style={{display:"flex", alignItems:"center", gap:6}}>
+              <span style={{fontSize:R.fs7, color:T.textGhost, letterSpacing:1}}>COMPLESSITÀ</span>
+              <Stars n={data.analysis.complexity} color={ac}/>
+            </div>
+          ) : (
+            <div style={{display:"flex", alignItems:"center", gap:5}}>
+              <Stars n={data.analysis.complexity} color={ac}/>
+            </div>
+          )}
+          <button onClick={() => setThemeId(t => t==="dark"?"light":"dark")}
             style={{
               background: themeId==="dark" ? "#1a2a3a" : "#d8e8f4",
-              border:`1px solid ${themeId==="dark" ? "#2a4058" : "#8aaabf"}`,
-              borderRadius:20, cursor:"pointer",
-              padding:"4px 10px", display:"flex", alignItems:"center", gap:6,
+              border:`1px solid ${themeId==="dark"?"#2a4058":"#8aaabf"}`,
+              borderRadius:20, cursor:"pointer", minHeight:R.btnMinH,
+              padding:`4px 12px`, display:"flex", alignItems:"center", gap:6,
               transition:"all 0.2s",
             }}>
-            <span style={{fontSize:13}}>{themeId==="dark" ? "☀️" : "🌙"}</span>
-            <span style={{fontSize:8,letterSpacing:1,color:themeId==="dark"?"#4a7a90":"#2a5a7a",fontFamily:"'Courier New',monospace"}}>
-              {themeId==="dark" ? "LIGHT" : "DARK"}
-            </span>
+            <span style={{fontSize:15}}>{themeId==="dark"?"☀️":"🌙"}</span>
+            {!R.xs && (
+              <span style={{fontSize:R.fs7, letterSpacing:1, fontFamily:"inherit",
+                color:themeId==="dark"?"#4a7a90":"#2a5a7a"}}>
+                {themeId==="dark"?"LIGHT":"DARK"}
+              </span>
+            )}
           </button>
         </div>
       </div>
 
       {/* ── SONG HEADER ──────────────────────────────────────────────── */}
-      <div style={{textAlign:"center",maxWidth:860,margin:"0 auto 18px"}}>
+      <div style={{textAlign:"center", maxWidth:900, margin:`0 auto ${R.xs?14:18}px`}}>
         {jsonError && (
-          <div style={{color:"#f87171",fontSize:10,marginBottom:8,padding:"6px 12px",
-            border:"1px solid #f87171",borderRadius:3,display:"inline-block",background:`#f8717112`}}>{jsonError}</div>
+          <div style={{color:"#f87171", fontSize:R.fs9, marginBottom:8, padding:"7px 14px",
+            border:"1px solid #f87171", borderRadius:4, display:"inline-block",
+            background:"#f8717112"}}>{jsonError}</div>
         )}
-        <div style={{fontSize:9,letterSpacing:5,color:T.textGhost,textTransform:"uppercase",marginBottom:4}}>
+        <div style={{fontSize:R.fs7, letterSpacing: R.xs?3:5, color:T.textGhost,
+          textTransform:"uppercase", marginBottom:4}}>
           {data.song.artist} · {data.song.album} · {data.song.year}
         </div>
-        <div style={{fontSize:26,fontWeight:700,color:T.textPrimary,letterSpacing:2,marginBottom:4}}>
+        <div style={{fontSize:R.fsSongTitle, fontWeight:700, color:T.textPrimary,
+          letterSpacing: R.xs?1:2, marginBottom:6, lineHeight:1.2}}>
           {data.song.title}
         </div>
-        <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap",gap:12,fontSize:8,color:T.textFaint,letterSpacing:2}}>
+        <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap",
+          gap: R.xs?8:14, fontSize:R.fs8, color:T.textFaint, letterSpacing:1}}>
           <span>🎸 {data.song.tuning}</span>
           <span>♩ {data.song.timeSignature}</span>
           <span>⏱ {data.song.tempo}</span>
-          {data.song.capo>0 && <span>CAPO {data.song.capo}</span>}
+          {data.song.capo > 0 && <span>CAPO {data.song.capo}</span>}
         </div>
-        <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap",gap:8,marginTop:10}}>
-          <span style={{fontSize:9,padding:"3px 12px",borderRadius:2,letterSpacing:1,
-            border:`1px solid ${ac}`,color:ac,background:`${ac}15`}}>
+        <div style={{display:"flex", justifyContent:"center", flexWrap:"wrap",
+          gap:8, marginTop:10}}>
+          <span style={{fontSize:R.fs8, padding:"4px 13px", borderRadius:3,
+            letterSpacing:.5, border:`1px solid ${ac}`, color:ac, background:`${ac}15`,
+            lineHeight:1.5}}>
             {data.analysis.tonicNote} · {data.analysis.primaryMode}
           </span>
-          <span style={{fontSize:9,padding:"3px 12px",borderRadius:2,letterSpacing:1,
-            border:"1px solid #f87171",color:"#f87171",background:"#f8717112"}}>
+          <span style={{fontSize:R.fs8, padding:"4px 13px", borderRadius:3,
+            letterSpacing:.5, border:"1px solid #f87171", color:"#f87171",
+            background:"#f8717112", lineHeight:1.5}}>
             ⚡ {data.analysis.alienChord}
           </span>
         </div>
       </div>
 
       {/* ── MAIN TABS ────────────────────────────────────────────────── */}
-      <div style={{display:"flex",justifyContent:"center",gap:6,marginBottom:18}}>
+      <div style={{display:"flex", justifyContent:"center", gap:6, marginBottom:18}}>
         {[["fretboard","TASTIERA"],["chords","ACCORDI"],["analysis","ANALISI"]].map(([t,l])=>(
-          <button key={t} onClick={()=>setMainTab(t)}
-            style={{...btn(mainTab===t,ac),padding:"7px 18px",fontSize:10,letterSpacing:2,fontWeight:mainTab===t?700:400}}>
+          <button key={t} onClick={() => setMainTab(t)}
+            style={{...btn(mainTab===t, ac), padding: R.btnPadMain,
+              fontSize:R.fs10, letterSpacing:1.5, fontWeight: mainTab===t?700:400}}>
             {l}
           </button>
         ))}
       </div>
 
-      {/* ══════════════════════════════════════════════════════════════════
+      {/* ══════════════════════════════════════════════════════════════
           TAB: TASTIERA
-      ══════════════════════════════════════════════════════════════════ */}
+      ══════════════════════════════════════════════════════════════ */}
       {mainTab==="fretboard" && cur && (
-        <div style={{maxWidth:860,margin:"0 auto"}}>
+        <div style={{maxWidth:900, margin:"0 auto"}}>
 
           {/* Scale/Arp subtabs */}
-          <div style={{display:"flex",justifyContent:"center",gap:6,marginBottom:12}}>
+          <div style={{display:"flex", justifyContent:"center", gap:6, marginBottom:12}}>
             {[["modes","SCALE / MODI"],["arps","ARPEGGI"]].map(([t,l])=>(
               <button key={t}
-                onClick={()=>{setScaleTab(t);setSelId((t==="modes"?data.modes:data.arpeggios)[0]?.id??"");setBoxStart(0);}}
-                style={{...btn(scaleTab===t,ac),padding:"5px 16px",fontSize:9,letterSpacing:2}}>
+                onClick={() => {setScaleTab(t); setSelId((t==="modes"?data.modes:data.arpeggios)[0]?.id??""); setBoxStart(0);}}
+                style={{...btn(scaleTab===t,ac), padding: R.btnPadSm, fontSize:R.fs8, letterSpacing:1.5}}>
                 {l}
               </button>
             ))}
           </div>
 
-          {/* Item pills */}
-          <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:5,marginBottom:14}}>
-            {items.map(it=>(
-              <button key={it.id} onClick={()=>{setSelId(it.id);setBoxStart(0);}}
-                style={{...btn(selId===it.id,it.color),padding:"6px 12px",minWidth:80,
-                  display:"flex",flexDirection:"column",alignItems:"center",gap:1}}>
-                <span style={{fontWeight:700,fontSize:11}}>{it.label}</span>
-                <span style={{fontSize:8,opacity:.75}}>{it.sub}</span>
-              </button>
-            ))}
+          {/* Scale/Arp pills — horizontal scroll on mobile */}
+          <div style={{overflowX:"auto", paddingBottom:6, marginBottom:14}}>
+            <div style={{display:"flex", gap:6, justifyContent: R.sm?"flex-start":"center",
+              minWidth:"max-content", padding: R.sm?"0 4px":0}}>
+              {items.map(it => (
+                <button key={it.id} onClick={() => {setSelId(it.id); setBoxStart(0);}}
+                  style={{...btn(selId===it.id, it.color),
+                    padding:`8px 13px`, minWidth: R.pillMinW, flexShrink:0,
+                    display:"flex", flexDirection:"column", alignItems:"center", gap:2}}>
+                  <span style={{fontWeight:700, fontSize:R.fs11}}>{it.label}</span>
+                  <span style={{fontSize:R.pillFontSub, opacity:.75, textAlign:"center"}}>{it.sub}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Tip banner */}
           {cur.tip && (
-            <div style={{maxWidth:580,margin:"0 auto 12px",padding:"9px 14px",borderRadius:3,
-              border:`1px solid ${cur.color}40`,background:`${cur.color}0c`,
-              fontSize:9,color:T.textMid,textAlign:"center",letterSpacing:.5,lineHeight:1.7}}>
+            <div style={{maxWidth:620, margin:"0 auto 14px",
+              padding: R.xs?"10px 12px":"10px 16px", borderRadius:4,
+              border:`1px solid ${cur.color}40`, background:`${cur.color}0c`,
+              fontSize:R.fs8, color:T.textMid, lineHeight:1.75}}>
               💡 {cur.tip}
             </div>
           )}
 
-          {/* ── FRETBOARD SVG ── */}
-          <div style={{overflowX:"auto",marginBottom:8,
-            background:T.bgCardAlt,borderRadius:6,
+          {/* ── FRETBOARD SVG — scales to container ── */}
+          <div style={{
+            overflowX:"auto", marginBottom:10,
+            background:T.bgCardAlt, borderRadius:8,
             border:`1px solid ${T.borderFaint}`,
-            padding:"8px 0"}}>
-            <svg width={SVG_W} height={SVG_H} style={{display:"block",margin:"0 auto"}}>
-
+            padding:"8px 4px 4px",
+          }}>
+            <svg
+              viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+              width={SVG_W} height={SVG_H}
+              style={{display:"block", margin:"0 auto",
+                maxWidth:"100%", height:"auto"}}
+            >
               {/* Fret numbers */}
-              {Array.from({length:13},(_,f)=>(
+              {Array.from({length:13},(_,f) => (
                 <text key={f} x={nX(f)} y={PT-20} textAnchor="middle"
-                  fontSize={9} fill={inBox(f)?T.fretNumActive:T.fretNumIdle} fontFamily="inherit">{f}</text>
+                  fontSize={9} fill={inBox(f)?T.fretNumActive:T.fretNumIdle}
+                  fontFamily="inherit">{f}</text>
               ))}
 
-              {/* Neck wood */}
+              {/* Neck */}
               <rect x={BX} y={PT-SH*.45} width={12*FW} height={5*SH+SH*.9}
                 fill={T.neckBg} rx={3}/>
 
               {/* Box highlight */}
               <rect x={boxX1} y={PT-SH*.45} width={boxX2-boxX1} height={5*SH+SH*.9}
-                fill={cur.color} opacity={themeId==="dark"?.07:.12} rx={5}
-                stroke={cur.color} strokeWidth={1.5} strokeOpacity={.45}/>
+                fill={cur.color} opacity={themeId==="dark"?.08:.14} rx={5}
+                stroke={cur.color} strokeWidth={1.5} strokeOpacity={.5}/>
 
               {/* Frets */}
-              {Array.from({length:12},(_,i)=>{
+              {Array.from({length:12},(_,i) => {
                 const f=i+1, hi=f>boxStart&&f<=boxEnd;
-                return <line key={f} x1={BX+f*FW} y1={PT-SH*.4} x2={BX+f*FW} y2={PT+5*SH-SH*.2}
+                return <line key={f}
+                  x1={BX+f*FW} y1={PT-SH*.4} x2={BX+f*FW} y2={PT+5*SH-SH*.2}
                   stroke={hi?T.fretActive:T.fretCol} strokeWidth={hi?2:1}/>;
               })}
 
               {/* Nut */}
-              <rect x={NUT_X} y={PT-SH*.45} width={NUT_W} height={5*SH+SH*.9} fill={T.nutCol} rx={2}/>
+              <rect x={NUT_X} y={PT-SH*.45} width={NUT_W} height={5*SH+SH*.9}
+                fill={T.nutCol} rx={2}/>
 
               {/* Position markers */}
-              {[3,5,7,9].map(f=>(
+              {[3,5,7,9].map(f => (
                 <circle key={f} cx={BX+(f-.5)*FW} cy={PT+5*SH+12} r={5} fill={T.markerCol}/>
               ))}
               <circle cx={BX+11.5*FW} cy={PT+5*SH+6}  r={5} fill={T.markerCol}/>
               <circle cx={BX+11.5*FW} cy={PT+5*SH+20} r={5} fill={T.markerCol}/>
 
               {/* Strings */}
-              {[0,1,2,3,4,5].map(s=>(
-                <line key={s} x1={OPEN_X-14} y1={sY(s)} x2={SVG_W-PR/2} y2={sY(s)}
-                  stroke={T.stringCol} strokeWidth={[2.8,2.3,1.9,1.4,1.1,.8][s]} opacity={.75}/>
+              {[0,1,2,3,4,5].map(s => (
+                <line key={s}
+                  x1={OPEN_X-14} y1={sY(s)} x2={SVG_W-PR/2} y2={sY(s)}
+                  stroke={T.stringCol}
+                  strokeWidth={[2.8,2.3,1.9,1.4,1.1,.8][s]}
+                  opacity={.8}/>
               ))}
 
               {/* String labels */}
-              {STR_LBL.map((nm,s)=>(
+              {STR_LBL.map((nm,s) => (
                 <text key={s} x={OPEN_X-20} y={sY(s)+4}
-                  textAnchor="middle" fontSize={10} fill={T.strLabelCol} fontFamily="inherit" fontWeight="600">{nm}</text>
+                  textAnchor="middle" fontSize={11} fontWeight="700"
+                  fill={T.strLabelCol} fontFamily="inherit">{nm}</text>
               ))}
 
               {/* Note dots */}
-              {Array.from({length:13},(_,f)=>
-                [0,1,2,3,4,5].map(s=>{
-                  const p=pc(s,f);
-                  if(!pcs.has(p)) return null;
-                  const isRoot=p===cur.rootPC, inside=inBox(f);
+              {Array.from({length:13},(_,f) =>
+                [0,1,2,3,4,5].map(s => {
+                  const p = pc(s,f);
+                  if (!pcs.has(p)) return null;
+                  const isRoot = p===cur.rootPC, inside = inBox(f);
                   const x=nX(f), y=sY(s), r=inside?15:6;
                   return (
-                    <g key={`${s}-${f}`} opacity={inside?1:themeId==="dark"?.2:.15}>
+                    <g key={`${s}-${f}`} opacity={inside?1:themeId==="dark"?.18:.12}>
                       <circle cx={x} cy={y} r={r}
-                        fill={isRoot ? cur.color : inside ? `${cur.color}28` : "none"}
-                        stroke={cur.color} strokeWidth={isRoot?2.5:1.5}/>
+                        fill={isRoot ? cur.color : inside ? `${cur.color}30` : "none"}
+                        stroke={cur.color}
+                        strokeWidth={isRoot?2.5:inside?1.5:1}/>
                       {inside && (
                         <text x={x} y={y+4} textAnchor="middle"
-                          fontSize={9} fontWeight="bold" fontFamily="inherit"
-                          fill={isRoot ? (themeId==="dark"?"#020912":"#ffffff") : cur.color}>
+                          fontSize={10} fontWeight="bold" fontFamily="inherit"
+                          fill={isRoot?(themeId==="dark"?"#020912":"#ffffff"):cur.color}>
                           {noteLabel(p)}
                         </text>
                       )}
@@ -694,78 +809,90 @@ function App() {
                 })
               )}
 
-              {/* Root string markers */}
+              {/* Root markers below strings */}
               {r6.filter(f=>inBox(f)).map(f=>(
-                <text key={`r6-${f}`} x={nX(f)} y={sY(0)+27}
-                  textAnchor="middle" fontSize={7} fill={cur.color} opacity={.8} fontWeight="700">6ª</text>
+                <text key={`r6-${f}`} x={nX(f)} y={sY(0)+28}
+                  textAnchor="middle" fontSize={8} fill={cur.color}
+                  opacity={.85} fontWeight="700">6ª</text>
               ))}
               {r5.filter(f=>inBox(f)).map(f=>(
-                <text key={`r5-${f}`} x={nX(f)} y={sY(1)+27}
-                  textAnchor="middle" fontSize={7} fill={cur.color} opacity={.8} fontWeight="700">5ª</text>
+                <text key={`r5-${f}`} x={nX(f)} y={sY(1)+28}
+                  textAnchor="middle" fontSize={8} fill={cur.color}
+                  opacity={.85} fontWeight="700">5ª</text>
               ))}
             </svg>
           </div>
 
           {/* Box navigation */}
-          <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:12,marginBottom:10}}>
-            <button disabled={boxStart===0} onClick={()=>setBoxStart(s=>Math.max(0,s-1))}
-              style={{...btn(false,ac),padding:"5px 16px",fontSize:16,opacity:boxStart===0?.3:1}}>◀</button>
-            <span style={{fontSize:11,color:T.textFaint,minWidth:110,textAlign:"center",letterSpacing:2}}>
+          <div style={{display:"flex", alignItems:"center", justifyContent:"center",
+            gap:12, marginBottom:10}}>
+            <button disabled={boxStart===0} onClick={() => setBoxStart(s=>Math.max(0,s-1))}
+              style={{...btn(false,ac), padding:"8px 20px", fontSize:18,
+                opacity:boxStart===0?.3:1}}>◀</button>
+            <span style={{fontSize:R.fs10, color:T.textMid, minWidth:120,
+              textAlign:"center", letterSpacing:1}}>
               TASTO {boxStart} – {boxEnd}
             </span>
-            <button disabled={boxStart>=8} onClick={()=>setBoxStart(s=>Math.min(8,s+1))}
-              style={{...btn(false,ac),padding:"5px 16px",fontSize:16,opacity:boxStart>=8?.3:1}}>▶</button>
+            <button disabled={boxStart>=8} onClick={() => setBoxStart(s=>Math.min(8,s+1))}
+              style={{...btn(false,ac), padding:"8px 20px", fontSize:18,
+                opacity:boxStart>=8?.3:1}}>▶</button>
           </div>
 
           {/* Jump-to-root */}
-          <div style={{display:"flex",justifyContent:"center",gap:8,flexWrap:"wrap",marginBottom:10}}>
+          <div style={{display:"flex", justifyContent:"center", gap:8,
+            flexWrap:"wrap", marginBottom:10}}>
             {[{si:0,label:"ROOT · 6ª",frets:r6},{si:1,label:"ROOT · 5ª",frets:r5}].map(({si,label,frets})=>(
-              <button key={si} onClick={()=>jumpTo(si)}
-                style={{...btn(false,cur.color),padding:"5px 12px",fontSize:9,letterSpacing:.5}}>
-                ↓ {label}&nbsp;<span style={{opacity:.55}}>[{frets.join(", ")}]</span>
+              <button key={si} onClick={() => jumpTo(si)}
+                style={{...btn(false,cur.color), padding: R.btnPadSm, fontSize:R.fs8}}>
+                ↓ {label}&nbsp;
+                <span style={{opacity:.55, fontSize:R.fs7}}>[{frets.join(", ")}]</span>
               </button>
             ))}
           </div>
 
           {/* Root in box badges */}
-          <div style={{display:"flex",justifyContent:"center",gap:6,flexWrap:"wrap",marginBottom:14,minHeight:22}}>
-            {r6.filter(f=>inBox(f)).map(f=>(
-              <span key={f} style={{fontSize:9,padding:"3px 10px",borderRadius:2,letterSpacing:1,
-                border:`1px solid ${cur.color}`,color:cur.color,background:`${cur.color}15`,fontWeight:700}}>
-                ROOT · 6ª · tasto {f}</span>
-            ))}
-            {r5.filter(f=>inBox(f)).map(f=>(
-              <span key={f} style={{fontSize:9,padding:"3px 10px",borderRadius:2,letterSpacing:1,
-                border:`1px solid ${cur.color}`,color:cur.color,background:`${cur.color}15`,fontWeight:700}}>
-                ROOT · 5ª · tasto {f}</span>
+          <div style={{display:"flex", justifyContent:"center", gap:6,
+            flexWrap:"wrap", marginBottom:14, minHeight:26}}>
+            {[...r6.filter(f=>inBox(f)).map(f=>({str:"6ª",f})),
+              ...r5.filter(f=>inBox(f)).map(f=>({str:"5ª",f}))].map(({str,f})=>(
+              <span key={`${str}-${f}`} style={{
+                fontSize:R.fs8, padding:"5px 12px", borderRadius:3,
+                border:`1px solid ${cur.color}`, color:cur.color,
+                background:`${cur.color}15`, fontWeight:700, letterSpacing:.5,
+              }}>
+                ROOT · {str} · tasto {f}
+              </span>
             ))}
           </div>
 
           {/* Note/Degree toggle */}
-          <div style={{display:"flex",justifyContent:"center",marginBottom:18}}>
-            <button onClick={()=>setShowDeg(d=>!d)}
-              style={{...btn(showDeg,ac),padding:"5px 18px",fontSize:9,letterSpacing:1}}>
+          <div style={{display:"flex", justifyContent:"center", marginBottom:20}}>
+            <button onClick={() => setShowDeg(d=>!d)}
+              style={{...btn(showDeg,ac), padding: R.btnPadSm, fontSize:R.fs9, letterSpacing:.5}}>
               {showDeg ? "♩ MOSTRA NOTE" : "① MOSTRA GRADI"}
             </button>
           </div>
 
           {/* Interval formula */}
-          <div style={{maxWidth:580,margin:"0 auto"}}>
-            <div style={{fontSize:9,color:T.textGhost,textAlign:"center",letterSpacing:4,
-              textTransform:"uppercase",marginBottom:10}}>formula · {cur.label}</div>
-            <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:5}}>
-              {cur.intervals.map((iv,i)=>{
+          <div style={{maxWidth:620, margin:"0 auto"}}>
+            <div style={{fontSize:R.fs8, color:T.textGhost, textAlign:"center",
+              letterSpacing:3, textTransform:"uppercase", marginBottom:12}}>
+              formula · {cur.label}
+            </div>
+            <div style={{display:"flex", flexWrap:"wrap", justifyContent:"center", gap:6}}>
+              {cur.intervals.map((iv,i) => {
                 const p=(cur.rootPC+iv)%12, isR=iv===0;
                 return (
                   <div key={i} style={{
-                    display:"flex",flexDirection:"column",alignItems:"center",gap:2,
-                    padding:"8px 11px",borderRadius:4,minWidth:46,
-                    background: isR ? `${cur.color}20` : T.bgCard,
-                    border:`1px solid ${isR ? cur.color : T.borderFaint}`,
+                    display:"flex", flexDirection:"column", alignItems:"center", gap:3,
+                    padding:"10px 12px", borderRadius:5, minWidth: R.ivMinW,
+                    background: isR?`${cur.color}22`:T.bgCard,
+                    border:`1px solid ${isR?cur.color:T.borderFaint}`,
                   }}>
-                    <span style={{fontSize:8,color:T.textFaint}}>{DEG_MAP[iv]??`+${iv}`}</span>
-                    <span style={{fontSize:15,fontWeight:700,color:isR?cur.color:T.textPrimary}}>{NOTE_NM[p]}</span>
-                    <span style={{fontSize:7,color:T.textGhost}}>+{iv}</span>
+                    <span style={{fontSize:R.fs7, color:T.textFaint}}>{DEG_MAP[iv]??`+${iv}`}</span>
+                    <span style={{fontSize:R.fs13+2, fontWeight:700,
+                      color:isR?cur.color:T.textPrimary}}>{NOTE_NM[p]}</span>
+                    <span style={{fontSize:R.fs6, color:T.textGhost}}>+{iv}</span>
                   </div>
                 );
               })}
@@ -774,49 +901,57 @@ function App() {
         </div>
       )}
 
-      {/* ══════════════════════════════════════════════════════════════════
+      {/* ══════════════════════════════════════════════════════════════
           TAB: ACCORDI
-      ══════════════════════════════════════════════════════════════════ */}
+      ══════════════════════════════════════════════════════════════ */}
       {mainTab==="chords" && (
-        <div style={{maxWidth:860,margin:"0 auto"}}>
+        <div style={{maxWidth:900, margin:"0 auto"}}>
           <div style={{marginBottom:24}}>
-            {data.sections.map(sec=><SectionChordsRow key={sec.id} section={sec}/>)}
+            {data.sections.map(sec => <SectionChordsRow key={sec.id} section={sec}/>)}
           </div>
-          <div style={{fontSize:9,letterSpacing:4,color:T.textGhost,textTransform:"uppercase",marginBottom:14,textAlign:"center"}}>
+          <div style={{fontSize:R.fs8, letterSpacing:3, color:T.textGhost,
+            textTransform:"uppercase", marginBottom:14, textAlign:"center"}}>
             analisi accordo per accordo
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10}}>
+          <div style={{display:"grid", gridTemplateColumns: R.chordCols, gap:12}}>
             {data.chords
               .filter((c,i,arr)=>arr.findIndex(x=>x.rootPC===c.rootPC&&x.symbol===c.symbol)===i)
-              .map(ch=>(
+              .map(ch => (
               <div key={ch.id} style={{
-                padding:"14px",borderRadius:4,
-                background: ch.isAlien ? `${ac}0e` : T.bgCard,
-                border:`1px solid ${ch.isAlien ? ac : T.borderFaint}`,
-                boxShadow: themeId==="light" ? "0 1px 4px rgba(0,0,0,.06)" : "none",
+                padding:16, borderRadius:6,
+                background: ch.isAlien?`${ac}0e`:T.bgCard,
+                border:`1px solid ${ch.isAlien?ac:T.borderFaint}`,
+                boxShadow: themeId==="light"?"0 2px 6px rgba(0,0,0,.07)":"none",
               }}>
-                <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-between",marginBottom:8}}>
-                  <span style={{fontSize:22,fontWeight:700,color:ch.isAlien?ac:T.textPrimary}}>{ch.symbol}</span>
-                  <span style={{fontSize:11,color:ch.isAlien?ac:T.textFaint,fontWeight:700}}>{ch.degree}</span>
+                <div style={{display:"flex", alignItems:"baseline",
+                  justifyContent:"space-between", marginBottom:8}}>
+                  <span style={{fontSize:R.fsSongTitle*.85, fontWeight:700,
+                    color:ch.isAlien?ac:T.textPrimary}}>{ch.symbol}</span>
+                  <span style={{fontSize:R.fs10, color:ch.isAlien?ac:T.textFaint,
+                    fontWeight:700}}>{ch.degree}</span>
                 </div>
-                <div style={{fontSize:8,color:T.textFaint,marginBottom:2,letterSpacing:.5}}>{ch.modalOrigin}</div>
-                <div style={{fontSize:9,color:T.textMid,marginBottom:8,lineHeight:1.5}}>{ch.function}</div>
-                <div style={{display:"flex",gap:6,alignItems:"center",marginBottom:8}}>
-                  <span style={{fontSize:13,fontWeight:700,color:ch.isAlien?ac:T.textSecondary}}>{ch.tetradFull}</span>
-                  <div style={{display:"flex",gap:3}}>
+                <div style={{fontSize:R.fs7, color:T.textFaint, marginBottom:3,
+                  letterSpacing:.3}}>{ch.modalOrigin}</div>
+                <div style={{fontSize:R.fs8, color:T.textMid, marginBottom:10,
+                  lineHeight:1.6}}>{ch.function}</div>
+                <div style={{display:"flex", gap:7, alignItems:"center", marginBottom:10}}>
+                  <span style={{fontSize:R.fs11, fontWeight:700,
+                    color:ch.isAlien?ac:T.textSecondary}}>{ch.tetradFull}</span>
+                  <div style={{display:"flex", gap:3, flexWrap:"wrap"}}>
                     {ch.tensions.map(t=>(
-                      <span key={t} style={{fontSize:7,padding:"1px 5px",borderRadius:2,
-                        border:`1px solid ${T.borderStrong}`,color:T.textFaint}}>{t}</span>
+                      <span key={t} style={{fontSize:R.fs7, padding:"2px 6px", borderRadius:3,
+                        border:`1px solid ${T.borderStrong}`, color:T.textMid}}>{t}</span>
                     ))}
                   </div>
                 </div>
                 <VoicingDot voicing={ch.voicing} color={ch.isAlien?ac:T.textMid} T={T}/>
-                <div style={{textAlign:"center",fontSize:8,color:T.textGhost,marginTop:4,letterSpacing:1}}>
-                  {ch.voicing}
-                </div>
+                <div style={{textAlign:"center", fontSize:R.fs7, color:T.textGhost,
+                  marginTop:5, letterSpacing:1}}>{ch.voicing}</div>
                 {ch.note && (
-                  <div style={{fontSize:8,color:T.textDim,borderTop:`1px solid ${T.borderFaint}`,
-                    paddingTop:6,lineHeight:1.5,fontStyle:"italic",marginTop:8}}>{ch.note}</div>
+                  <div style={{fontSize:R.fs8, color:T.textDim,
+                    borderTop:`1px solid ${T.borderFaint}`,
+                    paddingTop:8, lineHeight:1.6, fontStyle:"italic",
+                    marginTop:10}}>{ch.note}</div>
                 )}
               </div>
             ))}
@@ -824,78 +959,92 @@ function App() {
         </div>
       )}
 
-      {/* ══════════════════════════════════════════════════════════════════
+      {/* ══════════════════════════════════════════════════════════════
           TAB: ANALISI
-      ══════════════════════════════════════════════════════════════════ */}
+      ══════════════════════════════════════════════════════════════ */}
       {mainTab==="analysis" && (
-        <div style={{maxWidth:700,margin:"0 auto"}}>
-          <div style={{padding:"16px 20px",borderRadius:4,marginBottom:20,
-            border:`1px solid ${ac}40`,background:`${ac}0c`,
-            fontSize:11,color:T.textMid,lineHeight:1.8}}>
+        <div style={{maxWidth:740, margin:"0 auto"}}>
+          <div style={{padding: R.xs?"14px 14px":"16px 22px", borderRadius:6,
+            marginBottom:20, border:`1px solid ${ac}40`, background:`${ac}0c`,
+            fontSize:R.fs9, color:T.textMid, lineHeight:1.85}}>
             {data.analysis.summary}
           </div>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:20}}>
+          <div style={{display:"grid", gridTemplateColumns: R.analysisCols,
+            gap:10, marginBottom:20}}>
             {[
-              ["Centro tonale", data.analysis.tonicNote],
+              ["Centro tonale",   data.analysis.tonicNote],
               ["Modo principale", data.analysis.primaryMode],
-              ["Tecnica", data.analysis.technique],
-              ["Movimento basso", data.analysis.bassMotion],
-            ].map(([k,v])=>(
-              <div key={k} style={{padding:"12px 14px",borderRadius:3,
-                background:T.bgCard,border:`1px solid ${T.borderFaint}`,
-                boxShadow: themeId==="light" ? "0 1px 4px rgba(0,0,0,.05)" : "none"}}>
-                <div style={{fontSize:8,color:T.textGhost,letterSpacing:2,textTransform:"uppercase",marginBottom:4}}>{k}</div>
-                <div style={{fontSize:10,color:T.textSecondary,lineHeight:1.5}}>{v}</div>
+              ["Tecnica",         data.analysis.technique],
+              ["Basso",           data.analysis.bassMotion],
+            ].map(([k,v]) => (
+              <div key={k} style={{padding:"13px 15px", borderRadius:4,
+                background:T.bgCard, border:`1px solid ${T.borderFaint}`,
+                boxShadow: themeId==="light"?"0 1px 4px rgba(0,0,0,.05)":"none"}}>
+                <div style={{fontSize:R.fs7, color:T.textGhost, letterSpacing:2,
+                  textTransform:"uppercase", marginBottom:5}}>{k}</div>
+                <div style={{fontSize:R.fs9, color:T.textSecondary,
+                  lineHeight:1.55}}>{v}</div>
               </div>
             ))}
           </div>
-          <div style={{padding:"14px 18px",borderRadius:4,marginBottom:20,
-            border:"1px solid #f87171",background:"#f8717110"}}>
-            <div style={{fontSize:8,color:"#f87171",letterSpacing:3,textTransform:"uppercase",marginBottom:6}}>
+          <div style={{padding:"15px 18px", borderRadius:5, marginBottom:20,
+            border:"1px solid #f87171", background:"#f8717110"}}>
+            <div style={{fontSize:R.fs7, color:"#f87171", letterSpacing:2,
+              textTransform:"uppercase", marginBottom:7}}>
               ⚡ accordo alieno — {data.analysis.alienChord}
             </div>
-            <div style={{fontSize:10,color:themeId==="dark"?"#c08080":"#8a3030",lineHeight:1.6}}>{data.analysis.alienReason}</div>
+            <div style={{fontSize:R.fs9, color:themeId==="dark"?"#d09090":"#8a3030",
+              lineHeight:1.7}}>{data.analysis.alienReason}</div>
           </div>
-          <div style={{fontSize:9,letterSpacing:4,color:T.textGhost,textTransform:"uppercase",marginBottom:12,textAlign:"center"}}>
+          <div style={{fontSize:R.fs8, letterSpacing:3, color:T.textGhost,
+            textTransform:"uppercase", marginBottom:14, textAlign:"center"}}>
             guida all'improvvisazione
           </div>
-          <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:24}}>
-            {Object.entries(data.improv).map(([secId,info])=>{
-              const sec=data.sections.find(s=>s.id===secId);
+          <div style={{display:"flex", flexDirection:"column", gap:10, marginBottom:28}}>
+            {Object.entries(data.improv).map(([secId,info]) => {
+              const sec = data.sections.find(s=>s.id===secId);
               return (
-                <div key={secId} style={{padding:"12px 14px",borderRadius:3,
-                  background:T.bgCard,border:`1px solid ${T.borderFaint}`}}>
-                  <div style={{display:"flex",gap:10,flexWrap:"wrap",marginBottom:5}}>
-                    <span style={{fontSize:9,color:ac,fontWeight:700,letterSpacing:1}}>
-                      {sec?.label??secId.toUpperCase()}
+                <div key={secId} style={{padding:"14px 16px", borderRadius:4,
+                  background:T.bgCard, border:`1px solid ${T.borderFaint}`}}>
+                  <div style={{display:"flex", gap:10, flexWrap:"wrap", marginBottom:7,
+                    alignItems:"baseline"}}>
+                    <span style={{fontSize:R.fs9, color:ac, fontWeight:700, letterSpacing:.5}}>
+                      {sec?.label ?? secId.toUpperCase()}
                     </span>
-                    <span style={{fontSize:9,color:T.textMid}}>▸ {info.primary}</span>
+                    <span style={{fontSize:R.fs9, color:T.textMid}}>▸ {info.primary}</span>
                     {info.secondary && (
-                      <span style={{fontSize:8,color:T.textFaint,fontStyle:"italic"}}>alt: {info.secondary}</span>
+                      <span style={{fontSize:R.fs8, color:T.textFaint,
+                        fontStyle:"italic"}}>alt: {info.secondary}</span>
                     )}
                   </div>
-                  <div style={{fontSize:9,color:T.textDim,lineHeight:1.6}}>{info.tip}</div>
+                  <div style={{fontSize:R.fs8, color:T.textDim, lineHeight:1.7}}>{info.tip}</div>
                 </div>
               );
             })}
           </div>
           <div style={{textAlign:"center"}}>
-            <div style={{fontSize:8,letterSpacing:3,color:T.textGhost,textTransform:"uppercase",marginBottom:8}}>complessità armonica</div>
+            <div style={{fontSize:R.fs8, letterSpacing:2, color:T.textGhost,
+              textTransform:"uppercase", marginBottom:10}}>complessità armonica</div>
             <Stars n={data.analysis.complexity} color={ac}/>
-            <div style={{fontSize:9,color:T.textFaint,marginTop:6}}>{data.analysis.complexity}/5</div>
+            <div style={{fontSize:R.fs9, color:T.textFaint, marginTop:8}}>
+              {data.analysis.complexity} / 5
+            </div>
           </div>
         </div>
       )}
 
-      <div style={{textAlign:"center",fontSize:7,color:T.textGhost,letterSpacing:2,marginTop:28}}>
+      <div style={{textAlign:"center", fontSize:R.fs6, color:T.textGhost,
+        letterSpacing:2, marginTop:32, paddingBottom:8}}>
         HARMONIC ANALYSIS TOOL · schema {data.schema}
       </div>
     </div>
   );
 }
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(App));
+
 </script>
 </body>
 </html>
