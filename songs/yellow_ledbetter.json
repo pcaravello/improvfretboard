@@ -1,0 +1,598 @@
+{
+  "schema": "harmonic-analysis/1.0",
+  "song": {
+    "title": "Yellow Ledbetter",
+    "artist": "Pearl Jam",
+    "album": "Lost Dogs (B-side Jeremy 1992)",
+    "year": 1992,
+    "tuning": "Standard (EADGBe) — McCready usa thumb chord per le fondamentali basse",
+    "capo": 0,
+    "timeSignature": "4/4",
+    "tempo": "♩≈136 BPM (groove shufflato)",
+    "accentColor": "#d97706"
+  },
+  "analysis": {
+    "tonicNote": "E",
+    "tonicPC": 4,
+    "primaryMode": "E Ionio — I–V–IV (E–B–A) per tutta la canzone, con incursione di G (♭III da E Aeoliano) nel bridge/variazioni",
+    "complexity": 2,
+    "alienChord": "G (♭III — da E Aeoliano parallelo, compare nelle variazioni e nel bridge come unico colore minore)",
+    "alienReason": "Yellow Ledbetter è la canzone più semplice della raccolta dal punto di vista armonico: I–V–IV (E–B–A) ripetuto per tutta la durata. Il G maggiore (♭III) appare nelle variazioni strumentali e nel bridge come unico accordo estraneo a E Ionio — è ♭III di E Ionio (che ha G#) e appartiene a E Aeoliano. McCready inserisce G come colore passeggero nello stesso modo in cui Hendrix usava ♭III in Little Wing e May This Be Love — non come accordo strutturale ma come pennellata modale. La nota aliena è G naturale contro G# di E Ionio. La vera sofisticazione di Yellow Ledbetter non è nell'armonia ma nella tecnica di McCready: thumb chord che aggiungono fondamentali basse mentre le dita suonano voicing estesi in alto, hammer-on e pull-off continui che trasformano tre accordi in una conversazione infinita con se stesso.",
+    "technique": "McCready cita esplicitamente Hendrix e Little Wing come modello. La tecnica specifica: (1) thumb chord — il pollice frettando la corda E bassa mentre le dita suonano accordi in posizione di accordo A o D — permette voicing impossibili con tecnica standard; (2) fills melodici tra ogni cambio d'accordo — non c'è mai un cambio d'accordo 'nudo', sempre mediato da una frase breve; (3) la progressione I–V–IV (invece di I–IV–V) crea un movimento 'a discesa' invece di 'salita' — E→B→A è una progressione di quinta discendente (E→B) seguita da seconda discendente (B→A). Il suono è di qualcosa che si abbassa, si apre verso il basso.",
+    "bassMotion": "Basso Jeff Ament: E–B–A come fondamentali pulite, nessuna inversione. Il thumb chord di McCready aggiunge una seconda voce di basso sopra quella di Ament — le due linee di basso (Ament e il pollice di McCready) creano un effetto di 'basso raddoppiato' che dà profondità all'arrangiamento spoglio. Nella sezione G (bridge): basso scende E→G, un salto di terza minore discendente insolito nella progressione.",
+    "summary": "Yellow Ledbetter è l'argomento più forte che la complessità armonica non correla con la profondità emotiva: tre accordi, una scala, nessun accordo alieno strutturale, e tuttavia la canzone è considerata uno dei capolavori del rock degli anni '90. La sua magia è interamente nell'esecuzione: i thumb chord di McCready che aggiungono fondamentali basse ai voicing, i fills continui che non lasciano mai 'vuoto' tra gli accordi, il groove shufflato che trasforma I–V–IV in una danza. È la lezione di Hendrix completamente assorbita e ridistillata: Little Wing con il testo di un'epoca diversa."
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "label": "Intro — I–V–IV arpeggiato",
+      "chords": [
+        "E_intro",
+        "B_intro",
+        "A_intro"
+      ],
+      "note": "McCready introduce la progressione E–B–A con arpeggi fingerpicked e thumb chord. La struttura è I–V–IV ripetuta due volte prima che entri Vedder. Il suono è immediatamente riconoscibile — nessun'altra canzone suona così."
+    },
+    {
+      "id": "verse",
+      "label": "Verse — I–V–IV con fills continui",
+      "chords": [
+        "E_verse",
+        "B_verse",
+        "A_verse"
+      ],
+      "note": "Il verso di Yellow Ledbetter è il modello Hendrix applicato al grunge: McCready non suona mai un accordo senza inserire fills melodici prima o dopo. La voce di Vedder, volutamente incomprensibile (mumbled), diventa un secondo strumento melodico sopra la tessitura di McCready."
+    },
+    {
+      "id": "chorus",
+      "label": "Chorus — stesso giro, più dinamico",
+      "chords": [
+        "E_chorus",
+        "B_chorus",
+        "A_chorus"
+      ],
+      "note": "Il chorus usa la stessa progressione del verso — E–B–A — ma con più dinamica e voce più prominente. Non c'è differenza armonica tra verso e chorus: la differenza è solo nell'intensità esecutiva. È la filosofia opposta a Thunder Road (dove il chorus era più semplice del verso): qui tutto è uguale, la variazione è nell'energia."
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge — G (♭III) entra",
+      "chords": [
+        "E_bridge",
+        "G_bridge",
+        "A_bridge",
+        "B_bridge"
+      ],
+      "note": "Il G (♭III) compare nel bridge come unica variazione armonica della canzone. E–G–A–B crea una progressione ascendente invece della discendente E–B–A del verso. Il G è il momento di 'apertura' — armonicamente e nel testo."
+    },
+    {
+      "id": "solo",
+      "label": "Solo — vamp I–V–IV",
+      "chords": [
+        "E_solo",
+        "B_solo",
+        "A_solo"
+      ],
+      "note": "McCready improvvisa su E–B–A in E pentatonica maggiore, con excursions in E Ionio per note cromatiche. Il solo di Yellow Ledbetter è al 95° posto nella lista Guitar World dei '100 Greatest Guitar Solos' — su tre accordi diatonici."
+    },
+    {
+      "id": "outro",
+      "label": "Outro — fade su I–V–IV",
+      "chords": [
+        "E_outro",
+        "B_outro",
+        "A_outro"
+      ],
+      "note": "La canzone chiude in fade su E–B–A. McCready continua a improvvisare fino alla fine — ogni esecuzione live ha un outro diverso. Il brano non ha mai un vero finale, si dissolve come un'onda."
+    }
+  ],
+  "chords": [
+    {
+      "id": "E_intro",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — thumb chord con basso E sul pollice",
+      "tetrad": "Emaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Emaj9",
+      "voicing": "022130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "McCready suona E con voicing esteso — aggiunge B aperta (nona) e a volte F# (seconda/nona) usando le corde aperte come risonatori. Il thumb chord permette di tenere E bassa aperta mentre le dita suonano voicing in posizione VII o XII. Il suono è più 'pieno' e 'sospeso' di un semplice E maggiore."
+    },
+    {
+      "id": "B_intro",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante — scende dalla tonica per quinta",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Il B di Yellow Ledbetter è la seconda nota della progressione discendente E→B→A. McCready usa thumb chord sul B: pollice sulla corda A (II tasto = B) mentre le dita suonano il voicing. Il D# (terza maggiore di B) è la sensibile di E — crea tensione verso la tonica, ma nella progressione I–V–IV questa tensione non si risolve subito: va prima verso A."
+    },
+    {
+      "id": "A_intro",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — punto più basso della progressione discendente",
+      "tetrad": "Amaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Amaj9",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "A come punto di arrivo della progressione discendente E→B→A. Dal A si torna a E: il salto di quarta ascendente A→E è il 'rimbalzo' che riavvia il ciclo. McCready usa Asus2 in alcune variazioni (come in Black) per mantenere ambiguità modale, ma la versione base è A pieno."
+    },
+    {
+      "id": "E_verse",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — centro del verso",
+      "tetrad": "Emaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Emaj9",
+      "voicing": "022130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Nel verso McCready inserisce fills melodici tra E e B usando E pentatonica maggiore. Il fill tipico scende G#–F#–E o sale B–C#–E — sempre con hammer-on e pull-off. La melodia vocale di Vedder (incomprensibile ma emotivamente precisa) galleggia sopra questo strato."
+    },
+    {
+      "id": "B_verse",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A_verse",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "Il fill tra A e il ritorno a E usa la progressione melodica A–B–C#–E (ascendente) o E–C#–B–A (discendente) — le note dell'arpeggio di A major percorse in ordine scalare. McCready li suona come trilli e hammer-on veloci, non come note separate."
+    },
+    {
+      "id": "E_chorus",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — chorus più dinamico",
+      "tetrad": "Emaj7",
+      "tensions": [
+        "add9"
+      ],
+      "tetradFull": "Emaj9",
+      "voicing": "022130",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "B_chorus",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A_chorus",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_bridge",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — apertura del bridge",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Nel bridge il E precede il G invece del B. Il salto E→G (terza minore ascendente) è fisicamente diverso dal salto E→B (quinta discendente) del verso — crea un momento di sorpresa armonica anche nella ripetizione."
+    },
+    {
+      "id": "G_bridge",
+      "symbol": "G",
+      "degree": "♭III",
+      "modalOrigin": "E Aeoliano parallelo ⚡",
+      "function": "Terzo abbassato — unico accordo alieno, colore modale da E minore",
+      "tetrad": "Gmaj7",
+      "tensions": [],
+      "tetradFull": "G",
+      "voicing": "320033",
+      "rootPC": 7,
+      "isAlien": true,
+      "note": "G maggiore (♭III di E Ionio) — la nota aliena è G naturale contro G# di E Ionio. È esattamente lo stesso accordo alieno di Black (C = ♭VI) ma da un'altra angolazione: entrambi vengono da E Aeoliano parallelo. In Yellow Ledbetter il G è ♭III (terza minore parallela), in Black il C è ♭VI. McCready usa G come in Little Wing di Hendrix: un pennellata di colore minore dentro un contesto maggiore, non come risoluzione ma come transizione. Il G aperto (320033) risuona caldo e avvolgente — è il colore emotivo del bridge."
+    },
+    {
+      "id": "A_bridge",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante — dopo G crea progressione ♭III→IV insolita",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": "G→A è una seconda ascendente — il G si 'risolve' verso A invece che verso E. In E Aeoliano G→A è ♭III→IV, una cadenza dorica. Questo movimento crea una progressione ascendente E–G–A–B che è l'opposto direzionale della discendente E–B–A del verso."
+    },
+    {
+      "id": "B_bridge",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante — chiude il bridge verso la tonica",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_solo",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — vamp del solo",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": "Il solo di Yellow Ledbetter inizia su E e usa principalmente la posizione V della pentatonica maggiore (XII tasto). McCready poi scende verso la posizione I (apertura) nel climax del solo. Il whammy bar viene usato per effetti di pitch bend — caratteristica non presente in Black."
+    },
+    {
+      "id": "B_solo",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": "Sul B del solo McCready enfatizza F# (seconda di E, quinta di B) come nota di atterraggio. F# è condivisa tra E Ionio e E pentatonica maggiore — è la 'nota ponte' tra tonica e dominante."
+    },
+    {
+      "id": "A_solo",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "E_outro",
+      "symbol": "E",
+      "degree": "I",
+      "modalOrigin": "E Ionio",
+      "function": "Tonica — dissolvenza finale",
+      "tetrad": "Emaj7",
+      "tensions": [],
+      "tetradFull": "E",
+      "voicing": "022100",
+      "rootPC": 4,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "B_outro",
+      "symbol": "B",
+      "degree": "V",
+      "modalOrigin": "E Ionio",
+      "function": "Dominante",
+      "tetrad": "Bmaj7",
+      "tensions": [],
+      "tetradFull": "B",
+      "voicing": "x24442",
+      "rootPC": 11,
+      "isAlien": false,
+      "note": ""
+    },
+    {
+      "id": "A_outro",
+      "symbol": "A",
+      "degree": "IV",
+      "modalOrigin": "E Ionio",
+      "function": "Sottodominante",
+      "tetrad": "Amaj7",
+      "tensions": [],
+      "tetradFull": "A",
+      "voicing": "x02220",
+      "rootPC": 9,
+      "isAlien": false,
+      "note": ""
+    }
+  ],
+  "modes": [
+    {
+      "id": "e_ionian",
+      "label": "E Ionio (Maggiore)",
+      "sub": "Tutto il brano — primaria",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "color": "#d97706",
+      "sections": [
+        "intro",
+        "verse",
+        "chorus",
+        "solo",
+        "outro"
+      ],
+      "tip": "E–F#–G#–A–B–C#–D#. Copre E, B, A senza eccezioni. Note chiave: G# (terza, definisce il maggiore), F# (seconda/nona, nota di collegamento tra tonica e dominante), C# (sesta, suona bene sopra A). McCready usa prevalentemente E Ionio per i fills — le note G#–B–C# sopra E, e D#–F#–A sopra B."
+    },
+    {
+      "id": "e_major_pent",
+      "label": "E Pentatonica Maggiore",
+      "sub": "Base fills e solo — tutta la canzone",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        4,
+        7,
+        9
+      ],
+      "color": "#f59e0b",
+      "sections": [
+        "intro",
+        "verse",
+        "chorus",
+        "solo",
+        "outro"
+      ],
+      "tip": "E–F#–G#–B–C#. La scala del solo di Yellow Ledbetter. Su E: E, G#, B (tonica, terza, quinta). Su B: B, F# (quinta, seconda). Su A: A, C#, E (fondamentale, terza, quinta-tonica). Ogni nota della pentatonica di E funziona su tutti e tre gli accordi del brano — è la pentatonica 'universale' di Yellow Ledbetter. McCready la usa in posizione XII (quinta) e scende verso posizione II (prima)."
+    },
+    {
+      "id": "e_aeolian_color",
+      "label": "E Aeoliano — colore del bridge",
+      "sub": "Sul G (♭III) — bridge",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "color": "#b45309",
+      "sections": [
+        "bridge"
+      ],
+      "tip": "E–F#–G–A–B–C–D. Abbassa G# a G naturale. Copre il G del bridge. Sul G: usa G–B–D (fondamentale, terza, quinta) come guide tones, poi torna a E Ionio (con G#) su A e B. Il cambio G→G# tra bridge e verso è il suono del ritorno al 'normale' dopo la parentesi modale. Non restare in E Aeoliano troppo a lungo — è un colore, non una tonalità."
+    },
+    {
+      "id": "hendrix_style",
+      "label": "Stile Hendrix — tecnica thumb chord",
+      "sub": "Tecnica esecutiva — tutta la canzone",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7,
+        9,
+        11
+      ],
+      "color": "#fbbf24",
+      "sections": [
+        "intro",
+        "verse",
+        "chorus",
+        "bridge",
+        "solo",
+        "outro"
+      ],
+      "tip": "Non è una scala ma la tecnica esecutiva che definisce la canzone. Thumb chord: il pollice frettona la corda E bassa (o A) mentre le dita suonano voicing in alto. Permette di aggiungere fondamentali basse mentre si suonano voicing estesi. Esercizio: suona E con il pollice sulla corda E bassa, le dita suonano G#–B–E–G# alle corde 3,2,1 aperte. Poi aggiungi fills con l'anulare sulla corda B (hammer-on su C# al II tasto). Questo è il core tecnico di Yellow Ledbetter."
+    },
+    {
+      "id": "e_pentatonic_minor",
+      "label": "E Pentatonica Minore",
+      "sub": "Variante blues — bridge/variazioni",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        3,
+        5,
+        7,
+        10
+      ],
+      "color": "#92400e",
+      "sections": [
+        "bridge",
+        "solo"
+      ],
+      "tip": "E–G–A–B–D. Da usare sul G del bridge (G è fondamentale della pentatonica minore di E). La pentatonica minore di E è la relativa minore di G maggiore — funziona naturalmente sopra G. Sul solo McCready mescola pentatonica maggiore e minore: usa G# (maggiore) come nota 'brillante' e G naturale (minore) come nota 'blues'. Il blue note di E è Bb — usalo come bend dalla A alla Bb per intensità massima."
+    }
+  ],
+  "arpeggios": [
+    {
+      "id": "e_arp",
+      "label": "Emaj9",
+      "sub": "I · tutto il brano",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#d97706",
+      "chordRef": "E_intro",
+      "tip": "E–G#–B–D#–F#. Il D# (maj7) e F# (nona) sono i colori jazz nascosti in Yellow Ledbetter — McCready li suona attraverso le corde aperte B e E nei voicing Hendrix. Non è un arpeggio da suonare in sequenza ascendente: è un insieme di note da pescare in ordine libero, come Hendrix. Il D# (sensibile) suona naturalmente nelle transizioni B→E."
+    },
+    {
+      "id": "b_arp",
+      "label": "B",
+      "sub": "V · tutto il brano",
+      "rootPC": 11,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#f59e0b",
+      "chordRef": "B_intro",
+      "tip": "B–D#–F#. Il D# è la sensibile di E — la nota che 'vuole' risolvere su E. McCready enfatizza D# nei fills dopo B: la frase tipica è D#–E (semitono ascendente su corda 2, tasto 4→5). F# (quinta di B, seconda di E) è la nota di collegamento con la tonica. Sul solo: atterrare su F# sopra B è la mossa più 'corretta' di Yellow Ledbetter."
+    },
+    {
+      "id": "a_arp",
+      "label": "Amaj9",
+      "sub": "IV · tutto il brano",
+      "rootPC": 9,
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        2
+      ],
+      "color": "#fbbf24",
+      "chordRef": "A_intro",
+      "tip": "A–C#–E–G#–B. E (quinta) è la tonica — il IV di Yellow Ledbetter porta sempre la tonica come quinta. G# (maj7) e B (nona) sono le note estese che McCready suona sopra A con le corde aperte. Il fill tipico su A: C#–E ascendente (terza e quinta di A) con hammer-on al II tasto corda 2."
+    },
+    {
+      "id": "g_arp",
+      "label": "G",
+      "sub": "♭III · bridge ⚡",
+      "rootPC": 7,
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "color": "#b45309",
+      "chordRef": "G_bridge",
+      "tip": "G–B–D. La nota G è aliena rispetto a E Ionio (che ha G#). B (terza di G) è condivisa con Em e B — nota di continuità. D (quinta) crea contrasto con D# di B — quando il bridge torna al B dopo G, il cambio D→D# è udibile come 'uscita' dall'ombra modale. Suona G brevemente con voicing aperto (320033): il suono deve sembrare un colore passeggero, non un centro tonale."
+    },
+    {
+      "id": "double_stops",
+      "label": "Double stops E pent. magg.",
+      "sub": "Tecnica fills — tutta la canzone",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "color": "#fde68a",
+      "chordRef": "E_verse",
+      "tip": "Double stop = due note simultanee. McCready usa principalmente queste coppie: G#–B (corde 3 e 2, tasto 1 e 0), F#–B (corde 4 e 2, tasto 4 e 0), E–B (corde 3 e 2 al IX tasto). Il double stop G#–B su E è la firma di Yellow Ledbetter — è la terza e quinta dell'accordo di E, suonate come intervallo di terza. Questo intervallo di terza Hendrix è presente in quasi ogni battuta della canzone."
+    },
+    {
+      "id": "chromatic_approach",
+      "label": "Approccio cromatico",
+      "sub": "Tecnica fills — verso/chorus",
+      "rootPC": 4,
+      "intervals": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "color": "#d97706",
+      "chordRef": "E_verse",
+      "tip": "McCready usa approcci cromatici per raggiungere le note degli accordi: D##→E (semitono verso tonica), C##→D# (semitono verso sensibile di B), G##→A (semitono verso A). Il bend da F (♭2) a F# (2) sopra E è un altro approccio cromatico tipico. Questi micro-movimenti cromatici sono ciò che distingue il fraseggio di McCready dal semplice 'suonare la pentatonica' — aggiungono sorpresa e direzione a ogni frase."
+    }
+  ],
+  "improv": {
+    "intro": {
+      "primary": "E pentatonica maggiore — arpeggi Hendrix con thumb chord",
+      "secondary": "Double stop G#–B come texture di apertura",
+      "tip": "L'intro è il manifesto tecnico della canzone. Non suonare accordi fermi: ogni accordo deve essere arpeggiato con movimento continuo. Il thumb chord permette di tenere la fondamentale bassa mentre le dita si muovono in alto. Inizia lentamente — il groove shufflato di Yellow Ledbetter è sottile, non esplicito. Senti il click delle bacchette di Dave Abbruzzese prima di entrare."
+    },
+    "verse": {
+      "primary": "E pentatonica maggiore — fills tra ogni cambio d'accordo",
+      "secondary": "Double stop terze (G#–B su E, F#–A su B, C#–E su A)",
+      "tip": "La regola del verso: non c'è mai un cambio d'accordo senza un fill. La sequenza tipo è: [accordo] → [fill 2-3 note] → [cambio accordo] → [fill]. I fills di McCready usano quasi esclusivamente hammer-on e pull-off — mai note singole pizzicate senza ornamentazione. Sul E: hammer-on al tasto 2 corda 3 (F#). Sul B: pull-off dal tasto 4 al tasto 2 corda 2 (E→D#). Sul A: hammer-on tasto 2 corda 2 (C#)."
+    },
+    "chorus": {
+      "primary": "E pentatonica maggiore — più energia, stesse note",
+      "secondary": "Posizione XII tasto (pentatonica pos. 5) per il registro alto",
+      "tip": "Il chorus suona identico al verso armonicamente — la differenza è nel volume e nella posizione sul manico. Per il chorus sale al XII tasto dove la pentatonica di E ha la stessa forma del II tasto ma un'ottava sopra. Da lì scendi verso il verso successivo tornando alle posizioni basse. Questo movimento su–giù sul manico crea l'effetto di 'crescita e discesa' che sostituisce la variazione armonica assente."
+    },
+    "bridge": {
+      "primary": "E Aeoliano sul G (G–B–D come guide tones), poi E Ionio su A e B",
+      "secondary": "E pentatonica minore come connettore sul G",
+      "tip": "Il bridge introduce G naturale — la nota aliena. Sul G: suona G–B–D come arpeggio, poi aggiungi una nota della pentatonica minore (G–A–B–D–E) come colore. Sul A che segue: torna immediatamente a C# (nota di E Ionio, non Aeoliano). Il cambio G naturale → G# (tra il G e il B successivo) deve essere udibile — è il momento in cui la 'finestra Aeoliana' si richiude."
+    },
+    "solo": {
+      "primary": "E pentatonica maggiore — posizione V (XII tasto) poi posizione I (II tasto)",
+      "secondary": "Bending B→C# (blue note Ionica) e whammy bar per effetti pitch",
+      "tip": "Il solo di Yellow Ledbetter segue una narrativa precisa: inizia alto (XII tasto, posizione V), sviluppa verso il medio (VII tasto), poi sale di nuovo verso il climax (XV tasto). Sul B dell'accordo: atterrare su F# (quinta di B, seconda di E) come nota melodica di risoluzione. Il whammy bar di McCready crea vibrato lento sulle note tenute — non veloce come Hendrix, ma lento e 'piangente'. La nota più importante del solo: G# tenuta con bending a tutto mazzo sopra E finale — è la terza maggiore, il colore definitivo di E Ionio, l'accordo più 'vero' della canzone."
+    },
+    "outro": {
+      "primary": "E pentatonica maggiore — improvvisazione libera in dissolvenza",
+      "secondary": "Nessuna struttura richiesta: ogni esecuzione live è diversa",
+      "tip": "L'outro di Yellow Ledbetter non ha fine prestabilita — live Vedder cambia i testi ad ogni esecuzione, McCready improvvisa finché la band non decide di fermarsi. Tecnica: torna alle posizioni basse (II tasto), suona più silenziosamente, usa più spazio tra le note. Il fade out della versione studio imita questa dissolvenza naturale. L'ultima nota della canzone dovrebbe essere E aperta: la tonica, risonante, non conclusa."
+    }
+  }
+}
